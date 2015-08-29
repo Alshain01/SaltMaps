@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 using System.Yaml.Serialization;
+using System.Text;
 using Microsoft.VisualBasic;
 
 namespace SaltCharts
@@ -213,7 +216,7 @@ namespace SaltCharts
                 mapPoints = new List<MapPoint>();
 
 
-            this.Text = "Salt Charts - " + _config.LastMapFile;
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(_config.LastMapFile).ToString();
         }
 
         private void SaveConfigfile()
@@ -229,10 +232,10 @@ namespace SaltCharts
             btnSave.Enabled = false;
         }
 
-        private void newSeedMapToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
-            string mapName = Interaction.InputBox("Map name? (This is usually the name of the seed you used when you created your world)", DEFAULT_SEED);
-            if(string.IsNullOrEmpty(mapName))
+            string mapName = Interaction.InputBox("Map name? (This is usually the name of the seed you used when you created your world)", "New Map");
+            if (string.IsNullOrEmpty(mapName))
             {
                 MessageBox.Show("You must enter a name for the map.", "Map Name Required!", MessageBoxButtons.OK);
                 return;
@@ -266,7 +269,7 @@ namespace SaltCharts
             serializer.SerializeToFile(_settingsFile, _config);
         }
 
-        private void openMapToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {

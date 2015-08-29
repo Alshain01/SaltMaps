@@ -106,12 +106,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusCoord = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
+            this.btnNew = new System.Windows.Forms.ToolStripButton();
+            this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newSeedMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,7 +118,6 @@
             this.mnuRightClick.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.mnuWaypointRightClick.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,9 +127,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MapPanel.Controls.Add(this.SeaChart);
-            this.MapPanel.Location = new System.Drawing.Point(0, 52);
+            this.MapPanel.Location = new System.Drawing.Point(0, 30);
             this.MapPanel.Name = "MapPanel";
-            this.MapPanel.Size = new System.Drawing.Size(1280, 570);
+            this.MapPanel.Size = new System.Drawing.Size(1280, 596);
             this.MapPanel.TabIndex = 2;
             // 
             // SeaChart
@@ -144,7 +141,7 @@
             this.SeaChart.Image = ((System.Drawing.Image)(resources.GetObject("SeaChart.Image")));
             this.SeaChart.Location = new System.Drawing.Point(0, 0);
             this.SeaChart.Name = "SeaChart";
-            this.SeaChart.Size = new System.Drawing.Size(4125, 4135);
+            this.SeaChart.Size = new System.Drawing.Size(4125, 4161);
             this.SeaChart.TabIndex = 2;
             this.SeaChart.TabStop = false;
             this.SeaChart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseDown);
@@ -166,7 +163,7 @@
             this.innkeeperIsland,
             this.markers});
             this.mnuRightClick.Name = "mnuRightClick";
-            this.mnuRightClick.Size = new System.Drawing.Size(194, 268);
+            this.mnuRightClick.Size = new System.Drawing.Size(194, 246);
             // 
             // uninhabitedIsland
             // 
@@ -671,6 +668,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.SkyBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusCoord});
             this.statusStrip1.Location = new System.Drawing.Point(0, 625);
@@ -681,73 +679,66 @@
             // 
             // statusCoord
             // 
+            this.statusCoord.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.statusCoord.Name = "statusCoord";
-            this.statusCoord.Size = new System.Drawing.Size(88, 17);
+            this.statusCoord.Size = new System.Drawing.Size(95, 17);
             this.statusCoord.Text = "0 West, 0 South";
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.SkyBlue;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCenterMap,
-            this.btnSave});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.btnNew,
+            this.btnOpen,
+            this.btnSave,
+            this.btnCenterMap});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1280, 31);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnCenterMap
+            // btnNew
             // 
-            this.btnCenterMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCenterMap.Image = ((System.Drawing.Image)(resources.GetObject("btnCenterMap.Image")));
-            this.btnCenterMap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCenterMap.Name = "btnCenterMap";
-            this.btnCenterMap.Size = new System.Drawing.Size(23, 22);
-            this.btnCenterMap.Text = "Center Map";
-            this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
+            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNew.Image = global::SaltCharts.Properties.Resources._new;
+            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(28, 28);
+            this.btnNew.Text = "New";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOpen.Image = global::SaltCharts.Properties.Resources.load;
+            this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(28, 28);
+            this.btnOpen.Text = "Open";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
             this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Image = global::SaltCharts.Properties.Resources.save;
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(23, 22);
-            this.btnSave.Text = "toolStripButton1";
+            this.btnSave.Size = new System.Drawing.Size(28, 28);
+            this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // menuStrip1
+            // btnCenterMap
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newSeedMapToolStripMenuItem,
-            this.openMapToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // newSeedMapToolStripMenuItem
-            // 
-            this.newSeedMapToolStripMenuItem.Name = "newSeedMapToolStripMenuItem";
-            this.newSeedMapToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.newSeedMapToolStripMenuItem.Text = "New Map";
-            this.newSeedMapToolStripMenuItem.Click += new System.EventHandler(this.newSeedMapToolStripMenuItem_Click);
-            // 
-            // openMapToolStripMenuItem
-            // 
-            this.openMapToolStripMenuItem.Name = "openMapToolStripMenuItem";
-            this.openMapToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.openMapToolStripMenuItem.Text = "Open Map";
-            this.openMapToolStripMenuItem.Click += new System.EventHandler(this.openMapToolStripMenuItem_Click);
+            this.btnCenterMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCenterMap.Image = global::SaltCharts.Properties.Resources.globe;
+            this.btnCenterMap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCenterMap.Name = "btnCenterMap";
+            this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
+            this.btnCenterMap.Text = "Center Map";
+            this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
             // 
             // openFileDialog1
             // 
@@ -776,10 +767,8 @@
             this.ClientSize = new System.Drawing.Size(1280, 647);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.MapPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Map";
             this.Text = "Salt Charts";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -790,8 +779,6 @@
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.mnuWaypointRightClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -814,10 +801,6 @@
         private System.Windows.Forms.ToolStripMenuItem pirateTownshipIsland;
         private System.Windows.Forms.ToolStripMenuItem ancientRuinsIsland;
         private System.Windows.Forms.ToolStripMenuItem highMountainsIsland;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newSeedMapToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openMapToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ContextMenuStrip mnuWaypointRightClick;
         private System.Windows.Forms.ToolStripMenuItem deleteWaypointToolStripMenuItem1;
@@ -885,6 +868,8 @@
         private System.Windows.Forms.ToolStripMenuItem markerCompass;
         private System.Windows.Forms.ToolStripMenuItem markerX;
         private System.Windows.Forms.ToolStripMenuItem markerQuestion;
+        private System.Windows.Forms.ToolStripButton btnNew;
+        private System.Windows.Forms.ToolStripButton btnOpen;
 
     }
 }

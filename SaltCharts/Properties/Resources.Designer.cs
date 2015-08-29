@@ -63,6 +63,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _new {
+            get {
+                object obj = ResourceManager.GetObject("_new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AncientAltarIcon {
             get {
                 object obj = ResourceManager.GetObject("AncientAltarIcon", resourceCulture);
@@ -183,6 +193,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compass {
+            get {
+                object obj = ResourceManager.GetObject("compass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DesertIcon {
             get {
                 object obj = ResourceManager.GetObject("DesertIcon", resourceCulture);
@@ -247,6 +267,16 @@ namespace SaltCharts.Properties {
             get {
                 object obj = ResourceManager.GetObject("Everaldo_Kids_Icons_Start_here", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap globe {
+            get {
+                object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -436,6 +466,16 @@ namespace SaltCharts.Properties {
         internal static System.Drawing.Bitmap InnkeeperIslandSouthWest {
             get {
                 object obj = ResourceManager.GetObject("InnkeeperIslandSouthWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap load {
+            get {
+                object obj = ResourceManager.GetObject("load", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -716,6 +756,16 @@ namespace SaltCharts.Properties {
         internal static System.Drawing.Bitmap PirateTownshipIslandSouthWest {
             get {
                 object obj = ResourceManager.GetObject("PirateTownshipIslandSouthWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

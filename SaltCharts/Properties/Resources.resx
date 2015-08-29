@@ -154,6 +154,9 @@
   <data name="AncientRuinsIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AncientRuinsIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="compass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DesertIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DesertIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +177,9 @@
   </data>
   <data name="Everaldo_Kids_Icons_Start_here" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Everaldo-Kids-Icons-Start-here.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,6 +237,9 @@
   </data>
   <data name="InnkeeperIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InnkeeperIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MarkerBronzeChest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MarkerBronzeChest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,6 +325,9 @@
   <data name="PirateTownshipIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PirateTownshipIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TownshipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TownshipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -336,5 +348,8 @@
   </data>
   <data name="UninhabitedIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UninhabitedIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
