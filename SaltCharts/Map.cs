@@ -244,7 +244,7 @@ namespace SaltCharts
             configFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + mapName + MAP_EXTENSION;
             _config.LastMapFile = mapName;
 
-            this.Text = "Salt Charts - " + _config.LastMapFile;
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(_config.LastMapFile).ToString();
             btnSave.Enabled = false;
             mapPoints = new List<MapPoint>();
 
