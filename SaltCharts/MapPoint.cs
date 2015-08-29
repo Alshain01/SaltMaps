@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +11,55 @@ namespace SaltCharts
     [Serializable]
     public class MapPoint
     {
+        const int CELL_SIZE = 40;
+        const int GRID_CENTER = 2022;
 
         public MapPoint()
         {
-            X = 0;
-            Y = 0;
-            IsX_East = true;
-            IsY_South = true;
             this.Name = string.Empty;
         }
 
-        public MapPoint(int x, int y, bool IsXEast, bool IsYSouth, string name, POIType type, string notes)
+        // Constructor for grabbing mouse hover coordinates for display.
+        public MapPoint(Point p)
         {
-            X = x;
-            Y = y;
-            this.IsX_East = IsXEast;
-            this.IsY_South = IsYSouth;
-            this.Name = name;
+            this.getCoordinates(p.X, p.Y);
+            this.Name = string.Empty;
+            this.Notes = string.Empty;
+            this.PoiType = POIType.MarkerX;
+            this.PoiSubType = POISubType.None;
+        }
+
+        // Constructor for new POI Generation
+        public MapPoint(Point p, POIType type, POISubType subType)
+        {
+            this.getCoordinates(p.X, p.Y);
             this.PoiType = type;
-            this.Notes = notes;
+            this.PoiSubType = subType;
+            this.Name = string.Empty;
+       }
+
+        private void getCoordinates(int xPix, int yPix)
+        {
+            //calc east/west
+            int xCoordinate = xPix - GRID_CENTER;
+            if (xCoordinate != 0)
+                xCoordinate = (xCoordinate + Math.Abs(xCoordinate) / xCoordinate * (CELL_SIZE / 2)) / CELL_SIZE;
+
+            //calc north south
+            int yCoordinate = yPix - GRID_CENTER;
+            if (yCoordinate != 0)
+                yCoordinate = (yCoordinate + Math.Abs(yCoordinate) / yCoordinate * (CELL_SIZE / 2)) / CELL_SIZE;
+
+            this.x = xCoordinate;
+            this.y = yCoordinate;
+        }
+
+        public Point getPosition()
+        {
+            int yPos = y * CELL_SIZE + GRID_CENTER - CELL_SIZE / 2;
+            if (isSouth()) yPos++; // There is a 1 pixel inconsistency in the grid image along the 0 x-axis.
+
+            return new Point (x * CELL_SIZE + GRID_CENTER - CELL_SIZE /2, yPos);
         }
 
         public string Name { get; set; }
@@ -40,22 +71,20 @@ namespace SaltCharts
         public string Notes { get; set; }
 
         [Browsable(false)]
-        public int X { get; set; }
+        public int x { get; set; }
 
         [Browsable(false)]
-        public int Y { get; set; }
+        public int y { get; set; }
 
-        [Browsable(false)]
-        public bool IsX_East { get; set; }
+        public bool isSouth() { return this.y >= 0; }
 
-        [Browsable(false)]
-        public bool IsY_South { get; set; }
+        public bool isEast() { return this.x >= 0; }
 
         public override string ToString()
         {
             string template = "{0} {1}, {2} {3}";
 
-            return string.Format(template, X.ToString(), (IsX_East ? "East" : "West"), Y.ToString(), (IsY_South ? "South" : "North"));
+            return string.Format(template, Math.Abs(x).ToString(), (this.isEast() ? "East" : "West"), Math.Abs(y).ToString(), (this.isSouth() ? "South" : "North"));
         }
     }
 }

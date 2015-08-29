@@ -89,23 +89,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Map.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPOIDetails.cs">
+    <Compile Include="PoiDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPOIDetails.Designer.cs">
-      <DependentUpon>frmPOIDetails.cs</DependentUpon>
+    <Compile Include="PoiDetails.Designer.cs">
+      <DependentUpon>PoiDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPOIProperties.cs">
+    <Compile Include="PoiProperties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPOIProperties.Designer.cs">
-      <DependentUpon>frmPOIProperties.cs</DependentUpon>
+    <Compile Include="PoiProperties.Designer.cs">
+      <DependentUpon>PoiProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="MapPoint.cs" />
     <Compile Include="Program.cs" />
@@ -116,14 +116,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPOIDetails.resx">
-      <DependentUpon>frmPOIDetails.cs</DependentUpon>
+    <EmbeddedResource Include="PoiDetails.resx">
+      <DependentUpon>PoiDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPOIProperties.resx">
-      <DependentUpon>frmPOIProperties.cs</DependentUpon>
+    <EmbeddedResource Include="PoiProperties.resx">
+      <DependentUpon>PoiProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -342,6 +342,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MarkerQuestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
