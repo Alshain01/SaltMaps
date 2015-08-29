@@ -65,9 +65,9 @@ namespace SaltCharts
             btnSave.Enabled = false;
         }
 
-        /**
+        /*
          * Clears all POIs from the map.
-         **/
+         */
         private void ClearMapPoints()
         {
             //clear all the map points
@@ -75,9 +75,9 @@ namespace SaltCharts
                 p.Dispose();
         }
 
-        /**
+        /*
          * Plots all stored map points on the map. 
-         **/
+         */
         private void PlotMapPoints()
         {
             foreach (var mp in mapPoints)
@@ -119,10 +119,7 @@ namespace SaltCharts
                     SeaChart.Location = new Point(SeaChart.Location.X, newY);
             }
             else if (e.Button == MouseButtons.None)
-            {
-                statusCoord.Text = string.Format("{0}, {1}", e.Location.X.ToString(), e.Location.Y.ToString());
-                statusCoord.Text = new MapPoint(e.Location).ToString();
-            }
+                statusCoord.Text = MapPoint.getFormatted(e.Location);
         }
 
 
@@ -154,6 +151,7 @@ namespace SaltCharts
             newPic.Tag = mp;
             newPic.ContextMenuStrip = mnuWaypointRightClick;
             newPic.Click += newPic_Click;
+            newPic.MouseMove += newPic_MouseMove;
             newPic.MouseDown += newPic_MouseDown;
             if (pictureBoxes == null)
                 pictureBoxes = new List<PictureBox>();
@@ -184,13 +182,9 @@ namespace SaltCharts
             frm.ShowDialog(this);
         }
 
-        // Event Handler for all context menu clicks (except delete)
-        private void addPOI(object sender, EventArgs e, POIType type, POISubType subType)
+        private void newPic_MouseMove(object sender, EventArgs e)
         {
-            MapPoint mp = new MapPoint(mouseDownLoc, type, subType);
-            mapPoints.Add(mp);
-            AddPOIToMap(mp);
-            btnSave.Enabled = true;
+            statusCoord.Text = ((MapPoint)((PictureBox)sender).Tag).ToString();
         }
 
         private void LoadConfigFile()
@@ -312,7 +306,20 @@ namespace SaltCharts
             }
         }
 
-        // Define the click events with custom arguments for the context menu
+        /*
+         * Event Handler for all context menu clicks (except delete)
+         */
+        private void addPOI(object sender, EventArgs e, POIType type, POISubType subType)
+        {
+            MapPoint mp = new MapPoint(mouseDownLoc, type, subType);
+            mapPoints.Add(mp);
+            AddPOIToMap(mp);
+            btnSave.Enabled = true;
+        }
+         
+        /*
+         * Define the click events with custom arguments for the context menu
+         */
         private void DelegateEvents()
         {
             // Uninhabited Island

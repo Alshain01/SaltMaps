@@ -22,7 +22,8 @@ namespace SaltCharts
         // Constructor for grabbing mouse hover coordinates for display.
         public MapPoint(Point p)
         {
-            this.getCoordinates(p.X, p.Y);
+            this.x = getCoordinate(p.X);
+            this.y = getCoordinate(p.Y);
             this.Name = string.Empty;
             this.Notes = string.Empty;
             this.PoiType = POIType.MarkerX;
@@ -32,6 +33,8 @@ namespace SaltCharts
         // Constructor for new POI Generation
         public MapPoint(Point p, POIType type, POISubType subType)
         {
+            this.x = getCoordinate(p.X);
+            this.y = getCoordinate(p.Y);
             this.getCoordinates(p.X, p.Y);
             this.PoiType = type;
             this.PoiSubType = subType;
@@ -57,7 +60,7 @@ namespace SaltCharts
         public Point getPosition()
         {
             int yPos = y * CELL_SIZE + GRID_CENTER - CELL_SIZE / 2;
-            if (isSouth()) yPos++; // There is a 1 pixel inconsistency in the grid image along the 0 x-axis.
+            if (y >= 0) yPos++; // There is a 1 pixel inconsistency in the grid image along the 0 x-axis.
 
             return new Point (x * CELL_SIZE + GRID_CENTER - CELL_SIZE /2, yPos);
         }
@@ -76,15 +79,29 @@ namespace SaltCharts
         [Browsable(false)]
         public int y { get; set; }
 
-        public bool isSouth() { return this.y >= 0; }
-
-        public bool isEast() { return this.x >= 0; }
-
         public override string ToString()
+        {
+            return getFormatted(this.x, this.y);
+        }
+
+        public static string getFormatted(Point p)
+        {
+            return getFormatted(getCoordinate(p.X), getCoordinate(p.Y));
+        }
+
+        public static string getFormatted(int x, int y) 
         {
             string template = "{0} {1}, {2} {3}";
 
-            return string.Format(template, Math.Abs(x).ToString(), (this.isEast() ? "East" : "West"), Math.Abs(y).ToString(), (this.isSouth() ? "South" : "North"));
+            return string.Format(template, Math.Abs(x).ToString(), (x >= 0 ? "East" : "West"), Math.Abs(y).ToString(), (y >= 0) ? "South" : "North");
+        }
+
+        private static int getCoordinate(int pixel) {
+             int coordinate = pixel - GRID_CENTER;
+             if (coordinate != 0)
+                 coordinate = (coordinate + Math.Abs(coordinate) / coordinate * (CELL_SIZE / 2)) / CELL_SIZE;
+
+             return coordinate;
         }
     }
 }
