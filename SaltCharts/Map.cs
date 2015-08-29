@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using System.Yaml.Serialization;
-using System.Text;
 using Microsoft.VisualBasic;
 
 namespace SaltCharts
@@ -405,6 +404,12 @@ namespace SaltCharts
             this.markerSpiderQueen.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerSpiderQueen, POISubType.None); };
             this.markerX.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerX, POISubType.None); };
             this.markerQuestion.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerQuestion, POISubType.None); };
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();
+            about.ShowDialog(this);
         }
     }
 }

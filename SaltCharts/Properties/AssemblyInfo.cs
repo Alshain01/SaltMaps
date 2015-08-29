@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Salt Charts")]
-[assembly: AssemblyDescription("Charting Application for Salt the game.")]
+[assembly: AssemblyDescription("Charting Application for Salt the game.  Licensed under the GNU General Public License v2.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("14 Flag Studios")]
-[assembly: AssemblyProduct("Salt Charts - beta")]
+[assembly: AssemblyProduct("Salt Charts")]
 [assembly: AssemblyCopyright("Copyright ©  2014 Scott Smith")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

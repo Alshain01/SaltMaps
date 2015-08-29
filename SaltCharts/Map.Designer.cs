@@ -110,6 +110,7 @@
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
+            this.btnInfo = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -693,7 +694,8 @@
             this.btnNew,
             this.btnOpen,
             this.btnSave,
-            this.btnCenterMap});
+            this.btnCenterMap,
+            this.btnInfo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1280, 31);
@@ -739,6 +741,17 @@
             this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
             this.btnCenterMap.Text = "Center Map";
             this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnInfo.Image = global::SaltCharts.Properties.Resources.info;
+            this.btnInfo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(28, 28);
+            this.btnInfo.Text = "About";
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // openFileDialog1
             // 
@@ -870,6 +883,7 @@
         private System.Windows.Forms.ToolStripMenuItem markerQuestion;
         private System.Windows.Forms.ToolStripButton btnNew;
         private System.Windows.Forms.ToolStripButton btnOpen;
+        private System.Windows.Forms.ToolStripButton btnInfo;
 
     }
 }
