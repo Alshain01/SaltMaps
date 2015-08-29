@@ -126,6 +126,9 @@
             // 
             // MapPanel
             // 
+            this.MapPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MapPanel.Controls.Add(this.SeaChart);
             this.MapPanel.Location = new System.Drawing.Point(0, 52);
             this.MapPanel.Name = "MapPanel";
@@ -134,6 +137,9 @@
             // 
             // SeaChart
             // 
+            this.SeaChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SeaChart.ContextMenuStrip = this.mnuRightClick;
             this.SeaChart.Image = ((System.Drawing.Image)(resources.GetObject("SeaChart.Image")));
             this.SeaChart.Location = new System.Drawing.Point(0, 0);
