@@ -33,23 +33,81 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnuRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateShipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.battleMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moonstonesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goodResourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bronzeChestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silverChestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.uninhabitedIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.desertIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainsIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.highMountainIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateCampIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.pirateTownshipIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientRuinsIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ancientAltarIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.merchantIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.huntingCampIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIsland = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
+            this.innkeeperIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
+            this.markers = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerPirateShip = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerMoonstones = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerGoodResources = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerBronzeChest = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerSilverChest = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerSpiderQueen = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerCompass = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerX = new System.Windows.Forms.ToolStripMenuItem();
+            this.markerQuestion = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusCoord = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.imgListPOI = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newSeedMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +117,6 @@
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.mnuRightClick.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.mnuWaypointRightClick.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,96 +145,511 @@
             // mnuRightClick
             // 
             this.mnuRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.pirateShipToolStripMenuItem,
-            this.merchantToolStripMenuItem,
-            this.battleMasterToolStripMenuItem,
-            this.ancientRuinsToolStripMenuItem,
-            this.highMountainsToolStripMenuItem,
-            this.moonstonesToolStripMenuItem,
-            this.goodResourcesToolStripMenuItem,
-            this.bronzeChestToolStripMenuItem,
-            this.silverChestToolStripMenuItem});
+                this.uninhabitedIsland,
+                this.desertIsland,
+                this.highMountainsIsland,
+                this.pirateCampIsland,
+                this.pirateTownshipIsland,
+                this.ancientRuinsIsland,
+                this.ancientAltarIsland,
+                this.merchantIsland,
+                this.huntingCampIsland,
+                this.innkeeperIsland,
+                this.markers
+            });
             this.mnuRightClick.Name = "mnuRightClick";
-            this.mnuRightClick.Size = new System.Drawing.Size(162, 246);
+            this.mnuRightClick.Size = new System.Drawing.Size(61, 4);
+
             // 
-            // toolStripMenuItem1
+            // uninhabitedIsland
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.toolStripMenuItem1.Text = "Island";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.uninhabitedIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uninhabitedIslandSingle,
+            this.uninhabitedIslandNorthWest,
+            this.uninhabitedIslandNorthEast,
+            this.uninhabitedIslandSouthWest,
+            this.uninhabitedIslandSouthEast});
+            this.uninhabitedIsland.Name = "uninhabitedIsland";
+            this.uninhabitedIsland.Size = new System.Drawing.Size(193, 22);
+            this.uninhabitedIsland.Text = "Uninhabited Island";
             // 
-            // toolStripMenuItem2
+            // uninhabitedIslandSingle
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(161, 22);
-            this.toolStripMenuItem2.Text = "Pirate Encounter";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.uninhabitedIslandSingle.Name = "uninhabitedIslandSingle";
+            this.uninhabitedIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.uninhabitedIslandSingle.Text = "Single";
             // 
-            // pirateShipToolStripMenuItem
+            // uninhabitedIslandNorthWest
             // 
-            this.pirateShipToolStripMenuItem.Name = "pirateShipToolStripMenuItem";
-            this.pirateShipToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.pirateShipToolStripMenuItem.Text = "Pirate Ship";
-            this.pirateShipToolStripMenuItem.Click += new System.EventHandler(this.pirateShipToolStripMenuItem_Click);
+            this.uninhabitedIslandNorthWest.Name = "uninhabitedIslandNorthWest";
+            this.uninhabitedIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.uninhabitedIslandNorthWest.Text = "North West";
             // 
-            // merchantToolStripMenuItem
+            // uninhabitedIslandNorthEast
             // 
-            this.merchantToolStripMenuItem.Name = "merchantToolStripMenuItem";
-            this.merchantToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.merchantToolStripMenuItem.Text = "Merchant";
-            this.merchantToolStripMenuItem.Click += new System.EventHandler(this.merchantToolStripMenuItem_Click);
+            this.uninhabitedIslandNorthEast.Name = "uninhabitedIslandNorthEast";
+            this.uninhabitedIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.uninhabitedIslandNorthEast.Text = "North East";
             // 
-            // battleMasterToolStripMenuItem
+            // uninhabitedIslandSouthWest
             // 
-            this.battleMasterToolStripMenuItem.Name = "battleMasterToolStripMenuItem";
-            this.battleMasterToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.battleMasterToolStripMenuItem.Text = "Battle Master";
-            this.battleMasterToolStripMenuItem.Click += new System.EventHandler(this.battleMasterToolStripMenuItem_Click);
+            this.uninhabitedIslandSouthWest.Name = "uninhabitedIslandSouthWest";
+            this.uninhabitedIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.uninhabitedIslandSouthWest.Text = "South West";
             // 
-            // ancientRuinsToolStripMenuItem
+            // uninhabitedIslandSouthEast
             // 
-            this.ancientRuinsToolStripMenuItem.Name = "ancientRuinsToolStripMenuItem";
-            this.ancientRuinsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.ancientRuinsToolStripMenuItem.Text = "Ancient Ruins";
-            this.ancientRuinsToolStripMenuItem.Click += new System.EventHandler(this.ancientRuinsToolStripMenuItem_Click);
+            this.uninhabitedIslandSouthEast.Name = "uninhabitedIslandSouthEast";
+            this.uninhabitedIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.uninhabitedIslandSouthEast.Text = "South East";
             // 
-            // highMountainsToolStripMenuItem
+            // desertIsland
             // 
-            this.highMountainsToolStripMenuItem.Name = "highMountainsToolStripMenuItem";
-            this.highMountainsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.highMountainsToolStripMenuItem.Text = "High Mountains";
-            this.highMountainsToolStripMenuItem.Click += new System.EventHandler(this.highMountainsToolStripMenuItem_Click);
+            this.desertIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.desertIslandSingle,
+            this.desertIslandNorthWest,
+            this.desertIslandNorthEast,
+            this.desertIslandSouthWest,
+            this.desertIslandSouthEast});
+            this.desertIsland.Name = "desertIsland";
+            this.desertIsland.Size = new System.Drawing.Size(193, 22);
+            this.desertIsland.Text = "Desert Island";
             // 
-            // moonstonesToolStripMenuItem
+            // desertIslandSingle
             // 
-            this.moonstonesToolStripMenuItem.Name = "moonstonesToolStripMenuItem";
-            this.moonstonesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.moonstonesToolStripMenuItem.Text = "Moonstones";
-            this.moonstonesToolStripMenuItem.Click += new System.EventHandler(this.moonstonesToolStripMenuItem_Click);
+            this.desertIslandSingle.Name = "desertIslandSingle";
+            this.desertIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.desertIslandSingle.Text = "Single";
             // 
-            // goodResourcesToolStripMenuItem
+            // desertIslandNorthWest
             // 
-            this.goodResourcesToolStripMenuItem.Name = "goodResourcesToolStripMenuItem";
-            this.goodResourcesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.goodResourcesToolStripMenuItem.Text = "Good Resources";
-            this.goodResourcesToolStripMenuItem.Click += new System.EventHandler(this.goodResourcesToolStripMenuItem_Click);
+            this.desertIslandNorthWest.Name = "desertIslandNorthWest";
+            this.desertIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.desertIslandNorthWest.Text = "North West";
             // 
-            // bronzeChestToolStripMenuItem
+            // desertIslandNorthEast
             // 
-            this.bronzeChestToolStripMenuItem.Name = "bronzeChestToolStripMenuItem";
-            this.bronzeChestToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.bronzeChestToolStripMenuItem.Text = "Bronze Chest";
-            this.bronzeChestToolStripMenuItem.Click += new System.EventHandler(this.bronzeChestToolStripMenuItem_Click);
+            this.desertIslandNorthEast.Name = "desertIslandNorthEast";
+            this.desertIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.desertIslandNorthEast.Text = "North East";
             // 
-            // silverChestToolStripMenuItem
+            // desertIslandSouthWest
             // 
-            this.silverChestToolStripMenuItem.Name = "silverChestToolStripMenuItem";
-            this.silverChestToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.silverChestToolStripMenuItem.Text = "Silver Chest";
-            this.silverChestToolStripMenuItem.Click += new System.EventHandler(this.silverChestToolStripMenuItem_Click);
+            this.desertIslandSouthWest.Name = "desertIslandSouthWest";
+            this.desertIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.desertIslandSouthWest.Text = "SouthWest";
+            // 
+            // desertIslandSouthEast
+            // 
+            this.desertIslandSouthEast.Name = "desertIslandSouthEast";
+            this.desertIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.desertIslandSouthEast.Text = "South East";
+            // 
+            // highMountainsIsland
+            // 
+            this.highMountainsIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.highMountainIslandSingle,
+            this.highMountainIslandNorthWest,
+            this.highMountainIslandNorthEast,
+            this.highMountainIslandSouthWest,
+            this.highMountainIslandSouthEast});
+            this.highMountainsIsland.Name = "highMountainsIsland";
+            this.highMountainsIsland.Size = new System.Drawing.Size(193, 22);
+            this.highMountainsIsland.Text = "High Mountain Island";
+            // 
+            // highMountainIslandSingle
+            // 
+            this.highMountainIslandSingle.Name = "highMountainIslandSingle";
+            this.highMountainIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.highMountainIslandSingle.Text = "Single";
+            // 
+            // highMountainIslandNorthWest
+            // 
+            this.highMountainIslandNorthWest.Name = "highMountainIslandNorthWest";
+            this.highMountainIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.highMountainIslandNorthWest.Text = "North West";
+            // 
+            // highMountainIslandNorthEast
+            // 
+            this.highMountainIslandNorthEast.Name = "highMountainIslandNorthEast";
+            this.highMountainIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.highMountainIslandNorthEast.Text = "North East";
+            // 
+            // highMountainIslandSouthWest
+            // 
+            this.highMountainIslandSouthWest.Name = "highMountainIslandSouthWest";
+            this.highMountainIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.highMountainIslandSouthWest.Text = "South West";
+            // 
+            // highMountainIslandSouthEast
+            // 
+            this.highMountainIslandSouthEast.Name = "highMountainIslandSouthEast";
+            this.highMountainIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.highMountainIslandSouthEast.Text = "South East";
+            // 
+            // pirateCampIsland
+            // 
+            this.pirateCampIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pirateCampIslandSingle,
+            this.pirateCampIslandNorthWest,
+            this.pirateCampIslandNorthEast,
+            this.pirateCampIslandSouthWest,
+            this.pirateCampIslandSouthEast});
+            this.pirateCampIsland.Name = "pirateCampIsland";
+            this.pirateCampIsland.Size = new System.Drawing.Size(193, 22);
+            this.pirateCampIsland.Text = "Pirate Camp Island";
+            // 
+            // pirateCampIslandSingle
+            // 
+            this.pirateCampIslandSingle.Name = "pirateCampIslandSingle";
+            this.pirateCampIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.pirateCampIslandSingle.Text = "Single";
+            // 
+            // pirateCampIslandNorthWest
+            // 
+            this.pirateCampIslandNorthWest.Name = "pirateCampIslandNorthWest";
+            this.pirateCampIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.pirateCampIslandNorthWest.Text = "North West";
+            // 
+            // pirateCampIslandNorthEast
+            // 
+            this.pirateCampIslandNorthEast.Name = "pirateCampIslandNorthEast";
+            this.pirateCampIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.pirateCampIslandNorthEast.Text = "North East";
+            // 
+            // pirateCampIslandSouthWest
+            // 
+            this.pirateCampIslandSouthWest.Name = "pirateCampIslandSouthWest";
+            this.pirateCampIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.pirateCampIslandSouthWest.Text = "South West";
+            // 
+            // pirateCampIslandSouthEast
+            // 
+            this.pirateCampIslandSouthEast.Name = "pirateCampIslandSouthEast";
+            this.pirateCampIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.pirateCampIslandSouthEast.Text = "South East";
+            // 
+            // pirateTownshipIsland
+            // 
+            this.pirateTownshipIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pirateTownshipIslandSingle,
+            this.pirateTownshipIslandNorthWest,
+            this.pirateTownshipIslandNorthEast,
+            this.pirateTownshipIslandSouthWest,
+            this.pirateTownshipIslandSouthEast});
+            this.pirateTownshipIsland.Name = "pirateTownshipIsland";
+            this.pirateTownshipIsland.Size = new System.Drawing.Size(193, 22);
+            this.pirateTownshipIsland.Text = "Pirate Township Island";
+            // 
+            // pirateTownshipIslandSingle
+            // 
+            this.pirateTownshipIslandSingle.Name = "pirateTownshipIslandSingle";
+            this.pirateTownshipIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.pirateTownshipIslandSingle.Text = "Single";
+            // 
+            // pirateTownshipIslandNorthWest
+            // 
+            this.pirateTownshipIslandNorthWest.Name = "pirateTownshipIslandNorthWest";
+            this.pirateTownshipIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.pirateTownshipIslandNorthWest.Text = "North West";
+            // 
+            // pirateTownshipIslandNorthEast
+            // 
+            this.pirateTownshipIslandNorthEast.Name = "pirateTownshipIslandNorthEast";
+            this.pirateTownshipIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.pirateTownshipIslandNorthEast.Text = "North East";
+            // 
+            // pirateTownshipIslandSouthWest
+            // 
+            this.pirateTownshipIslandSouthWest.Name = "pirateTownshipIslandSouthWest";
+            this.pirateTownshipIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.pirateTownshipIslandSouthWest.Text = "South West";
+            // 
+            // pirateTownshipIslandSouthEast
+            // 
+            this.pirateTownshipIslandSouthEast.Name = "pirateTownshipIslandSouthEast";
+            this.pirateTownshipIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.pirateTownshipIslandSouthEast.Text = "South East";
+            // 
+            // ancientRuinsIsland
+            // 
+            this.ancientRuinsIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ancientRuinsIslandSingle,
+            this.ancientRuinsIslandNorthWest,
+            this.ancientRuinsIslandNorthEast,
+            this.ancientRuinsIslandSouthWest,
+            this.ancientRuinsIslandSouthEast});
+            this.ancientRuinsIsland.Name = "ancientRuinsIsland";
+            this.ancientRuinsIsland.Size = new System.Drawing.Size(193, 22);
+            this.ancientRuinsIsland.Text = "Ancient Ruins Island";
+            // 
+            // ancientRuinsIslandSingle
+            // 
+            this.ancientRuinsIslandSingle.Name = "ancientRuinsIslandSingle";
+            this.ancientRuinsIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.ancientRuinsIslandSingle.Text = "Single";
+            // 
+            // ancientRuinsIslandNorthWest
+            // 
+            this.ancientRuinsIslandNorthWest.Name = "ancientRuinsIslandNorthWest";
+            this.ancientRuinsIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.ancientRuinsIslandNorthWest.Text = "North West";
+            // 
+            // ancientRuinsIslandNorthEast
+            // 
+            this.ancientRuinsIslandNorthEast.Name = "ancientRuinsIslandNorthEast";
+            this.ancientRuinsIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.ancientRuinsIslandNorthEast.Text = "North East";
+            // 
+            // ancientRuinsIslandSouthWest
+            // 
+            this.ancientRuinsIslandSouthWest.Name = "ancientRuinsIslandSouthWest";
+            this.ancientRuinsIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.ancientRuinsIslandSouthWest.Text = "South West";
+            // 
+            // ancientRuinsIslandSouthEast
+            // 
+            this.ancientRuinsIslandSouthEast.Name = "ancientRuinsIslandSouthEast";
+            this.ancientRuinsIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.ancientRuinsIslandSouthEast.Text = "South East";
+            // 
+            // ancientAltarIsland
+            // 
+            this.ancientAltarIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ancientAltarIslandSingle,
+            this.ancientAltarIslandNorthWest,
+            this.ancientAltarIslandNorthEast,
+            this.ancientAltarIslandSouthWest,
+            this.ancientAltarIslandSouthEast});
+            this.ancientAltarIsland.Name = "ancientAltarIsland";
+            this.ancientAltarIsland.Size = new System.Drawing.Size(193, 22);
+            this.ancientAltarIsland.Text = "Ancient Altar Island";
+            // 
+            // ancientAltarIslandSingle
+            // 
+            this.ancientAltarIslandSingle.Name = "ancientAltarIslandSingle";
+            this.ancientAltarIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.ancientAltarIslandSingle.Text = "Single";
+            // 
+            // ancientAltarIslandNorthWest
+            // 
+            this.ancientAltarIslandNorthWest.Name = "ancientAltarIslandNorthWest";
+            this.ancientAltarIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.ancientAltarIslandNorthWest.Text = "North West";
+            // 
+            // ancientAltarIslandNorthEast
+            // 
+            this.ancientAltarIslandNorthEast.Name = "ancientAltarIslandNorthEast";
+            this.ancientAltarIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.ancientAltarIslandNorthEast.Text = "North East";
+            // 
+            // ancientAltarIslandSouthWest
+            // 
+            this.ancientAltarIslandSouthWest.Name = "ancientAltarIslandSouthWest";
+            this.ancientAltarIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.ancientAltarIslandSouthWest.Text = "South West";
+            // 
+            // ancientAltarIslandSouthEast
+            // 
+            this.ancientAltarIslandSouthEast.Name = "ancientAltarIslandSouthEast";
+            this.ancientAltarIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.ancientAltarIslandSouthEast.Text = "South East";
+            // 
+            // merchantIsland
+            // 
+            this.merchantIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.merchantIslandSingle,
+            this.merchantIslandNorthWest,
+            this.merchantIslandNorthEast,
+            this.merchantIslandSouthWest,
+            this.merchantIslandSouthEast});
+            this.merchantIsland.Name = "merchantIsland";
+            this.merchantIsland.Size = new System.Drawing.Size(193, 22);
+            this.merchantIsland.Text = "Merchant Island";
+            // 
+            // merchantIslandSingle
+            // 
+            this.merchantIslandSingle.Name = "merchantIslandSingle";
+            this.merchantIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.merchantIslandSingle.Text = "Single";
+            // 
+            // merchantIslandNorthWest
+            // 
+            this.merchantIslandNorthWest.Name = "merchantIslandNorthWest";
+            this.merchantIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.merchantIslandNorthWest.Text = "North West";
+            // 
+            // merchantIslandNorthEast
+            // 
+            this.merchantIslandNorthEast.Name = "merchantIslandNorthEast";
+            this.merchantIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.merchantIslandNorthEast.Text = "North East";
+            // 
+            // merchantIslandSouthWest
+            // 
+            this.merchantIslandSouthWest.Name = "merchantIslandSouthWest";
+            this.merchantIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.merchantIslandSouthWest.Text = "South West";
+            // 
+            // merchantIslandSouthEast
+            // 
+            this.merchantIslandSouthEast.Name = "merchantIslandSouthEast";
+            this.merchantIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.merchantIslandSouthEast.Text = "South East";
+            // 
+            // huntingCampIsland
+            // 
+            this.huntingCampIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.huntingCampIslandSingle,
+            this.huntingCampIslandNorthWest,
+            this.huntingCampIslandNorthEast,
+            this.huntingCampIslandSouthWest,
+            this.huntingCampIslandSouthEast});
+            this.huntingCampIsland.Name = "huntingCampIsland";
+            this.huntingCampIsland.Size = new System.Drawing.Size(193, 22);
+            this.huntingCampIsland.Text = "Hunting Camp Island";
+            // 
+            // huntingCampIslandSingle
+            // 
+            this.huntingCampIslandSingle.Name = "huntingCampIslandSingle";
+            this.huntingCampIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.huntingCampIslandSingle.Text = "Single";
+            // 
+            // huntingCampIslandNorthWest
+            // 
+            this.huntingCampIslandNorthWest.Name = "huntingCampIslandNorthWest";
+            this.huntingCampIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.huntingCampIslandNorthWest.Text = "North West";
+            // 
+            // huntingCampIslandNorthEast
+            // 
+            this.huntingCampIslandNorthEast.Name = "huntingCampIslandNorthEast";
+            this.huntingCampIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.huntingCampIslandNorthEast.Text = "North East";
+            // 
+            // huntingCampIslandSouthWest
+            // 
+            this.huntingCampIslandSouthWest.Name = "huntingCampIslandSouthWest";
+            this.huntingCampIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.huntingCampIslandSouthWest.Text = "South West";
+            // 
+            // huntingCampIslandSouthEast
+            // 
+            this.huntingCampIslandSouthEast.Name = "huntingCampIslandSouthEast";
+            this.huntingCampIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.huntingCampIslandSouthEast.Text = "South East";
+            // 
+            // innkeeperIsland
+            // 
+            this.innkeeperIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.innkeeperIslandSingle,
+            this.innkeeperIslandNorthWest,
+            this.innkeeperIslandNorthEast,
+            this.innkeeperIslandSouthWest,
+            this.innkeeperIslandSouthEast});
+            this.innkeeperIsland.Name = "innkeeperIsland";
+            this.innkeeperIsland.Size = new System.Drawing.Size(193, 22);
+            this.innkeeperIsland.Text = "Innkeeper Island";
+            // 
+            // innkeeperIslandSingle
+            // 
+            this.innkeeperIslandSingle.Name = "innkeeperIslandSingle";
+            this.innkeeperIslandSingle.Size = new System.Drawing.Size(134, 22);
+            this.innkeeperIslandSingle.Text = "Single";
+            // 
+            // innkeeperIslandNorthWest
+            // 
+            this.innkeeperIslandNorthWest.Name = "innkeeperIslandNorthWest";
+            this.innkeeperIslandNorthWest.Size = new System.Drawing.Size(134, 22);
+            this.innkeeperIslandNorthWest.Text = "North West";
+            // 
+            // innkeeperIslandNorthEast
+            // 
+            this.innkeeperIslandNorthEast.Name = "innkeeperIslandNorthEast";
+            this.innkeeperIslandNorthEast.Size = new System.Drawing.Size(134, 22);
+            this.innkeeperIslandNorthEast.Text = "North East";
+            // 
+            // innkeeperIslandSouthWest
+            // 
+            this.innkeeperIslandSouthWest.Name = "innkeeperIslandSouthWest";
+            this.innkeeperIslandSouthWest.Size = new System.Drawing.Size(134, 22);
+            this.innkeeperIslandSouthWest.Text = "South West";
+            // 
+            // innkeeperIslandSouthEast
+            // 
+            this.innkeeperIslandSouthEast.Name = "innkeeperIslandSouthEast";
+            this.innkeeperIslandSouthEast.Size = new System.Drawing.Size(134, 22);
+            this.innkeeperIslandSouthEast.Text = "South East";
+            // 
+            // markers
+            // 
+            this.markers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.markerPirateShip,
+            this.markerMoonstones,
+            this.markerGoodResources,
+            this.markerBronzeChest,
+            this.markerSilverChest,
+            this.markerSpiderQueen,
+            this.markerCompass,
+            this.markerX,
+            this.markerQuestion});
+            this.markers.Name = "markers";
+            this.markers.Size = new System.Drawing.Size(193, 22);
+            this.markers.Text = "Markers";
+            // 
+            // markerPirateShip
+            // 
+            this.markerPirateShip.Name = "markerPirateShip";
+            this.markerPirateShip.Size = new System.Drawing.Size(159, 22);
+            this.markerPirateShip.Text = "Pirate Ship";
+            // 
+            // markerMoonstones
+            // 
+            this.markerMoonstones.Name = "markerMoonstones";
+            this.markerMoonstones.Size = new System.Drawing.Size(159, 22);
+            this.markerMoonstones.Text = "Moonstones";
+            // 
+            // markerGoodResources
+            // 
+            this.markerGoodResources.Name = "markerGoodResources";
+            this.markerGoodResources.Size = new System.Drawing.Size(159, 22);
+            this.markerGoodResources.Text = "Good Resources";
+            // 
+            // markerBronzeChest
+            // 
+            this.markerBronzeChest.Name = "markerBronzeChest";
+            this.markerBronzeChest.Size = new System.Drawing.Size(159, 22);
+            this.markerBronzeChest.Text = "Bronze Chest";
+            // 
+            // markerSilverChest
+            // 
+            this.markerSilverChest.Name = "markerSilverChest";
+            this.markerSilverChest.Size = new System.Drawing.Size(159, 22);
+            this.markerSilverChest.Text = "Silver Chest";
+            // 
+            // markerSpiderQueen
+            // 
+            this.markerSpiderQueen.Name = "markerSpiderQueen";
+            this.markerSpiderQueen.Size = new System.Drawing.Size(159, 22);
+            this.markerSpiderQueen.Text = "SpiderQueen";
+            // 
+            // markerCompass
+            // 
+            this.markerCompass.Name = "markerCompass";
+            this.markerCompass.Size = new System.Drawing.Size(159, 22);
+            this.markerCompass.Text = "Compass";
+            // 
+            // markerX
+            // 
+            this.markerX.Name = "markerX";
+            this.markerX.Size = new System.Drawing.Size(159, 22);
+            this.markerX.Text = "X";
+            // 
+            // markerQuestion
+            // 
+            this.markerQuestion.Name = "markerQuestion";
+            this.markerQuestion.Size = new System.Drawing.Size(159, 22);
+            this.markerQuestion.Text = "Question";
             // 
             // statusStrip1
             // 
@@ -228,22 +697,6 @@
             this.btnSave.Size = new System.Drawing.Size(23, 22);
             this.btnSave.Text = "toolStripButton1";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // imgListPOI
-            // 
-            this.imgListPOI.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListPOI.ImageStream")));
-            this.imgListPOI.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListPOI.Images.SetKeyName(0, "island.png");
-            this.imgListPOI.Images.SetKeyName(1, "Pirate.png");
-            this.imgListPOI.Images.SetKeyName(2, "PirateShip.png");
-            this.imgListPOI.Images.SetKeyName(3, "merchant.png");
-            this.imgListPOI.Images.SetKeyName(4, "Battlemasters.png");
-            this.imgListPOI.Images.SetKeyName(5, "AncientRuins.png");
-            this.imgListPOI.Images.SetKeyName(6, "HighMountains.png");
-            this.imgListPOI.Images.SetKeyName(7, "Moonstones.png");
-            this.imgListPOI.Images.SetKeyName(8, "GoodResources.png");
-            this.imgListPOI.Images.SetKeyName(9, "BronzeChest.png");
-            this.imgListPOI.Images.SetKeyName(10, "SilverChest.png");
             // 
             // menuStrip1
             // 
@@ -314,13 +767,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.mnuRightClick.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.mnuWaypointRightClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -335,20 +781,14 @@
         private System.Windows.Forms.ToolStripStatusLabel statusCoord;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnCenterMap;
-        private System.Windows.Forms.ImageList imgListPOI;
         private System.Windows.Forms.ContextMenuStrip mnuRightClick;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIsland;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIsland;
         private System.Windows.Forms.ToolStripButton btnSave;
-        private System.Windows.Forms.ToolStripMenuItem pirateShipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem merchantToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem battleMasterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem highMountainsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem moonstonesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goodResourcesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bronzeChestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem silverChestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem merchantIsland;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIsland;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIsland;
+        private System.Windows.Forms.ToolStripMenuItem highMountainsIsland;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newSeedMapToolStripMenuItem;
@@ -356,6 +796,70 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ContextMenuStrip mnuWaypointRightClick;
         private System.Windows.Forms.ToolStripMenuItem deleteWaypointToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem desertIsland;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem desertIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem desertIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem desertIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem desertIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem desertIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem merchantIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem merchantIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem merchantIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem merchantIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem merchantIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem highMountainIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem highMountainIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIsland;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIsland;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIsland;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSingle;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandNorthWest;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandNorthEast;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSouthWest;
+        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSouthEast;
+        private System.Windows.Forms.ToolStripMenuItem markers;
+        private System.Windows.Forms.ToolStripMenuItem markerPirateShip;
+        private System.Windows.Forms.ToolStripMenuItem markerMoonstones;
+        private System.Windows.Forms.ToolStripMenuItem markerGoodResources;
+        private System.Windows.Forms.ToolStripMenuItem markerBronzeChest;
+        private System.Windows.Forms.ToolStripMenuItem markerSilverChest;
+        private System.Windows.Forms.ToolStripMenuItem markerSpiderQueen;
+        private System.Windows.Forms.ToolStripMenuItem markerCompass;
+        private System.Windows.Forms.ToolStripMenuItem markerX;
+        private System.Windows.Forms.ToolStripMenuItem markerQuestion;
 
     }
 }

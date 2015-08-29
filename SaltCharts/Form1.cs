@@ -32,6 +32,8 @@ namespace SaltCharts
 
             PlotMapPoints();
 
+            DelegateEvents();
+
             btnSave.Enabled = false;
         }
 
@@ -182,7 +184,7 @@ namespace SaltCharts
 
             if (!mp.IsY_South)
             {
-                picY = 2066 - 20 - (40 * mp.Y);
+                picY = 2065 - 20 - (40 * mp.Y);
             }
             else
             {
@@ -190,7 +192,11 @@ namespace SaltCharts
             }
 
             newPic.Location = new Point(picX, picY + 3);
-            newPic.Image = imgListPOI.Images[(int)mp.PoiType];
+
+            string imageName = (mp.PoiSubType != POISubType.None && mp.PoiSubType != POISubType.Single) 
+                ? mp.PoiType.ToString() + mp.PoiSubType.ToString() : mp.PoiType.ToString();
+
+            newPic.Image = (Image)SaltCharts.Properties.Resources.ResourceManager.GetObject(imageName);
             newPic.BringToFront();
             newPic.Tag = mp;
             newPic.ContextMenuStrip = mnuWaypointRightClick;
@@ -226,24 +232,15 @@ namespace SaltCharts
             frm.ShowDialog(this);
         }
 
-
-        private void AddPOI(Point p, POIType type)
+        // Event Handler for all context menu clicks (except delete)
+        private void addPOI(object sender, EventArgs e, POIType type, POISubType subType)
         {
-            var mp = CalulateMapPosition(p.X, p.Y);
+            var mp = CalulateMapPosition(mouseDownLoc.X, mouseDownLoc.Y);
             mp.PoiType = type;
+            mp.PoiSubType = subType;
             mapPoints.Add(mp);
             AddPOIToMap(mp);
             btnSave.Enabled = true;
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.Island);
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.Pirate);
         }
 
         private void LoadConfigFile()
@@ -286,51 +283,6 @@ namespace SaltCharts
         {
             SaveConfigfile();
             btnSave.Enabled = false;
-        }
-
-        private void pirateShipToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.PirateShip);
-        }
-
-        private void merchantToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.Merchant);
-        }
-
-        private void battleMasterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.BattleMaster);
-        }
-
-        private void ancientRuinsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.AncientRuins);
-        }
-
-        private void highMountainsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.HighMountains);
-        }
-
-        private void moonstonesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.MoonStones);
-        }
-
-        private void goodResourcesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.GoodResources);
-        }
-
-        private void bronzeChestToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.BronzeChest);
-        }
-
-        private void silverChestToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddPOI(mouseDownLoc, POIType.SilverChest);
         }
 
         private void newSeedMapToolStripMenuItem_Click(object sender, EventArgs e)
@@ -409,21 +361,122 @@ namespace SaltCharts
                 btnSave.Enabled = true;
             }
         }
-        
+
+        // Define the click events with custom arguments for the context menu
+        private void DelegateEvents()
+        {
+            // Uninhabited Island
+            this.uninhabitedIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.Single); };
+            this.uninhabitedIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.NorthWest); };
+            this.uninhabitedIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.NorthEast); };
+            this.uninhabitedIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.SouthWest); };
+            this.uninhabitedIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.SouthEast); };
+
+            // Desert Island
+            this.desertIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.Single); };
+            this.desertIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.NorthWest); };
+            this.desertIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.NorthEast); };
+            this.desertIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.SouthWest); };
+            this.desertIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.SouthEast); };
+
+            //High Mountain Island
+            this.highMountainIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.Single); };
+            this.highMountainIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.NorthWest); };
+            this.highMountainIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.NorthEast); };
+            this.highMountainIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.SouthWest); };
+            this.highMountainIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.SouthEast); };
+
+            // Pirate Camp Island
+            this.pirateCampIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.Single); };
+            this.pirateCampIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.NorthWest); };
+            this.pirateCampIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.NorthEast); };
+            this.pirateCampIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.SouthWest); };
+            this.pirateCampIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.SouthEast); };
+
+            // Pirate Township Island
+            this.pirateTownshipIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.Single); };
+            this.pirateTownshipIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.NorthWest); };
+            this.pirateTownshipIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.NorthEast); };
+            this.pirateTownshipIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.SouthWest); };
+            this.pirateTownshipIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.SouthEast); };
+
+            // Ancient Ruins Island
+            this.ancientRuinsIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.Single); };
+            this.ancientRuinsIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.NorthWest); };
+            this.ancientRuinsIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.NorthEast); };
+            this.ancientRuinsIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.SouthWest); };
+            this.ancientRuinsIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.SouthEast); };
+
+            // Ancient Ruins Island
+            this.ancientAltarIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.Single); };
+            this.ancientAltarIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.NorthWest); };
+            this.ancientAltarIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.NorthEast); };
+            this.ancientAltarIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.SouthWest); };
+            this.ancientAltarIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.SouthEast); };
+
+            // Merchant Island
+            this.merchantIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.Single); };
+            this.merchantIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.NorthWest); };
+            this.merchantIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.NorthEast); };
+            this.merchantIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.SouthWest); };
+            this.merchantIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.SouthEast); };
+
+            // Hunting Camp
+            this.huntingCampIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.Single); };
+            this.huntingCampIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.NorthWest); };
+            this.huntingCampIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.NorthEast); };
+            this.huntingCampIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.SouthWest); };
+            this.huntingCampIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.SouthEast); };
+
+            //Innkeeper
+            this.innkeeperIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.Single); };
+            this.innkeeperIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.NorthWest); };
+            this.innkeeperIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.NorthEast); };
+            this.innkeeperIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.SouthWest); };
+            this.innkeeperIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.SouthEast); };
+
+            //Markers
+            this.markerPirateShip.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerPirateShip, POISubType.None); };
+            this.markerMoonstones.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerMoonstones, POISubType.None); };
+            this.markerGoodResources.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerGoodResources, POISubType.None); };
+            this.markerBronzeChest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerBronzeChest, POISubType.None); };
+            this.markerSilverChest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerSilverChest, POISubType.None); };
+            this.markerCompass.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerCompass, POISubType.None); };
+            this.markerSpiderQueen.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerSpiderQueen, POISubType.None); };
+            this.markerX.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerX, POISubType.None); };
+            this.markerQuestion.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerQuestion, POISubType.None); };
+        }
+    }
+    public enum POISubType
+    {
+        None,
+        Single,
+        NorthWest,
+        NorthEast,
+        SouthWest,
+        SouthEast
     }
 
     public enum POIType
     {
-        Island,
-        Pirate,
-        PirateShip,
-        Merchant,
-        BattleMaster,
-        AncientRuins,
-        HighMountains,
-        MoonStones,
-        GoodResources,
-        BronzeChest,
-        SilverChest
+        UninhabitedIsland,
+        DesertIsland,
+        HighMountainIsland,
+        PirateCampIsland,
+        PirateTownshipIsland,
+        AncientRuinsIsland,
+        AncientAltarIsland,
+        MerchantIsland,
+        HuntingCampIsland,
+        InnkeeperIsland,
+        MarkerPirateShip,
+        MarkerMoonstones,
+        MarkerGoodResources,
+        MarkerBronzeChest,
+        MarkerSilverChest,
+        MarkerCompass,
+        MarkerX,
+        MarkerSpiderQueen,
+        MarkerQuestion
     }
 }

@@ -35,6 +35,8 @@ namespace SaltCharts
 
         public POIType PoiType { get; set; }
 
+        public POISubType PoiSubType { get; set; }
+
         public string Notes { get; set; }
 
         [Browsable(false)]
