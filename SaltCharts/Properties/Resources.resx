@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AncientAltarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AncientAltarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AncientAltarIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AncientAltarIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,6 +136,9 @@
   <data name="AncientAltarIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AncientAltarIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AncientRuinsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AncientRuinsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AncientRuinsIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AncientRuinsIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +153,9 @@
   </data>
   <data name="AncientRuinsIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AncientRuinsIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DesertIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DesertIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DesertIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DesertIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +178,9 @@
   <data name="Grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HighMountainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HighMountainIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HighMountainIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HighMountainIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,6 +196,9 @@
   <data name="HighMountainIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HighMountainIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HuntingCampIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HuntingCampIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HuntingCampIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HuntingCampIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +213,9 @@
   </data>
   <data name="HuntingCampIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HuntingCampIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InkeeperIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InkeeperIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InnkeeperIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InnkeeperIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +241,9 @@
   <data name="MarkerGoodResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MarkerGoodResources.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MarkerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MarkerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MarkerMoonstones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MarkerMoonstones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,6 +262,9 @@
   <data name="MarkerX" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MarkerX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MerchantIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MerchantIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MerchantIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MerchantIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -255,6 +279,9 @@
   </data>
   <data name="MerchantIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MerchantIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PirateCampIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PirateCampIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PirateCampIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PirateCampIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,6 +298,9 @@
   <data name="PirateCampIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PirateCampIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PirateShipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PirateShipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PirateTownshipIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PirateTownshipIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -286,8 +316,14 @@
   <data name="PirateTownshipIslandSouthWest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PirateTownshipIslandSouthWest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TownshipIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TownshipIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UninhabitedIsland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UninhabitedIsland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UninhabitedIslandIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UninhabitedIslandIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UninhabitedIslandNorthEast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UninhabitedIslandNorthEast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -166,7 +166,7 @@
             this.innkeeperIsland,
             this.markers});
             this.mnuRightClick.Name = "mnuRightClick";
-            this.mnuRightClick.Size = new System.Drawing.Size(194, 246);
+            this.mnuRightClick.Size = new System.Drawing.Size(194, 268);
             // 
             // uninhabitedIsland
             // 
@@ -176,6 +176,7 @@
             this.uninhabitedIslandNorthEast,
             this.uninhabitedIslandSouthWest,
             this.uninhabitedIslandSouthEast});
+            this.uninhabitedIsland.Image = global::SaltCharts.Properties.Resources.UninhabitedIslandIcon;
             this.uninhabitedIsland.Name = "uninhabitedIsland";
             this.uninhabitedIsland.Size = new System.Drawing.Size(193, 22);
             this.uninhabitedIsland.Text = "Uninhabited Island";
@@ -218,6 +219,7 @@
             this.desertIslandNorthEast,
             this.desertIslandSouthWest,
             this.desertIslandSouthEast});
+            this.desertIsland.Image = global::SaltCharts.Properties.Resources.DesertIcon;
             this.desertIsland.Name = "desertIsland";
             this.desertIsland.Size = new System.Drawing.Size(193, 22);
             this.desertIsland.Text = "Desert Island";
@@ -260,6 +262,7 @@
             this.highMountainIslandNorthEast,
             this.highMountainIslandSouthWest,
             this.highMountainIslandSouthEast});
+            this.highMountainsIsland.Image = global::SaltCharts.Properties.Resources.HighMountainIcon;
             this.highMountainsIsland.Name = "highMountainsIsland";
             this.highMountainsIsland.Size = new System.Drawing.Size(193, 22);
             this.highMountainsIsland.Text = "High Mountain Island";
@@ -302,6 +305,7 @@
             this.pirateCampIslandNorthEast,
             this.pirateCampIslandSouthWest,
             this.pirateCampIslandSouthEast});
+            this.pirateCampIsland.Image = global::SaltCharts.Properties.Resources.PirateCampIcon;
             this.pirateCampIsland.Name = "pirateCampIsland";
             this.pirateCampIsland.Size = new System.Drawing.Size(193, 22);
             this.pirateCampIsland.Text = "Pirate Camp Island";
@@ -344,6 +348,7 @@
             this.pirateTownshipIslandNorthEast,
             this.pirateTownshipIslandSouthWest,
             this.pirateTownshipIslandSouthEast});
+            this.pirateTownshipIsland.Image = global::SaltCharts.Properties.Resources.TownshipIcon;
             this.pirateTownshipIsland.Name = "pirateTownshipIsland";
             this.pirateTownshipIsland.Size = new System.Drawing.Size(193, 22);
             this.pirateTownshipIsland.Text = "Pirate Township Island";
@@ -386,6 +391,7 @@
             this.ancientRuinsIslandNorthEast,
             this.ancientRuinsIslandSouthWest,
             this.ancientRuinsIslandSouthEast});
+            this.ancientRuinsIsland.Image = global::SaltCharts.Properties.Resources.AncientRuinsIcon;
             this.ancientRuinsIsland.Name = "ancientRuinsIsland";
             this.ancientRuinsIsland.Size = new System.Drawing.Size(193, 22);
             this.ancientRuinsIsland.Text = "Ancient Ruins Island";
@@ -428,6 +434,7 @@
             this.ancientAltarIslandNorthEast,
             this.ancientAltarIslandSouthWest,
             this.ancientAltarIslandSouthEast});
+            this.ancientAltarIsland.Image = global::SaltCharts.Properties.Resources.AncientAltarIcon;
             this.ancientAltarIsland.Name = "ancientAltarIsland";
             this.ancientAltarIsland.Size = new System.Drawing.Size(193, 22);
             this.ancientAltarIsland.Text = "Ancient Altar Island";
@@ -470,6 +477,7 @@
             this.merchantIslandNorthEast,
             this.merchantIslandSouthWest,
             this.merchantIslandSouthEast});
+            this.merchantIsland.Image = global::SaltCharts.Properties.Resources.MerchantIcon;
             this.merchantIsland.Name = "merchantIsland";
             this.merchantIsland.Size = new System.Drawing.Size(193, 22);
             this.merchantIsland.Text = "Merchant Island";
@@ -512,6 +520,7 @@
             this.huntingCampIslandNorthEast,
             this.huntingCampIslandSouthWest,
             this.huntingCampIslandSouthEast});
+            this.huntingCampIsland.Image = global::SaltCharts.Properties.Resources.HuntingCampIcon;
             this.huntingCampIsland.Name = "huntingCampIsland";
             this.huntingCampIsland.Size = new System.Drawing.Size(193, 22);
             this.huntingCampIsland.Text = "Hunting Camp Island";
@@ -554,6 +563,7 @@
             this.innkeeperIslandNorthEast,
             this.innkeeperIslandSouthWest,
             this.innkeeperIslandSouthEast});
+            this.innkeeperIsland.Image = global::SaltCharts.Properties.Resources.InkeeperIcon;
             this.innkeeperIsland.Name = "innkeeperIsland";
             this.innkeeperIsland.Size = new System.Drawing.Size(193, 22);
             this.innkeeperIsland.Text = "Innkeeper Island";
@@ -600,6 +610,7 @@
             this.markerCompass,
             this.markerX,
             this.markerQuestion});
+            this.markers.Image = global::SaltCharts.Properties.Resources.MarkerIcon;
             this.markers.Name = "markers";
             this.markers.Size = new System.Drawing.Size(193, 22);
             this.markers.Text = "Markers";

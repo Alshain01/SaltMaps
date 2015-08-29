@@ -346,6 +346,42 @@
   <ItemGroup>
     <None Include="Resources\Grid.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AncientAltarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AncientRuinsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesertIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighMountainIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MerchantIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PirateCampIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PirateShipIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TownshipIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HuntingCampIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InkeeperIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarkerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UninhabitedIslandIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
