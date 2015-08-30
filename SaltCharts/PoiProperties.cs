@@ -16,5 +16,10 @@ namespace SaltCharts
         {
             InitializeComponent();
         }
+
+        private void PoiProperties_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

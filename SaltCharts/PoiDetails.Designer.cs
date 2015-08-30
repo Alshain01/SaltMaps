@@ -43,7 +43,7 @@
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
             // 
-            // frmPOIDetails
+            // PoiDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,12 +51,13 @@
             this.Controls.Add(this.propertyGrid1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmPOIDetails";
+            this.Name = "PoiDetails";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Point of Interest";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.PoiDetails_Load);
             this.ResumeLayout(false);
 
         }

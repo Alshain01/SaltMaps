@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmPOIProperties
+            // PoiProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 261);
-            this.Name = "frmPOIProperties";
+            this.Name = "PoiProperties";
             this.Text = "frmPOIProperties";
+            this.Load += new System.EventHandler(this.PoiProperties_Load);
             this.ResumeLayout(false);
 
         }

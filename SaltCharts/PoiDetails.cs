@@ -26,5 +26,10 @@ namespace SaltCharts
             Map frm = (Map)this.Owner;
             frm.EnableSaveButton();
         }
+
+        private void PoiDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
