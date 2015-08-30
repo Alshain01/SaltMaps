@@ -114,6 +114,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
             this.mnuRightClick.SuspendLayout();
@@ -884,6 +885,7 @@
         private System.Windows.Forms.ToolStripButton btnNew;
         private System.Windows.Forms.ToolStripButton btnOpen;
         private System.Windows.Forms.ToolStripButton btnInfo;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

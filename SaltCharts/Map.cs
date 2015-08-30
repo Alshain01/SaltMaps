@@ -153,7 +153,7 @@ namespace SaltCharts
             newPic.Tag = mp;
             newPic.ContextMenuStrip = mnuWaypointRightClick;
             newPic.Click += newPic_Click;
-            newPic.MouseMove += newPic_MouseMove;
+            newPic.MouseEnter += newPic_MouseEnter;
             newPic.MouseDown += newPic_MouseDown;
             if (pictureBoxes == null)
                 pictureBoxes = new List<PictureBox>();
@@ -184,9 +184,12 @@ namespace SaltCharts
             frm.ShowDialog(this);
         }
 
-        private void newPic_MouseMove(object sender, EventArgs e)
+        private void newPic_MouseEnter(object sender, EventArgs e)
         {
-            statusCoord.Text = ((MapPoint)((PictureBox)sender).Tag).ToString();
+            PictureBox pix = ((PictureBox)sender);
+            MapPoint mp = (MapPoint)pix.Tag;
+            statusCoord.Text = mp.ToString();
+            toolTip1.SetToolTip(pix, mp.Notes);
         }
 
         private void LoadConfigFile()
