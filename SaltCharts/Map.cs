@@ -460,7 +460,12 @@ namespace SaltCharts
         {
             Settings settings = new Settings();
             settings.ShowDialog(this);
-            btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+
+            bool auto = SaltCharts.Properties.Settings.Default.AutoSave;
+            if (btnSave.Enabled && auto) // Trigger and immediate autosave if necessary.
+                SaveConfigfile();
+            btnSave.Visible = !auto;
+
             setDebug();
         }
 
