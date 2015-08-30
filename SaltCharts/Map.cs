@@ -268,7 +268,10 @@ namespace SaltCharts
 
         public void EnableSaveButton()
         {
-            btnSave.Enabled = true;
+            if (SaltCharts.Properties.Settings.Default.AutoSave)
+                SaveConfigfile();
+            else
+                btnSave.Enabled = true;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -313,7 +316,10 @@ namespace SaltCharts
                 var mp = (MapPoint)waypointPB.Tag;
                 mapPoints.Remove(mp);
                 waypointPB.Dispose();
-                btnSave.Enabled = true;
+                if (SaltCharts.Properties.Settings.Default.AutoSave)
+                    SaveConfigfile();
+                else
+                    btnSave.Enabled = true;
             }
         }
 
@@ -325,7 +331,10 @@ namespace SaltCharts
             MapPoint mp = new MapPoint(mouseDownLoc, type, subType);
             mapPoints.Add(mp);
             AddPOIToMap(mp);
-            btnSave.Enabled = true;
+            if (SaltCharts.Properties.Settings.Default.AutoSave)
+                SaveConfigfile();
+            else
+                btnSave.Enabled = true;
         }
          
         /*
@@ -423,11 +432,8 @@ namespace SaltCharts
 
         private void Map_Load(object sender, EventArgs e)
         {
-            #if DEBUG
-                statusPoint.Visible = true;
-                statusRawCoord.Visible = true;
-                statusChartLocation.Visible = true;
-            #endif
+            btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            setDebug();
         }
 
         private void btnWest_Click(object sender, EventArgs e)
@@ -448,6 +454,30 @@ namespace SaltCharts
         private void btnSouth_Click(object sender, EventArgs e)
         {
             SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (MapPanel.Height / 2), -(SeaChart.Image.Height - MapPanel.Height)));
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog(this);
+            btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            setDebug();
+        }
+
+        private void setDebug(bool state)
+        {
+            // Set Debug Options On
+            statusPoint.Visible = state;
+            statusRawCoord.Visible = state;
+            statusChartLocation.Visible = state;
+        }
+
+        private void setDebug()
+        {
+            setDebug(SaltCharts.Properties.Settings.Default.Debug);
+            #if DEBUG // Override settings for compiler directive
+                setDebug(true);
+            #endif
         }
     }
 }

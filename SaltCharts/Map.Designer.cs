@@ -119,6 +119,7 @@
             this.btnNorth = new System.Windows.Forms.ToolStripButton();
             this.btnSouth = new System.Windows.Forms.ToolStripButton();
             this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -734,7 +735,8 @@
             this.btnEast,
             this.btnNorth,
             this.btnSouth,
-            this.btnCenterMap});
+            this.btnCenterMap,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1280, 31);
@@ -836,6 +838,17 @@
             this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
             this.btnCenterMap.Text = "Center Map";
             this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::SaltCharts.Properties.Resources.gear;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton1.Text = "Settings";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // openFileDialog1
             // 
@@ -978,6 +991,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusPoint;
         private System.Windows.Forms.ToolStripStatusLabel statusRawCoord;
         private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
 
     }
 }
