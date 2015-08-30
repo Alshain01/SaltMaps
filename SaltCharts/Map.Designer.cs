@@ -105,12 +105,20 @@
             this.markerQuestion = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusCoord = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusRawCoord = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusPoint = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusChartLocation = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnInfo = new System.Windows.Forms.ToolStripButton();
+            this.btnWest = new System.Windows.Forms.ToolStripButton();
+            this.btnEast = new System.Windows.Forms.ToolStripButton();
+            this.btnNorth = new System.Windows.Forms.ToolStripButton();
+            this.btnSouth = new System.Windows.Forms.ToolStripButton();
+            this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -672,7 +680,10 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.SkyBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusCoord});
+            this.statusCoord,
+            this.statusRawCoord,
+            this.statusPoint,
+            this.statusChartLocation});
             this.statusStrip1.Location = new System.Drawing.Point(0, 625);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1280, 22);
@@ -686,6 +697,30 @@
             this.statusCoord.Size = new System.Drawing.Size(95, 17);
             this.statusCoord.Text = "0 West, 0 South";
             // 
+            // statusRawCoord
+            // 
+            this.statusRawCoord.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusRawCoord.Name = "statusRawCoord";
+            this.statusRawCoord.Size = new System.Drawing.Size(118, 17);
+            this.statusRawCoord.Text = "Raw Coordinate: 0,0";
+            this.statusRawCoord.Visible = false;
+            // 
+            // statusPoint
+            // 
+            this.statusPoint.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusPoint.Name = "statusPoint";
+            this.statusPoint.Size = new System.Drawing.Size(59, 17);
+            this.statusPoint.Text = "Point: 0,0";
+            this.statusPoint.Visible = false;
+            // 
+            // statusChartLocation
+            // 
+            this.statusChartLocation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusChartLocation.Name = "statusChartLocation";
+            this.statusChartLocation.Size = new System.Drawing.Size(110, 17);
+            this.statusChartLocation.Text = "Chart Location: 0,0";
+            this.statusChartLocation.Visible = false;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.SkyBlue;
@@ -695,8 +730,13 @@
             this.btnNew,
             this.btnOpen,
             this.btnSave,
-            this.btnCenterMap,
-            this.btnInfo});
+            this.toolStripSeparator1,
+            this.btnInfo,
+            this.btnWest,
+            this.btnEast,
+            this.btnNorth,
+            this.btnSouth,
+            this.btnCenterMap});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1280, 31);
@@ -733,15 +773,10 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnCenterMap
+            // toolStripSeparator1
             // 
-            this.btnCenterMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCenterMap.Image = global::SaltCharts.Properties.Resources.globe;
-            this.btnCenterMap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCenterMap.Name = "btnCenterMap";
-            this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
-            this.btnCenterMap.Text = "Center Map";
-            this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // btnInfo
             // 
@@ -753,6 +788,56 @@
             this.btnInfo.Size = new System.Drawing.Size(28, 28);
             this.btnInfo.Text = "About";
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // btnWest
+            // 
+            this.btnWest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnWest.Image = global::SaltCharts.Properties.Resources.left;
+            this.btnWest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWest.Name = "btnWest";
+            this.btnWest.Size = new System.Drawing.Size(28, 28);
+            this.btnWest.Text = "Move Map West";
+            this.btnWest.Click += new System.EventHandler(this.btnWest_Click);
+            // 
+            // btnEast
+            // 
+            this.btnEast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEast.Image = global::SaltCharts.Properties.Resources.right;
+            this.btnEast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEast.Name = "btnEast";
+            this.btnEast.Size = new System.Drawing.Size(28, 28);
+            this.btnEast.Text = "Move Map East";
+            this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
+            // 
+            // btnNorth
+            // 
+            this.btnNorth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNorth.Image = global::SaltCharts.Properties.Resources.up;
+            this.btnNorth.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNorth.Name = "btnNorth";
+            this.btnNorth.Size = new System.Drawing.Size(28, 28);
+            this.btnNorth.Text = "Move Map North";
+            this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
+            // 
+            // btnSouth
+            // 
+            this.btnSouth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSouth.Image = global::SaltCharts.Properties.Resources.down;
+            this.btnSouth.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSouth.Name = "btnSouth";
+            this.btnSouth.Size = new System.Drawing.Size(28, 28);
+            this.btnSouth.Text = "Move Map South";
+            this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
+            // 
+            // btnCenterMap
+            // 
+            this.btnCenterMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCenterMap.Image = global::SaltCharts.Properties.Resources.globe;
+            this.btnCenterMap.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCenterMap.Name = "btnCenterMap";
+            this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
+            this.btnCenterMap.Text = "Center Map";
+            this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
             // 
             // openFileDialog1
             // 
@@ -786,6 +871,7 @@
             this.Name = "Map";
             this.Text = "Salt Charts";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Map_Load);
             this.MapPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).EndInit();
             this.mnuRightClick.ResumeLayout(false);
@@ -886,6 +972,14 @@
         private System.Windows.Forms.ToolStripButton btnOpen;
         private System.Windows.Forms.ToolStripButton btnInfo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnWest;
+        private System.Windows.Forms.ToolStripButton btnEast;
+        private System.Windows.Forms.ToolStripButton btnNorth;
+        private System.Windows.Forms.ToolStripButton btnSouth;
+        private System.Windows.Forms.ToolStripStatusLabel statusPoint;
+        private System.Windows.Forms.ToolStripStatusLabel statusRawCoord;
+        private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
 
     }
 }

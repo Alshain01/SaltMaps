@@ -96,7 +96,7 @@ namespace SaltCharts
             return string.Format(template, Math.Abs(x).ToString(), (x >= 0 ? "East" : "West"), Math.Abs(y).ToString(), (y >= 0) ? "South" : "North");
         }
 
-        private static int getCoordinate(int pixel) {
+        public static int getCoordinate(int pixel) {
              int coordinate = pixel - GRID_CENTER;
              if (coordinate != 0)
                  coordinate = (coordinate + Math.Abs(coordinate) / coordinate * (CELL_SIZE / 2)) / CELL_SIZE;

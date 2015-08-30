@@ -121,7 +121,12 @@ namespace SaltCharts
                     SeaChart.Location = new Point(SeaChart.Location.X, newY);
             }
             else if (e.Button == MouseButtons.None)
+            {
                 statusCoord.Text = MapPoint.getFormatted(e.Location);
+                statusPoint.Text = string.Format("Point: {0},{1}", e.Location.X, e.Location.Y);
+                statusRawCoord.Text = string.Format("Raw Coordinate: {0},{1}", MapPoint.getCoordinate(e.Location.X), MapPoint.getCoordinate(e.Location.Y));
+                statusChartLocation.Text = string.Format("Chart Location: {0}, {1}", SeaChart.Location.X, SeaChart.Location.Y);
+            }
         }
 
 
@@ -132,7 +137,8 @@ namespace SaltCharts
 
         private void CenterMap()
         {
-            SeaChart.Location = new Point(-1434, -1769);
+            SeaChart.Location = new Point(-(SeaChart.Image.Width / 2 - MapPanel.Width / 2), -(SeaChart.Image.Height / 2 - MapPanel.Height / 2));
+            //SeaChart.Location = new Point(-1434, -1769);
         }
 
         private void AddPOIToMap(MapPoint mp)
@@ -413,6 +419,35 @@ namespace SaltCharts
         {
             var about = new AboutBox();
             about.ShowDialog(this);
+        }
+
+        private void Map_Load(object sender, EventArgs e)
+        {
+            #if DEBUG
+                statusPoint.Visible = true;
+                statusRawCoord.Visible = true;
+                statusChartLocation.Visible = true;
+            #endif
+        }
+
+        private void btnWest_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(Math.Min(SeaChart.Location.X + (MapPanel.Width / 2), -1), SeaChart.Location.Y);
+        }
+
+        private void btnEast_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (MapPanel.Width / 2), -(SeaChart.Image.Width - MapPanel.Width)), SeaChart.Location.Y);
+        }
+
+        private void btnNorth_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (MapPanel.Height / 2), -1));
+        }
+
+        private void btnSouth_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (MapPanel.Height / 2), -(SeaChart.Image.Height - MapPanel.Height)));
         }
     }
 }
