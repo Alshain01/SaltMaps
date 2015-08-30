@@ -462,8 +462,12 @@ namespace SaltCharts
             settings.ShowDialog(this);
 
             bool auto = SaltCharts.Properties.Settings.Default.AutoSave;
-            if (btnSave.Enabled && auto) // Trigger and immediate autosave if necessary.
+            if (btnSave.Enabled && auto)
+            {
+                // Trigger and immediate autosave if necessary.
                 SaveConfigfile();
+                btnSave.Enabled = false;
+            }
             btnSave.Visible = !auto;
 
             setDebug();
