@@ -456,7 +456,7 @@ namespace SaltCharts
             SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (MapPanel.Height / 2), -(SeaChart.Image.Height - MapPanel.Height)));
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
             Settings settings = new Settings();
             settings.ShowDialog(this);
