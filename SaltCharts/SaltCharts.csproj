@@ -94,6 +94,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaypointType.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>

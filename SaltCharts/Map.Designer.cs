@@ -898,9 +898,10 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MapPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Map";
             this.Text = "Salt Charts";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Map_FormClosing);
             this.Load += new System.EventHandler(this.Map_Load);
             this.MapPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).EndInit();

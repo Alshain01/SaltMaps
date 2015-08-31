@@ -11,39 +11,6 @@ using Microsoft.VisualBasic;
 
 namespace SaltCharts
 {
-    public enum POIType
-    {
-        UninhabitedIsland,
-        DesertIsland,
-        HighMountainIsland,
-        PirateCampIsland,
-        PirateTownshipIsland,
-        AncientRuinsIsland,
-        AncientAltarIsland,
-        MerchantIsland,
-        HuntingCampIsland,
-        InnkeeperIsland,
-        MarkerPirateShip,
-        MarkerMoonstones,
-        MarkerGoodResources,
-        MarkerBronzeChest,
-        MarkerSilverChest,
-        MarkerCompass,
-        MarkerX,
-        MarkerSpiderQueen,
-        MarkerQuestion
-    }
-
-    public enum POISubType
-    {
-        None,
-        Single,
-        NorthWest,
-        NorthEast,
-        SouthWest,
-        SouthEast
-    }
-
      public partial class Map : Form
     {
         private const string MAP_EXTENSION = ".map";
@@ -51,9 +18,9 @@ namespace SaltCharts
         private const string DEFAULT_SEED = "Default";
 
         private List<MapPoint> mapPoints;
-        private Config _config;
-        private string configFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + DEFAULT_SEED + MAP_EXTENSION;
-        private string _settingsFile = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SETTINGS_FILE;
+        //private Config _config;
+        private string mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + DEFAULT_SEED + MAP_EXTENSION;
+        //private string _settingsFile = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SETTINGS_FILE;
         private Point mouseDownLoc;
         private Point rightMouseDownLoc;
         private List<PictureBox> pictureBoxes;
@@ -61,7 +28,6 @@ namespace SaltCharts
         public Map()
         {
             InitializeComponent();
-            CenterMap();
             LoadConfigFile();
             PlotMapPoints();
             DelegateEvents();
@@ -159,16 +125,16 @@ namespace SaltCharts
             newPic.BringToFront();
             newPic.Tag = mp;
             newPic.ContextMenuStrip = mnuWaypointRightClick;
-            newPic.Click += newPic_Click;
-            newPic.MouseEnter += newPic_MouseEnter;
-            newPic.MouseDown += newPic_MouseDown;
+            newPic.Click += Waypoint_Click;
+            newPic.MouseEnter += Waypoint_MouseEnter;
+            newPic.MouseDown += Waypoint_MouseDown;
             if (pictureBoxes == null)
                 pictureBoxes = new List<PictureBox>();
 
             pictureBoxes.Add(newPic);
         }
 
-        void newPic_MouseDown(object sender, MouseEventArgs e)
+        void Waypoint_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDownLoc = e.Location;
             if (e.Button == MouseButtons.Left)
@@ -181,7 +147,7 @@ namespace SaltCharts
             }
         }
 
-        private void newPic_Click(object sender, EventArgs e)
+        private void Waypoint_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             MapPoint mp = (MapPoint)pb.Tag;
@@ -191,7 +157,7 @@ namespace SaltCharts
             frm.ShowDialog(this);
         }
 
-        private void newPic_MouseEnter(object sender, EventArgs e)
+        private void Waypoint_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pix = ((PictureBox)sender);
             MapPoint mp = (MapPoint)pix.Tag;
@@ -203,35 +169,24 @@ namespace SaltCharts
         {
             
             var serializer = new YamlSerializer();
-            if (File.Exists(_settingsFile))
-            {
-                var obj = serializer.DeserializeFromFile(Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SETTINGS_FILE);
-                _config = (Config)obj[0];
-                configFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + _config.LastMapFile + MAP_EXTENSION;
-            }
-            else
-            {
-                _config = new Config();
-                _config.LastMapFile = DEFAULT_SEED;
-            }
+            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + MAP_EXTENSION;
 
-            
-            if (File.Exists(configFilepath))
+            if (File.Exists(mapFilepath))
             {
-                var obj = serializer.DeserializeFromFile(configFilepath);
+                var obj = serializer.DeserializeFromFile(mapFilepath);
                 mapPoints = (List<MapPoint>)obj[0];
             }
             else
                 mapPoints = new List<MapPoint>();
 
 
-            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(_config.LastMapFile).ToString();
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(SaltCharts.Properties.Settings.Default.LastMapFile).ToString();
         }
 
         private void SaveConfigfile()
         {
             var serializer = new YamlSerializer();
-            serializer.SerializeToFile(configFilepath, mapPoints);
+            serializer.SerializeToFile(mapFilepath, mapPoints);
 
         }
 
@@ -250,10 +205,10 @@ namespace SaltCharts
                 return;
             }
 
-            configFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + mapName + MAP_EXTENSION;
-            _config.LastMapFile = mapName;
+            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + mapName + MAP_EXTENSION;
+            SaltCharts.Properties.Settings.Default.LastMapFile = mapName;
 
-            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(_config.LastMapFile).ToString();
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(mapName).ToString();
             btnSave.Enabled = false;
             mapPoints = new List<MapPoint>();
 
@@ -275,24 +230,16 @@ namespace SaltCharts
                 btnSave.Enabled = true;
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            var serializer = new YamlSerializer();
-            serializer.SerializeToFile(_settingsFile, _config);
-        }
-
         private void btnOpen_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
                 ClearMapPoints();
-                _config.LastMapFile = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
-                var serializer = new YamlSerializer();
-                serializer.SerializeToFile(_settingsFile, _config);
+                SaltCharts.Properties.Settings.Default.LastMapFile = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
                 LoadConfigFile();
                 PlotMapPoints();
 
-                this.Text = "Salt Charts - " + _config.LastMapFile;
+                this.Text = "Salt Charts - " + SaltCharts.Properties.Settings.Default.LastMapFile;
             }
         }
 
@@ -433,7 +380,11 @@ namespace SaltCharts
 
         private void Map_Load(object sender, EventArgs e)
         {
+            this.Size = SaltCharts.Properties.Settings.Default.FormSize;
+            this.Location = SaltCharts.Properties.Settings.Default.FormLocation;
+            this.WindowState = SaltCharts.Properties.Settings.Default.FormState;
             btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            CenterMap();
             setDebug();
         }
 
@@ -492,7 +443,7 @@ namespace SaltCharts
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            imageSaveDialog.FileName = _config.LastMapFile + ".png";
+            imageSaveDialog.FileName = SaltCharts.Properties.Settings.Default.LastMapFile + ".png";
             if (imageSaveDialog.ShowDialog() == DialogResult.OK)
             {
                 // Build the Image
@@ -509,7 +460,13 @@ namespace SaltCharts
 
                 // Find the format
                 ImageFormat format;
-                string extension = imageSaveDialog.FileName.Split('.')[1];
+                string[] split = imageSaveDialog.FileName.Split('.');
+                string extension;
+                if (split.GetLength(0) < 2)
+                    extension = ".err";
+                else
+                    extension = split[0];
+
                 switch (extension.ToLower())
                 {
                     case "bmp":
@@ -537,6 +494,14 @@ namespace SaltCharts
                 bmp.Save(imageSaveDialog.FileName, format);
             }
 
+        }
+
+        private void Map_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaltCharts.Properties.Settings.Default.FormState = this.WindowState;
+            SaltCharts.Properties.Settings.Default.FormSize = this.Size;
+            SaltCharts.Properties.Settings.Default.FormLocation = this.Location;
+            SaltCharts.Properties.Settings.Default.Save();
         }
     }
 }
