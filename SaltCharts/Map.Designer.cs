@@ -151,7 +151,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SeaChart.ContextMenuStrip = this.mnuRightClick;
-            this.SeaChart.Image = ((System.Drawing.Image)(resources.GetObject("SeaChart.Image")));
+            this.SeaChart.Image = global::SaltCharts.Properties.Resources.Grid;
             this.SeaChart.Location = new System.Drawing.Point(0, 0);
             this.SeaChart.Name = "SeaChart";
             this.SeaChart.Size = new System.Drawing.Size(4125, 4161);

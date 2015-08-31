@@ -12,7 +12,7 @@ namespace SaltCharts
     public class MapPoint
     {
         const int CELL_SIZE = 40;
-        const int GRID_CENTER = 2022;
+        const int GRID_CENTER = 2068;
 
         public MapPoint()
         {
@@ -62,7 +62,7 @@ namespace SaltCharts
             int yPos = y * CELL_SIZE + GRID_CENTER - CELL_SIZE / 2;
             if (y >= 0) yPos++; // There is a 1 pixel inconsistency in the grid image along the 0 x-axis.
 
-            return new Point (x * CELL_SIZE + GRID_CENTER - CELL_SIZE /2, yPos);
+            return new Point (x * CELL_SIZE + GRID_CENTER - CELL_SIZE /2 -1, yPos);
         }
 
         public string Name { get; set; }
