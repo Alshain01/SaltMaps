@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -491,9 +492,10 @@ namespace SaltCharts
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            saveFileDialog.FileName = _config.LastMapFile + ".bmp";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            imageSaveDialog.FileName = _config.LastMapFile + ".png";
+            if (imageSaveDialog.ShowDialog() == DialogResult.OK)
             {
+                // Build the Image
                 Bitmap bmp = new Bitmap(SaltCharts.Properties.Resources.Grid);
                 Graphics g = Graphics.FromImage(bmp);
                 g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
@@ -504,7 +506,35 @@ namespace SaltCharts
 
                     g.DrawImageUnscaled((Image)SaltCharts.Properties.Resources.ResourceManager.GetObject(imageName), mp.getPosition().X, mp.getPosition().Y);
                 }
-                bmp.Save(saveFileDialog.FileName);
+
+                // Find the format
+                ImageFormat format;
+                string extension = imageSaveDialog.FileName.Split('.')[1];
+                switch (extension.ToLower())
+                {
+                    case "bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                    case "png":
+                        format = ImageFormat.Png;
+                        break;
+                    case "jpg":
+                    case "jpeg":
+                        format = ImageFormat.Jpeg;
+                        break;
+                    case "gif":
+                        format = ImageFormat.Gif;
+                        break;
+                    case "tiff":
+                    case "tif":
+                        format = ImageFormat.Tiff;
+                        break;
+                    default:
+                        MessageBox.Show("Unable to determine a valid image type.  Please use a proper file extension.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+                bmp.Save(imageSaveDialog.FileName, format);
             }
 
         }

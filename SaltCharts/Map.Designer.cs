@@ -125,7 +125,7 @@
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.imageSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
             this.mnuRightClick.SuspendLayout();
@@ -883,10 +883,11 @@
             this.deleteWaypointToolStripMenuItem1.Text = "Delete Waypoint";
             this.deleteWaypointToolStripMenuItem1.Click += new System.EventHandler(this.deleteWaypointToolStripMenuItem1_Click);
             // 
-            // saveFileDialog
+            // imageSaveDialog
             // 
-            this.saveFileDialog.DefaultExt = "bmp";
-            this.saveFileDialog.Filter = "Bitmap Image|*.bmp";
+            this.imageSaveDialog.DefaultExt = "png";
+            this.imageSaveDialog.Filter = "Portable Network Graphic|*.png|JPEG|*.jpg|Graphics Interchange Format|*.gif|Bitma" +
+    "p Image|*.bmp|Tagged Image File Format|*.tif";
             // 
             // Map
             // 
@@ -1011,7 +1012,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
         private System.Windows.Forms.ToolStripButton btnSettings;
         private System.Windows.Forms.ToolStripButton btnSaveImage;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.SaveFileDialog imageSaveDialog;
 
     }
 }
