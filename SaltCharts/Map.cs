@@ -23,7 +23,7 @@ namespace SaltCharts
         //private string _settingsFile = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SETTINGS_FILE;
         private Point mouseDownLoc;
         private Point rightMouseDownLoc;
-        private List<PictureBox> pictureBoxes;
+        private List<PictureBox> pictureBoxes = new List<PictureBox>();
 
         public Map()
         {
@@ -128,9 +128,6 @@ namespace SaltCharts
             newPic.Click += Waypoint_Click;
             newPic.MouseEnter += Waypoint_MouseEnter;
             newPic.MouseDown += Waypoint_MouseDown;
-            if (pictureBoxes == null)
-                pictureBoxes = new List<PictureBox>();
-
             pictureBoxes.Add(newPic);
         }
 
@@ -213,13 +210,7 @@ namespace SaltCharts
             mapPoints = new List<MapPoint>();
 
             //clear all the map points
-            if (pictureBoxes != null)
-            {
-                foreach (var p in pictureBoxes)
-                {
-                    p.Dispose();
-                }
-            }
+            ClearMapPoints();
         }
 
         public void EnableSaveButton()
