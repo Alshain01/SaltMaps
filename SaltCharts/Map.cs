@@ -488,5 +488,25 @@ namespace SaltCharts
                 setDebug(true);
             #endif
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.FileName = _config.LastMapFile + ".bmp";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap bmp = new Bitmap(SaltCharts.Properties.Resources.Grid);
+                Graphics g = Graphics.FromImage(bmp);
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                foreach (MapPoint mp in mapPoints)
+                {
+                    string imageName = (mp.PoiSubType != POISubType.None && mp.PoiSubType != POISubType.Single)
+                        ? mp.PoiType.ToString() + mp.PoiSubType.ToString() : mp.PoiType.ToString();
+
+                    g.DrawImageUnscaled((Image)SaltCharts.Properties.Resources.ResourceManager.GetObject(imageName), mp.getPosition().X, mp.getPosition().Y);
+                }
+                bmp.Save(saveFileDialog.FileName);
+            }
+
+        }
     }
 }

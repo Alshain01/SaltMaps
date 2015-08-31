@@ -823,6 +823,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap saveImage {
+            get {
+                object obj = ResourceManager.GetObject("saveImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap start_here_icon {
             get {
                 object obj = ResourceManager.GetObject("start_here_icon", resourceCulture);

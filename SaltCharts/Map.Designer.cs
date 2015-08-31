@@ -112,6 +112,7 @@
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnSaveImage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnInfo = new System.Windows.Forms.ToolStripButton();
             this.btnWest = new System.Windows.Forms.ToolStripButton();
@@ -124,6 +125,7 @@
             this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
             this.mnuRightClick.SuspendLayout();
@@ -729,6 +731,7 @@
             this.btnNew,
             this.btnOpen,
             this.btnSave,
+            this.btnSaveImage,
             this.toolStripSeparator1,
             this.btnInfo,
             this.btnWest,
@@ -772,6 +775,16 @@
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSaveImage
+            // 
+            this.btnSaveImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSaveImage.Image = global::SaltCharts.Properties.Resources.saveImage;
+            this.btnSaveImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveImage.Name = "btnSaveImage";
+            this.btnSaveImage.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveImage.Text = "Save Map As Image";
+            this.btnSaveImage.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -869,6 +882,11 @@
             this.deleteWaypointToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.deleteWaypointToolStripMenuItem1.Text = "Delete Waypoint";
             this.deleteWaypointToolStripMenuItem1.Click += new System.EventHandler(this.deleteWaypointToolStripMenuItem1_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "bmp";
+            this.saveFileDialog.Filter = "Bitmap Image|*.bmp";
             // 
             // Map
             // 
@@ -992,6 +1010,8 @@
         private System.Windows.Forms.ToolStripStatusLabel statusRawCoord;
         private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
         private System.Windows.Forms.ToolStripButton btnSettings;
+        private System.Windows.Forms.ToolStripButton btnSaveImage;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
 
     }
 }
