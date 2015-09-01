@@ -71,7 +71,7 @@ namespace SaltCharts
          */
         private void CenterMap()
         {
-            SeaChart.Location = new Point(-(SeaChart.Image.Width / 2 - MapPanel.Width / 2), -(SeaChart.Image.Height / 2 - MapPanel.Height / 2));
+            SeaChart.Location = new Point(-(SeaChart.Image.Width / 2 - panelChart.Width / 2), -(SeaChart.Image.Height / 2 - panelChart.Height / 2));
         }
 
         private void LoadMapFile()
@@ -187,9 +187,9 @@ namespace SaltCharts
                 int newX = SeaChart.Location.X + distanceX;
                 int newY = SeaChart.Location.Y + distanceY;
 
-                if (newX + SeaChart.Image.Width < SeaChart.Image.Width && SeaChart.Image.Width + newX > MapPanel.Width)
+                if (newX + SeaChart.Image.Width < SeaChart.Image.Width && SeaChart.Image.Width + newX > panelChart.Width)
                     SeaChart.Location = new Point(newX, SeaChart.Location.Y);
-                if (newY + SeaChart.Image.Height < SeaChart.Image.Height && SeaChart.Image.Height + newY > MapPanel.Height)
+                if (newY + SeaChart.Image.Height < SeaChart.Image.Height && SeaChart.Image.Height + newY > panelChart.Height)
                     SeaChart.Location = new Point(SeaChart.Location.X, newY);
         }
 
@@ -216,7 +216,7 @@ namespace SaltCharts
          private IslandType getActiveIsland()
          {
             IslandType island = IslandType.None;
-            foreach (RadioButton b in islandPanel.Controls)
+            foreach (RadioButton b in panelIsland.Controls)
                 if (b.Checked)
                 {
                     island = (IslandType)b.Tag;
@@ -367,22 +367,22 @@ namespace SaltCharts
 
         private void btnNorth_Click(object sender, EventArgs e)
         {
-            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (MapPanel.Height / 2), -1));
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (panelChart.Height / 2), -1));
         }
 
         private void btnWest_Click(object sender, EventArgs e)
         {
-            SeaChart.Location = new Point(Math.Min(SeaChart.Location.X + (MapPanel.Width / 2), -1), SeaChart.Location.Y);
+            SeaChart.Location = new Point(Math.Min(SeaChart.Location.X + (panelChart.Width / 2), -1), SeaChart.Location.Y);
         }
 
         private void btnEast_Click(object sender, EventArgs e)
         {
-            SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (MapPanel.Width / 2), -(SeaChart.Image.Width - MapPanel.Width)), SeaChart.Location.Y);
+            SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (panelChart.Width / 2), -(SeaChart.Image.Width - panelChart.Width)), SeaChart.Location.Y);
         }
 
         private void btnSouth_Click(object sender, EventArgs e)
         {
-            SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (MapPanel.Height / 2), -(SeaChart.Image.Height - MapPanel.Height)));
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (panelChart.Height / 2), -(SeaChart.Image.Height - panelChart.Height)));
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -458,5 +458,51 @@ namespace SaltCharts
 
         }
         #endregion
+
+        private void SeaChart_LocationChanged(object sender, EventArgs e)
+        {
+            horizontalNavigation.Location = new Point(SeaChart.Location.X, horizontalNavigation.Location.Y);
+            verticalNavigation.Location = new Point(verticalNavigation.Location.X, SeaChart.Location.Y);
+        }
+
+        private void horizontalNavigation_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownLoc = e.Location;
+            if (e.Button == MouseButtons.Left)
+                this.Cursor = Cursors.NoMoveHoriz;
+        }
+
+        private void horizontalNavigation_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void horizontalNavigation_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DragMap(new Point(e.Location.X, mouseDownLoc.Y));
+            }
+        }
+
+        private void verticalNavigation_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownLoc = e.Location;
+            if (e.Button == MouseButtons.Left)
+                this.Cursor = Cursors.NoMoveVert;
+        }
+
+        private void verticalNavigation_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
+
+        private void verticalNavigation_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                DragMap(new Point(mouseDownLoc.X, e.Location.Y));
+            }
+        }
     }
 }
