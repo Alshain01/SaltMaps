@@ -153,7 +153,7 @@ namespace SaltCharts
         {
             mouseDownLoc = e.Location;
             if (e.Button == MouseButtons.Left)
-                this.Cursor = Cursors.Hand;
+                this.Cursor = Cursors.NoMove2D;
             else if (e.Button == MouseButtons.Right)
                 addWaypoint(e.Location);
         }
@@ -503,6 +503,11 @@ namespace SaltCharts
             {
                 DragMap(new Point(mouseDownLoc.X, e.Location.Y));
             }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            new Help().Show(this);
         }
     }
 }

@@ -213,6 +213,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap help {
+            get {
+                object obj = ResourceManager.GetObject("help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HighMountain {
             get {
                 object obj = ResourceManager.GetObject("HighMountain", resourceCulture);
@@ -317,6 +327,16 @@ namespace SaltCharts.Properties {
             get {
                 object obj = ResourceManager.GetObject("NorthWest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Oxygen_Icons_org_Oxygen_Categories_system_help {
+            get {
+                object obj = ResourceManager.GetObject("Oxygen_Icons_org_Oxygen_Categories_system_help", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
