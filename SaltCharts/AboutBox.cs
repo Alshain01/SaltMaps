@@ -110,5 +110,34 @@ namespace SaltCharts
             this.Close();
         }
 
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelReleases_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Alshain01/SaltMaps/releases");
+        }
+
+        private void labelSource_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Alshain01/SaltMaps");
+        }
+
+        private void labelDiscussion_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://steamcommunity.com/app/327860/discussions/0/627456486460978202/");
+        }
+
+        private void Hyperlink_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void Hyperlink_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+        }
     }
 }

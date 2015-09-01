@@ -19,6 +19,7 @@ namespace SaltCharts
         private List<Waypoint> waypoints;
         private string mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + DEFAULT_SEED + MAP_EXTENSION;
         private Point mouseDownLoc;
+        private Point mapBoxLoc;
         //private Point rightMouseDownLoc;
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
 
@@ -120,7 +121,9 @@ namespace SaltCharts
             //Events
             wpImg.MouseUp += Waypoint_MouseUp;
             wpImg.MouseEnter += Waypoint_MouseEnter;
+            wpImg.MouseLeave += Waypoint_MouseLeave;
             wpImg.MouseDown += Waypoint_MouseDown;
+            wpImg.MouseMove += Waypoint_MouseMove;
 
             //Add to storage
             pictureBoxes.Add(wpImg);
@@ -132,6 +135,8 @@ namespace SaltCharts
             this.Location = SaltCharts.Properties.Settings.Default.FormLocation;
             this.WindowState = SaltCharts.Properties.Settings.Default.FormState;
             btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            statusNotes.Text = String.Empty;
+            statusName.Text = String.Empty;
             CenterMap();
             setDebug();
         }
@@ -162,7 +167,21 @@ namespace SaltCharts
         {
             if (e.Button == MouseButtons.Left)
             {
-                Point currentMousePos = e.Location;
+                DragMap(e.Location);
+            }
+            else if (e.Button == MouseButtons.None)
+            {
+                statusCoord.Text = Waypoint.getFormatted(e.Location);
+
+                // Debug information
+                statusPoint.Text = string.Format("Point: {0},{1}", e.Location.X, e.Location.Y);
+                statusRawCoord.Text = string.Format("Raw Coordinate: {0},{1}", Waypoint.getCoordinate(e.Location.X), Waypoint.getCoordinate(e.Location.Y));
+                statusChartLocation.Text = string.Format("Chart Location: {0}, {1}", SeaChart.Location.X, SeaChart.Location.Y);
+            }
+        }
+
+        private void DragMap(Point currentMousePos)
+        {
                 int distanceX = currentMousePos.X - mouseDownLoc.X;
                 int distanceY = currentMousePos.Y - mouseDownLoc.Y;
                 int newX = SeaChart.Location.X + distanceX;
@@ -172,16 +191,6 @@ namespace SaltCharts
                     SeaChart.Location = new Point(newX, SeaChart.Location.Y);
                 if (newY + SeaChart.Image.Height < SeaChart.Image.Height && SeaChart.Image.Height + newY > MapPanel.Height)
                     SeaChart.Location = new Point(SeaChart.Location.X, newY);
-            }
-            else if (e.Button == MouseButtons.None)
-            {
-                statusCoord.Text = Waypoint.getFormatted(e.Location);
-                
-                // Debug information
-                statusPoint.Text = string.Format("Point: {0},{1}", e.Location.X, e.Location.Y);
-                statusRawCoord.Text = string.Format("Raw Coordinate: {0},{1}", Waypoint.getCoordinate(e.Location.X), Waypoint.getCoordinate(e.Location.Y));
-                statusChartLocation.Text = string.Format("Chart Location: {0}, {1}", SeaChart.Location.X, SeaChart.Location.Y);
-            }
         }
 
         /*
@@ -244,44 +253,25 @@ namespace SaltCharts
                 btnSave.Enabled = true;
         }
 
-        private void deleteWaypointToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            PictureBox waypointPB = null;
-            ToolStripItem menuItem = sender as ToolStripItem;
-            if (menuItem != null)
-            {
-                // Retrieve the ContextMenuStrip that owns this ToolStripItem
-                ContextMenuStrip owner = menuItem.Owner as ContextMenuStrip;
-                if (owner != null)
-                {
-                    // Get the control that is displaying this context menu
-                    waypointPB = owner.SourceControl as PictureBox;
-                }
-            }
-
-
-            if (waypointPB != null)
-            {
-                var mp = (Waypoint)waypointPB.Tag;
-                waypoints.Remove(mp);
-                waypointPB.Dispose();
-                if (SaltCharts.Properties.Settings.Default.AutoSave)
-                    SaveMapFile();
-                else
-                    btnSave.Enabled = true;
-            }
-        }
-
         void Waypoint_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDownLoc = e.Location;
+            mapBoxLoc = ((PictureBox)sender).Parent.Location;
             if (e.Button == MouseButtons.Left)
                 this.Cursor = Cursors.Hand;
         }
 
-        private void Waypoint_MouseUp(object sender, MouseEventArgs e)
+        private void Waypoint_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
+            {
+                DragMap(e.Location);
+            }
+        }
+
+        private void Waypoint_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && mapBoxLoc.Equals(((PictureBox)sender).Parent.Location))
             {
                 PictureBox pb = (PictureBox)sender;
                 Waypoint mp = (Waypoint)pb.Tag;
@@ -300,7 +290,6 @@ namespace SaltCharts
                     MarkerType marker = getActiveMarker();
                     PictureBox pb = (PictureBox)sender;
                     Waypoint wp = (Waypoint)pb.Tag;
-                    bool updated = false;
 
                     if (wp.Island != island || wp.Marker != marker)
                     {
@@ -317,9 +306,20 @@ namespace SaltCharts
             PictureBox pix = ((PictureBox)sender);
             Waypoint mp = (Waypoint)pix.Tag;
             statusCoord.Text = mp.ToString();
-            toolTip1.SetToolTip(pix, mp.Notes);
+            if(!String.IsNullOrEmpty(mp.Name))
+                statusName.Text = "Name: " + mp.Name;
+            if (!String.IsNullOrEmpty(mp.Notes))
+            {
+                statusNotes.Text = "Notes: " + mp.Notes;
+                toolTip1.SetToolTip(pix, mp.Notes);
+            }
         }
 
+        private void Waypoint_MouseLeave(object sender, EventArgs e)
+        {
+            statusName.Text = string.Empty;
+            statusNotes.Text = string.Empty;
+        }
         #region Button Click Events
         private void btnNew_Click(object sender, EventArgs e)
         {

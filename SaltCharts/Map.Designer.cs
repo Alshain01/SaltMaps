@@ -82,6 +82,8 @@
             this.btnNorth = new System.Windows.Forms.Button();
             this.markerPanel = new System.Windows.Forms.Panel();
             this.islandPanel = new System.Windows.Forms.Panel();
+            this.statusName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusNotes = new System.Windows.Forms.ToolStripStatusLabel();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -121,6 +123,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusCoord,
+            this.statusName,
+            this.statusNotes,
             this.statusRawCoord,
             this.statusPoint,
             this.statusChartLocation});
@@ -716,6 +720,20 @@
             this.islandPanel.Size = new System.Drawing.Size(123, 167);
             this.islandPanel.TabIndex = 3;
             // 
+            // statusName
+            // 
+            this.statusName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusName.Name = "statusName";
+            this.statusName.Size = new System.Drawing.Size(135, 17);
+            this.statusName.Text = "Name: Waypoint Name";
+            // 
+            // statusNotes
+            // 
+            this.statusNotes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.statusNotes.Name = "statusNotes";
+            this.statusNotes.Size = new System.Drawing.Size(135, 17);
+            this.statusNotes.Text = "Notes: Waypoint Notes";
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -801,6 +819,8 @@
         private System.Windows.Forms.RadioButton radioButton11;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.ToolStripStatusLabel statusName;
+        private System.Windows.Forms.ToolStripStatusLabel statusNotes;
 
     }
 }
