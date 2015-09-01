@@ -114,7 +114,7 @@
     <Compile Include="PoiDetails.Designer.cs">
       <DependentUpon>PoiDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapPoint.cs" />
+    <Compile Include="Waypoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -177,220 +177,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MerchantIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateTownshipIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateTownshipIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateTownshipIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateTownshipIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateTownshipIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MerchantIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MerchantIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MerchantIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MerchantIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InnkeeperIsland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InnkeeperIslandNorthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InnkeeperIslandNorthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InnkeeperIslandSouthEast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InnkeeperIslandSouthWest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerBronzeChest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerCompass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerGoodResources.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerMoonstones.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerPirateShip.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerSilverChest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerSpiderQueen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerX.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerQuestion.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Grid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientAltarIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AncientRuinsIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesertIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HighMountainIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MerchantIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateCampIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PirateShipIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TownshipIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HuntingCampIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InkeeperIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MarkerIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UninhabitedIslandIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\compass.png" />
@@ -430,6 +217,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\saveImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AncientAltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AncientRuins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighMountain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HuntingCamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inkeeper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Island.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PirateCamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Township.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Merchant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PirateShip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BronzeChest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GoodResources.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moonrock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SilverChest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpiderQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\None.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NorthEast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NorthWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SouthEast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SouthWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flower.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

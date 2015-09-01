@@ -32,77 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
             this.MapPanel = new System.Windows.Forms.Panel();
             this.SeaChart = new System.Windows.Forms.PictureBox();
-            this.mnuRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.uninhabitedIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninhabitedIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninhabitedIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninhabitedIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninhabitedIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.uninhabitedIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.desertIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainsIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.highMountainIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateCampIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.pirateTownshipIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientRuinsIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.ancientAltarIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.merchantIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.huntingCampIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIsland = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIslandSingle = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIslandNorthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIslandNorthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIslandSouthWest = new System.Windows.Forms.ToolStripMenuItem();
-            this.innkeeperIslandSouthEast = new System.Windows.Forms.ToolStripMenuItem();
-            this.markers = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerPirateShip = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerMoonstones = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerGoodResources = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerBronzeChest = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerSilverChest = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerSpiderQueen = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerCompass = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerX = new System.Windows.Forms.ToolStripMenuItem();
-            this.markerQuestion = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusCoord = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusRawCoord = new System.Windows.Forms.ToolStripStatusLabel();
@@ -113,25 +42,53 @@
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnSaveImage = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnInfo = new System.Windows.Forms.ToolStripButton();
-            this.btnWest = new System.Windows.Forms.ToolStripButton();
-            this.btnEast = new System.Windows.Forms.ToolStripButton();
-            this.btnNorth = new System.Windows.Forms.ToolStripButton();
-            this.btnSouth = new System.Windows.Forms.ToolStripButton();
-            this.btnCenterMap = new System.Windows.Forms.ToolStripButton();
             this.btnSettings = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.mnuWaypointRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteWaypointToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnNoIsland = new System.Windows.Forms.RadioButton();
+            this.btnSingle = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.btnPirateShip = new System.Windows.Forms.RadioButton();
+            this.btnPirateTownship = new System.Windows.Forms.RadioButton();
+            this.btnPirateCamp = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnAncientAltar = new System.Windows.Forms.RadioButton();
+            this.btnAncientRuins = new System.Windows.Forms.RadioButton();
+            this.btnHuntingCamp = new System.Windows.Forms.RadioButton();
+            this.btnInnkeeper = new System.Windows.Forms.RadioButton();
+            this.btnMerchant = new System.Windows.Forms.RadioButton();
+            this.btnHighMountain = new System.Windows.Forms.RadioButton();
+            this.btnDesert = new System.Windows.Forms.RadioButton();
+            this.btnNoMarker = new System.Windows.Forms.RadioButton();
+            this.btnQuestion = new System.Windows.Forms.RadioButton();
+            this.btnX = new System.Windows.Forms.RadioButton();
+            this.btnFlower = new System.Windows.Forms.RadioButton();
+            this.btnDeer = new System.Windows.Forms.RadioButton();
+            this.btnSpiderQueen = new System.Windows.Forms.RadioButton();
+            this.btnMoonrock = new System.Windows.Forms.RadioButton();
+            this.btnCompass = new System.Windows.Forms.RadioButton();
+            this.btnSilverChest = new System.Windows.Forms.RadioButton();
+            this.btnBronzeChest = new System.Windows.Forms.RadioButton();
             this.imageSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEast = new System.Windows.Forms.Button();
+            this.btnWest = new System.Windows.Forms.Button();
+            this.btnSouth = new System.Windows.Forms.Button();
+            this.btnCenter = new System.Windows.Forms.Button();
+            this.btnNorth = new System.Windows.Forms.Button();
+            this.markerPanel = new System.Windows.Forms.Panel();
+            this.islandPanel = new System.Windows.Forms.Panel();
             this.MapPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
-            this.mnuRightClick.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.mnuWaypointRightClick.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.markerPanel.SuspendLayout();
+            this.islandPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MapPanel
@@ -140,9 +97,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MapPanel.Controls.Add(this.SeaChart);
-            this.MapPanel.Location = new System.Drawing.Point(0, 30);
+            this.MapPanel.Location = new System.Drawing.Point(123, 30);
             this.MapPanel.Name = "MapPanel";
-            this.MapPanel.Size = new System.Drawing.Size(1280, 596);
+            this.MapPanel.Size = new System.Drawing.Size(1157, 611);
             this.MapPanel.TabIndex = 2;
             // 
             // SeaChart
@@ -150,534 +107,15 @@
             this.SeaChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SeaChart.ContextMenuStrip = this.mnuRightClick;
             this.SeaChart.Image = global::SaltCharts.Properties.Resources.Grid;
             this.SeaChart.Location = new System.Drawing.Point(0, 0);
             this.SeaChart.Name = "SeaChart";
-            this.SeaChart.Size = new System.Drawing.Size(4125, 4161);
+            this.SeaChart.Size = new System.Drawing.Size(4002, 4176);
             this.SeaChart.TabIndex = 2;
             this.SeaChart.TabStop = false;
             this.SeaChart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseDown);
             this.SeaChart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseMove);
             this.SeaChart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseUp);
-            // 
-            // mnuRightClick
-            // 
-            this.mnuRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uninhabitedIsland,
-            this.desertIsland,
-            this.highMountainsIsland,
-            this.pirateCampIsland,
-            this.pirateTownshipIsland,
-            this.ancientRuinsIsland,
-            this.ancientAltarIsland,
-            this.merchantIsland,
-            this.huntingCampIsland,
-            this.innkeeperIsland,
-            this.markers});
-            this.mnuRightClick.Name = "mnuRightClick";
-            this.mnuRightClick.Size = new System.Drawing.Size(194, 246);
-            // 
-            // uninhabitedIsland
-            // 
-            this.uninhabitedIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uninhabitedIslandSingle,
-            this.uninhabitedIslandNorthWest,
-            this.uninhabitedIslandNorthEast,
-            this.uninhabitedIslandSouthWest,
-            this.uninhabitedIslandSouthEast});
-            this.uninhabitedIsland.Image = global::SaltCharts.Properties.Resources.UninhabitedIslandIcon;
-            this.uninhabitedIsland.Name = "uninhabitedIsland";
-            this.uninhabitedIsland.Size = new System.Drawing.Size(193, 22);
-            this.uninhabitedIsland.Text = "Uninhabited Island";
-            // 
-            // uninhabitedIslandSingle
-            // 
-            this.uninhabitedIslandSingle.Name = "uninhabitedIslandSingle";
-            this.uninhabitedIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.uninhabitedIslandSingle.Text = "Single";
-            // 
-            // uninhabitedIslandNorthWest
-            // 
-            this.uninhabitedIslandNorthWest.Name = "uninhabitedIslandNorthWest";
-            this.uninhabitedIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.uninhabitedIslandNorthWest.Text = "North West";
-            // 
-            // uninhabitedIslandNorthEast
-            // 
-            this.uninhabitedIslandNorthEast.Name = "uninhabitedIslandNorthEast";
-            this.uninhabitedIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.uninhabitedIslandNorthEast.Text = "North East";
-            // 
-            // uninhabitedIslandSouthWest
-            // 
-            this.uninhabitedIslandSouthWest.Name = "uninhabitedIslandSouthWest";
-            this.uninhabitedIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.uninhabitedIslandSouthWest.Text = "South West";
-            // 
-            // uninhabitedIslandSouthEast
-            // 
-            this.uninhabitedIslandSouthEast.Name = "uninhabitedIslandSouthEast";
-            this.uninhabitedIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.uninhabitedIslandSouthEast.Text = "South East";
-            // 
-            // desertIsland
-            // 
-            this.desertIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.desertIslandSingle,
-            this.desertIslandNorthWest,
-            this.desertIslandNorthEast,
-            this.desertIslandSouthWest,
-            this.desertIslandSouthEast});
-            this.desertIsland.Image = global::SaltCharts.Properties.Resources.DesertIcon;
-            this.desertIsland.Name = "desertIsland";
-            this.desertIsland.Size = new System.Drawing.Size(193, 22);
-            this.desertIsland.Text = "Desert Island";
-            // 
-            // desertIslandSingle
-            // 
-            this.desertIslandSingle.Name = "desertIslandSingle";
-            this.desertIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.desertIslandSingle.Text = "Single";
-            // 
-            // desertIslandNorthWest
-            // 
-            this.desertIslandNorthWest.Name = "desertIslandNorthWest";
-            this.desertIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.desertIslandNorthWest.Text = "North West";
-            // 
-            // desertIslandNorthEast
-            // 
-            this.desertIslandNorthEast.Name = "desertIslandNorthEast";
-            this.desertIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.desertIslandNorthEast.Text = "North East";
-            // 
-            // desertIslandSouthWest
-            // 
-            this.desertIslandSouthWest.Name = "desertIslandSouthWest";
-            this.desertIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.desertIslandSouthWest.Text = "SouthWest";
-            // 
-            // desertIslandSouthEast
-            // 
-            this.desertIslandSouthEast.Name = "desertIslandSouthEast";
-            this.desertIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.desertIslandSouthEast.Text = "South East";
-            // 
-            // highMountainsIsland
-            // 
-            this.highMountainsIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.highMountainIslandSingle,
-            this.highMountainIslandNorthWest,
-            this.highMountainIslandNorthEast,
-            this.highMountainIslandSouthWest,
-            this.highMountainIslandSouthEast});
-            this.highMountainsIsland.Image = global::SaltCharts.Properties.Resources.HighMountainIcon;
-            this.highMountainsIsland.Name = "highMountainsIsland";
-            this.highMountainsIsland.Size = new System.Drawing.Size(193, 22);
-            this.highMountainsIsland.Text = "High Mountain Island";
-            // 
-            // highMountainIslandSingle
-            // 
-            this.highMountainIslandSingle.Name = "highMountainIslandSingle";
-            this.highMountainIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.highMountainIslandSingle.Text = "Single";
-            // 
-            // highMountainIslandNorthWest
-            // 
-            this.highMountainIslandNorthWest.Name = "highMountainIslandNorthWest";
-            this.highMountainIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.highMountainIslandNorthWest.Text = "North West";
-            // 
-            // highMountainIslandNorthEast
-            // 
-            this.highMountainIslandNorthEast.Name = "highMountainIslandNorthEast";
-            this.highMountainIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.highMountainIslandNorthEast.Text = "North East";
-            // 
-            // highMountainIslandSouthWest
-            // 
-            this.highMountainIslandSouthWest.Name = "highMountainIslandSouthWest";
-            this.highMountainIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.highMountainIslandSouthWest.Text = "South West";
-            // 
-            // highMountainIslandSouthEast
-            // 
-            this.highMountainIslandSouthEast.Name = "highMountainIslandSouthEast";
-            this.highMountainIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.highMountainIslandSouthEast.Text = "South East";
-            // 
-            // pirateCampIsland
-            // 
-            this.pirateCampIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pirateCampIslandSingle,
-            this.pirateCampIslandNorthWest,
-            this.pirateCampIslandNorthEast,
-            this.pirateCampIslandSouthWest,
-            this.pirateCampIslandSouthEast});
-            this.pirateCampIsland.Image = global::SaltCharts.Properties.Resources.PirateCampIcon;
-            this.pirateCampIsland.Name = "pirateCampIsland";
-            this.pirateCampIsland.Size = new System.Drawing.Size(193, 22);
-            this.pirateCampIsland.Text = "Pirate Camp Island";
-            // 
-            // pirateCampIslandSingle
-            // 
-            this.pirateCampIslandSingle.Name = "pirateCampIslandSingle";
-            this.pirateCampIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.pirateCampIslandSingle.Text = "Single";
-            // 
-            // pirateCampIslandNorthWest
-            // 
-            this.pirateCampIslandNorthWest.Name = "pirateCampIslandNorthWest";
-            this.pirateCampIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.pirateCampIslandNorthWest.Text = "North West";
-            // 
-            // pirateCampIslandNorthEast
-            // 
-            this.pirateCampIslandNorthEast.Name = "pirateCampIslandNorthEast";
-            this.pirateCampIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.pirateCampIslandNorthEast.Text = "North East";
-            // 
-            // pirateCampIslandSouthWest
-            // 
-            this.pirateCampIslandSouthWest.Name = "pirateCampIslandSouthWest";
-            this.pirateCampIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.pirateCampIslandSouthWest.Text = "South West";
-            // 
-            // pirateCampIslandSouthEast
-            // 
-            this.pirateCampIslandSouthEast.Name = "pirateCampIslandSouthEast";
-            this.pirateCampIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.pirateCampIslandSouthEast.Text = "South East";
-            // 
-            // pirateTownshipIsland
-            // 
-            this.pirateTownshipIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pirateTownshipIslandSingle,
-            this.pirateTownshipIslandNorthWest,
-            this.pirateTownshipIslandNorthEast,
-            this.pirateTownshipIslandSouthWest,
-            this.pirateTownshipIslandSouthEast});
-            this.pirateTownshipIsland.Image = global::SaltCharts.Properties.Resources.TownshipIcon;
-            this.pirateTownshipIsland.Name = "pirateTownshipIsland";
-            this.pirateTownshipIsland.Size = new System.Drawing.Size(193, 22);
-            this.pirateTownshipIsland.Text = "Pirate Township Island";
-            // 
-            // pirateTownshipIslandSingle
-            // 
-            this.pirateTownshipIslandSingle.Name = "pirateTownshipIslandSingle";
-            this.pirateTownshipIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.pirateTownshipIslandSingle.Text = "Single";
-            // 
-            // pirateTownshipIslandNorthWest
-            // 
-            this.pirateTownshipIslandNorthWest.Name = "pirateTownshipIslandNorthWest";
-            this.pirateTownshipIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.pirateTownshipIslandNorthWest.Text = "North West";
-            // 
-            // pirateTownshipIslandNorthEast
-            // 
-            this.pirateTownshipIslandNorthEast.Name = "pirateTownshipIslandNorthEast";
-            this.pirateTownshipIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.pirateTownshipIslandNorthEast.Text = "North East";
-            // 
-            // pirateTownshipIslandSouthWest
-            // 
-            this.pirateTownshipIslandSouthWest.Name = "pirateTownshipIslandSouthWest";
-            this.pirateTownshipIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.pirateTownshipIslandSouthWest.Text = "South West";
-            // 
-            // pirateTownshipIslandSouthEast
-            // 
-            this.pirateTownshipIslandSouthEast.Name = "pirateTownshipIslandSouthEast";
-            this.pirateTownshipIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.pirateTownshipIslandSouthEast.Text = "South East";
-            // 
-            // ancientRuinsIsland
-            // 
-            this.ancientRuinsIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ancientRuinsIslandSingle,
-            this.ancientRuinsIslandNorthWest,
-            this.ancientRuinsIslandNorthEast,
-            this.ancientRuinsIslandSouthWest,
-            this.ancientRuinsIslandSouthEast});
-            this.ancientRuinsIsland.Image = global::SaltCharts.Properties.Resources.AncientRuinsIcon;
-            this.ancientRuinsIsland.Name = "ancientRuinsIsland";
-            this.ancientRuinsIsland.Size = new System.Drawing.Size(193, 22);
-            this.ancientRuinsIsland.Text = "Ancient Ruins Island";
-            // 
-            // ancientRuinsIslandSingle
-            // 
-            this.ancientRuinsIslandSingle.Name = "ancientRuinsIslandSingle";
-            this.ancientRuinsIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.ancientRuinsIslandSingle.Text = "Single";
-            // 
-            // ancientRuinsIslandNorthWest
-            // 
-            this.ancientRuinsIslandNorthWest.Name = "ancientRuinsIslandNorthWest";
-            this.ancientRuinsIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.ancientRuinsIslandNorthWest.Text = "North West";
-            // 
-            // ancientRuinsIslandNorthEast
-            // 
-            this.ancientRuinsIslandNorthEast.Name = "ancientRuinsIslandNorthEast";
-            this.ancientRuinsIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.ancientRuinsIslandNorthEast.Text = "North East";
-            // 
-            // ancientRuinsIslandSouthWest
-            // 
-            this.ancientRuinsIslandSouthWest.Name = "ancientRuinsIslandSouthWest";
-            this.ancientRuinsIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.ancientRuinsIslandSouthWest.Text = "South West";
-            // 
-            // ancientRuinsIslandSouthEast
-            // 
-            this.ancientRuinsIslandSouthEast.Name = "ancientRuinsIslandSouthEast";
-            this.ancientRuinsIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.ancientRuinsIslandSouthEast.Text = "South East";
-            // 
-            // ancientAltarIsland
-            // 
-            this.ancientAltarIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ancientAltarIslandSingle,
-            this.ancientAltarIslandNorthWest,
-            this.ancientAltarIslandNorthEast,
-            this.ancientAltarIslandSouthWest,
-            this.ancientAltarIslandSouthEast});
-            this.ancientAltarIsland.Image = global::SaltCharts.Properties.Resources.AncientAltarIcon;
-            this.ancientAltarIsland.Name = "ancientAltarIsland";
-            this.ancientAltarIsland.Size = new System.Drawing.Size(193, 22);
-            this.ancientAltarIsland.Text = "Ancient Altar Island";
-            // 
-            // ancientAltarIslandSingle
-            // 
-            this.ancientAltarIslandSingle.Name = "ancientAltarIslandSingle";
-            this.ancientAltarIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.ancientAltarIslandSingle.Text = "Single";
-            // 
-            // ancientAltarIslandNorthWest
-            // 
-            this.ancientAltarIslandNorthWest.Name = "ancientAltarIslandNorthWest";
-            this.ancientAltarIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.ancientAltarIslandNorthWest.Text = "North West";
-            // 
-            // ancientAltarIslandNorthEast
-            // 
-            this.ancientAltarIslandNorthEast.Name = "ancientAltarIslandNorthEast";
-            this.ancientAltarIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.ancientAltarIslandNorthEast.Text = "North East";
-            // 
-            // ancientAltarIslandSouthWest
-            // 
-            this.ancientAltarIslandSouthWest.Name = "ancientAltarIslandSouthWest";
-            this.ancientAltarIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.ancientAltarIslandSouthWest.Text = "South West";
-            // 
-            // ancientAltarIslandSouthEast
-            // 
-            this.ancientAltarIslandSouthEast.Name = "ancientAltarIslandSouthEast";
-            this.ancientAltarIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.ancientAltarIslandSouthEast.Text = "South East";
-            // 
-            // merchantIsland
-            // 
-            this.merchantIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.merchantIslandSingle,
-            this.merchantIslandNorthWest,
-            this.merchantIslandNorthEast,
-            this.merchantIslandSouthWest,
-            this.merchantIslandSouthEast});
-            this.merchantIsland.Image = global::SaltCharts.Properties.Resources.MerchantIcon;
-            this.merchantIsland.Name = "merchantIsland";
-            this.merchantIsland.Size = new System.Drawing.Size(193, 22);
-            this.merchantIsland.Text = "Merchant Island";
-            // 
-            // merchantIslandSingle
-            // 
-            this.merchantIslandSingle.Name = "merchantIslandSingle";
-            this.merchantIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.merchantIslandSingle.Text = "Single";
-            // 
-            // merchantIslandNorthWest
-            // 
-            this.merchantIslandNorthWest.Name = "merchantIslandNorthWest";
-            this.merchantIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.merchantIslandNorthWest.Text = "North West";
-            // 
-            // merchantIslandNorthEast
-            // 
-            this.merchantIslandNorthEast.Name = "merchantIslandNorthEast";
-            this.merchantIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.merchantIslandNorthEast.Text = "North East";
-            // 
-            // merchantIslandSouthWest
-            // 
-            this.merchantIslandSouthWest.Name = "merchantIslandSouthWest";
-            this.merchantIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.merchantIslandSouthWest.Text = "South West";
-            // 
-            // merchantIslandSouthEast
-            // 
-            this.merchantIslandSouthEast.Name = "merchantIslandSouthEast";
-            this.merchantIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.merchantIslandSouthEast.Text = "South East";
-            // 
-            // huntingCampIsland
-            // 
-            this.huntingCampIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.huntingCampIslandSingle,
-            this.huntingCampIslandNorthWest,
-            this.huntingCampIslandNorthEast,
-            this.huntingCampIslandSouthWest,
-            this.huntingCampIslandSouthEast});
-            this.huntingCampIsland.Image = global::SaltCharts.Properties.Resources.HuntingCampIcon;
-            this.huntingCampIsland.Name = "huntingCampIsland";
-            this.huntingCampIsland.Size = new System.Drawing.Size(193, 22);
-            this.huntingCampIsland.Text = "Hunting Camp Island";
-            // 
-            // huntingCampIslandSingle
-            // 
-            this.huntingCampIslandSingle.Name = "huntingCampIslandSingle";
-            this.huntingCampIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.huntingCampIslandSingle.Text = "Single";
-            // 
-            // huntingCampIslandNorthWest
-            // 
-            this.huntingCampIslandNorthWest.Name = "huntingCampIslandNorthWest";
-            this.huntingCampIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.huntingCampIslandNorthWest.Text = "North West";
-            // 
-            // huntingCampIslandNorthEast
-            // 
-            this.huntingCampIslandNorthEast.Name = "huntingCampIslandNorthEast";
-            this.huntingCampIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.huntingCampIslandNorthEast.Text = "North East";
-            // 
-            // huntingCampIslandSouthWest
-            // 
-            this.huntingCampIslandSouthWest.Name = "huntingCampIslandSouthWest";
-            this.huntingCampIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.huntingCampIslandSouthWest.Text = "South West";
-            // 
-            // huntingCampIslandSouthEast
-            // 
-            this.huntingCampIslandSouthEast.Name = "huntingCampIslandSouthEast";
-            this.huntingCampIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.huntingCampIslandSouthEast.Text = "South East";
-            // 
-            // innkeeperIsland
-            // 
-            this.innkeeperIsland.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.innkeeperIslandSingle,
-            this.innkeeperIslandNorthWest,
-            this.innkeeperIslandNorthEast,
-            this.innkeeperIslandSouthWest,
-            this.innkeeperIslandSouthEast});
-            this.innkeeperIsland.Image = global::SaltCharts.Properties.Resources.InkeeperIcon;
-            this.innkeeperIsland.Name = "innkeeperIsland";
-            this.innkeeperIsland.Size = new System.Drawing.Size(193, 22);
-            this.innkeeperIsland.Text = "Innkeeper Island";
-            // 
-            // innkeeperIslandSingle
-            // 
-            this.innkeeperIslandSingle.Name = "innkeeperIslandSingle";
-            this.innkeeperIslandSingle.Size = new System.Drawing.Size(134, 22);
-            this.innkeeperIslandSingle.Text = "Single";
-            // 
-            // innkeeperIslandNorthWest
-            // 
-            this.innkeeperIslandNorthWest.Name = "innkeeperIslandNorthWest";
-            this.innkeeperIslandNorthWest.Size = new System.Drawing.Size(134, 22);
-            this.innkeeperIslandNorthWest.Text = "North West";
-            // 
-            // innkeeperIslandNorthEast
-            // 
-            this.innkeeperIslandNorthEast.Name = "innkeeperIslandNorthEast";
-            this.innkeeperIslandNorthEast.Size = new System.Drawing.Size(134, 22);
-            this.innkeeperIslandNorthEast.Text = "North East";
-            // 
-            // innkeeperIslandSouthWest
-            // 
-            this.innkeeperIslandSouthWest.Name = "innkeeperIslandSouthWest";
-            this.innkeeperIslandSouthWest.Size = new System.Drawing.Size(134, 22);
-            this.innkeeperIslandSouthWest.Text = "South West";
-            // 
-            // innkeeperIslandSouthEast
-            // 
-            this.innkeeperIslandSouthEast.Name = "innkeeperIslandSouthEast";
-            this.innkeeperIslandSouthEast.Size = new System.Drawing.Size(134, 22);
-            this.innkeeperIslandSouthEast.Text = "South East";
-            // 
-            // markers
-            // 
-            this.markers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.markerPirateShip,
-            this.markerMoonstones,
-            this.markerGoodResources,
-            this.markerBronzeChest,
-            this.markerSilverChest,
-            this.markerSpiderQueen,
-            this.markerCompass,
-            this.markerX,
-            this.markerQuestion});
-            this.markers.Image = global::SaltCharts.Properties.Resources.MarkerIcon;
-            this.markers.Name = "markers";
-            this.markers.Size = new System.Drawing.Size(193, 22);
-            this.markers.Text = "Markers";
-            // 
-            // markerPirateShip
-            // 
-            this.markerPirateShip.Name = "markerPirateShip";
-            this.markerPirateShip.Size = new System.Drawing.Size(159, 22);
-            this.markerPirateShip.Text = "Pirate Ship";
-            // 
-            // markerMoonstones
-            // 
-            this.markerMoonstones.Name = "markerMoonstones";
-            this.markerMoonstones.Size = new System.Drawing.Size(159, 22);
-            this.markerMoonstones.Text = "Moonstones";
-            // 
-            // markerGoodResources
-            // 
-            this.markerGoodResources.Name = "markerGoodResources";
-            this.markerGoodResources.Size = new System.Drawing.Size(159, 22);
-            this.markerGoodResources.Text = "Good Resources";
-            // 
-            // markerBronzeChest
-            // 
-            this.markerBronzeChest.Name = "markerBronzeChest";
-            this.markerBronzeChest.Size = new System.Drawing.Size(159, 22);
-            this.markerBronzeChest.Text = "Bronze Chest";
-            // 
-            // markerSilverChest
-            // 
-            this.markerSilverChest.Name = "markerSilverChest";
-            this.markerSilverChest.Size = new System.Drawing.Size(159, 22);
-            this.markerSilverChest.Text = "Silver Chest";
-            // 
-            // markerSpiderQueen
-            // 
-            this.markerSpiderQueen.Name = "markerSpiderQueen";
-            this.markerSpiderQueen.Size = new System.Drawing.Size(159, 22);
-            this.markerSpiderQueen.Text = "SpiderQueen";
-            // 
-            // markerCompass
-            // 
-            this.markerCompass.Name = "markerCompass";
-            this.markerCompass.Size = new System.Drawing.Size(159, 22);
-            this.markerCompass.Text = "Compass";
-            // 
-            // markerX
-            // 
-            this.markerX.Name = "markerX";
-            this.markerX.Size = new System.Drawing.Size(159, 22);
-            this.markerX.Text = "X";
-            // 
-            // markerQuestion
-            // 
-            this.markerQuestion.Name = "markerQuestion";
-            this.markerQuestion.Size = new System.Drawing.Size(159, 22);
-            this.markerQuestion.Text = "Question";
             // 
             // statusStrip1
             // 
@@ -686,7 +124,7 @@
             this.statusRawCoord,
             this.statusPoint,
             this.statusChartLocation});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 625);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 640);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1280, 22);
             this.statusStrip1.TabIndex = 3;
@@ -725,6 +163,10 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -732,17 +174,11 @@
             this.btnOpen,
             this.btnSave,
             this.btnSaveImage,
-            this.toolStripSeparator1,
             this.btnInfo,
-            this.btnWest,
-            this.btnEast,
-            this.btnNorth,
-            this.btnSouth,
-            this.btnCenterMap,
             this.btnSettings});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(123, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1157, 31);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -784,12 +220,7 @@
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(28, 28);
             this.btnSaveImage.Text = "Save Map As Image";
-            this.btnSaveImage.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.btnSaveImage.Click += new System.EventHandler(this.btnSaveImage_Click);
             // 
             // btnInfo
             // 
@@ -801,56 +232,6 @@
             this.btnInfo.Size = new System.Drawing.Size(28, 28);
             this.btnInfo.Text = "About";
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
-            // 
-            // btnWest
-            // 
-            this.btnWest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnWest.Image = global::SaltCharts.Properties.Resources.left;
-            this.btnWest.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnWest.Name = "btnWest";
-            this.btnWest.Size = new System.Drawing.Size(28, 28);
-            this.btnWest.Text = "Move Map West";
-            this.btnWest.Click += new System.EventHandler(this.btnWest_Click);
-            // 
-            // btnEast
-            // 
-            this.btnEast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEast.Image = global::SaltCharts.Properties.Resources.right;
-            this.btnEast.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEast.Name = "btnEast";
-            this.btnEast.Size = new System.Drawing.Size(28, 28);
-            this.btnEast.Text = "Move Map East";
-            this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
-            // 
-            // btnNorth
-            // 
-            this.btnNorth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNorth.Image = global::SaltCharts.Properties.Resources.up;
-            this.btnNorth.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNorth.Name = "btnNorth";
-            this.btnNorth.Size = new System.Drawing.Size(28, 28);
-            this.btnNorth.Text = "Move Map North";
-            this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
-            // 
-            // btnSouth
-            // 
-            this.btnSouth.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSouth.Image = global::SaltCharts.Properties.Resources.down;
-            this.btnSouth.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSouth.Name = "btnSouth";
-            this.btnSouth.Size = new System.Drawing.Size(28, 28);
-            this.btnSouth.Text = "Move Map South";
-            this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
-            // 
-            // btnCenterMap
-            // 
-            this.btnCenterMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCenterMap.Image = global::SaltCharts.Properties.Resources.globe;
-            this.btnCenterMap.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCenterMap.Name = "btnCenterMap";
-            this.btnCenterMap.Size = new System.Drawing.Size(28, 28);
-            this.btnCenterMap.Text = "Center Map";
-            this.btnCenterMap.Click += new System.EventHandler(this.btnCenterMap_Click);
             // 
             // btnSettings
             // 
@@ -869,19 +250,360 @@
             this.openFileDialog1.Filter = "Map File|*.map";
             this.openFileDialog1.Title = "Select Map File";
             // 
-            // mnuWaypointRightClick
+            // btnNoIsland
             // 
-            this.mnuWaypointRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteWaypointToolStripMenuItem1});
-            this.mnuWaypointRightClick.Name = "mnuWaypointRightClick";
-            this.mnuWaypointRightClick.Size = new System.Drawing.Size(162, 26);
+            this.btnNoIsland.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNoIsland.BackgroundImage = global::SaltCharts.Properties.Resources.No;
+            this.btnNoIsland.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNoIsland.Checked = true;
+            this.btnNoIsland.Location = new System.Drawing.Point(8, 3);
+            this.btnNoIsland.Name = "btnNoIsland";
+            this.btnNoIsland.Size = new System.Drawing.Size(50, 50);
+            this.btnNoIsland.TabIndex = 57;
+            this.btnNoIsland.TabStop = true;
+            this.btnNoIsland.Tag = SaltCharts.IslandType.None;
+            this.toolTip1.SetToolTip(this.btnNoIsland, "No Island");
+            this.btnNoIsland.UseVisualStyleBackColor = true;
             // 
-            // deleteWaypointToolStripMenuItem1
+            // btnSingle
             // 
-            this.deleteWaypointToolStripMenuItem1.Name = "deleteWaypointToolStripMenuItem1";
-            this.deleteWaypointToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.deleteWaypointToolStripMenuItem1.Text = "Delete Waypoint";
-            this.deleteWaypointToolStripMenuItem1.Click += new System.EventHandler(this.deleteWaypointToolStripMenuItem1_Click);
+            this.btnSingle.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSingle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSingle.BackgroundImage")));
+            this.btnSingle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSingle.Location = new System.Drawing.Point(66, 3);
+            this.btnSingle.Name = "btnSingle";
+            this.btnSingle.Size = new System.Drawing.Size(50, 50);
+            this.btnSingle.TabIndex = 58;
+            this.btnSingle.Tag = SaltCharts.IslandType.Single;
+            this.toolTip1.SetToolTip(this.btnSingle, "Single Island");
+            this.btnSingle.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton8.BackgroundImage")));
+            this.radioButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton8.Location = new System.Drawing.Point(66, 59);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(50, 50);
+            this.radioButton8.TabIndex = 60;
+            this.radioButton8.Tag = SaltCharts.IslandType.NorthEast;
+            this.toolTip1.SetToolTip(this.radioButton8, "NorthEast Island");
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton9.BackgroundImage")));
+            this.radioButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton9.Location = new System.Drawing.Point(8, 59);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(50, 50);
+            this.radioButton9.TabIndex = 59;
+            this.radioButton9.Tag = SaltCharts.IslandType.NorthWest;
+            this.toolTip1.SetToolTip(this.radioButton9, "NorthWest Island");
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton10.BackgroundImage")));
+            this.radioButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton10.Location = new System.Drawing.Point(66, 115);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(50, 50);
+            this.radioButton10.TabIndex = 62;
+            this.radioButton10.Tag = SaltCharts.IslandType.SouthEast;
+            this.toolTip1.SetToolTip(this.radioButton10, "SouthEast Island");
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton11.BackgroundImage")));
+            this.radioButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton11.Location = new System.Drawing.Point(8, 115);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(50, 50);
+            this.radioButton11.TabIndex = 61;
+            this.radioButton11.Tag = SaltCharts.IslandType.SouthWest;
+            this.toolTip1.SetToolTip(this.radioButton11, "SouthWest Island");
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateShip
+            // 
+            this.btnPirateShip.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateShip.BackgroundImage = global::SaltCharts.Properties.Resources.PirateShip;
+            this.btnPirateShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateShip.Location = new System.Drawing.Point(80, 128);
+            this.btnPirateShip.Name = "btnPirateShip";
+            this.btnPirateShip.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateShip.TabIndex = 47;
+            this.btnPirateShip.Tag = SaltCharts.MarkerType.PirateShip;
+            this.toolTip1.SetToolTip(this.btnPirateShip, "Pirate Ship");
+            this.btnPirateShip.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateTownship
+            // 
+            this.btnPirateTownship.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateTownship.BackgroundImage = global::SaltCharts.Properties.Resources.PirateTownship;
+            this.btnPirateTownship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateTownship.Location = new System.Drawing.Point(44, 128);
+            this.btnPirateTownship.Name = "btnPirateTownship";
+            this.btnPirateTownship.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateTownship.TabIndex = 46;
+            this.btnPirateTownship.Tag = SaltCharts.MarkerType.PirateTownship;
+            this.toolTip1.SetToolTip(this.btnPirateTownship, "Pirate Township");
+            this.btnPirateTownship.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateCamp
+            // 
+            this.btnPirateCamp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateCamp.BackgroundImage = global::SaltCharts.Properties.Resources.PirateCamp;
+            this.btnPirateCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateCamp.Location = new System.Drawing.Point(8, 128);
+            this.btnPirateCamp.Name = "btnPirateCamp";
+            this.btnPirateCamp.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateCamp.TabIndex = 45;
+            this.btnPirateCamp.Tag = SaltCharts.MarkerType.PirateCamp;
+            this.toolTip1.SetToolTip(this.btnPirateCamp, "Pirate Camp");
+            this.btnPirateCamp.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.BackgroundImage = global::SaltCharts.Properties.Resources.GoodResources;
+            this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton1.Location = new System.Drawing.Point(80, 87);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(35, 35);
+            this.radioButton1.TabIndex = 44;
+            this.radioButton1.Tag = SaltCharts.MarkerType.GoodResources;
+            this.toolTip1.SetToolTip(this.radioButton1, "Good Resources");
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientAltar
+            // 
+            this.btnAncientAltar.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientAltar.BackgroundImage = global::SaltCharts.Properties.Resources.AncientAltar;
+            this.btnAncientAltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientAltar.Location = new System.Drawing.Point(44, 87);
+            this.btnAncientAltar.Name = "btnAncientAltar";
+            this.btnAncientAltar.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientAltar.TabIndex = 43;
+            this.btnAncientAltar.Tag = SaltCharts.MarkerType.AncientAltar;
+            this.toolTip1.SetToolTip(this.btnAncientAltar, "Ancient Altar");
+            this.btnAncientAltar.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientRuins
+            // 
+            this.btnAncientRuins.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientRuins.BackgroundImage = global::SaltCharts.Properties.Resources.AncientRuins;
+            this.btnAncientRuins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientRuins.Location = new System.Drawing.Point(8, 87);
+            this.btnAncientRuins.Name = "btnAncientRuins";
+            this.btnAncientRuins.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientRuins.TabIndex = 42;
+            this.btnAncientRuins.Tag = SaltCharts.MarkerType.AncientRuins;
+            this.toolTip1.SetToolTip(this.btnAncientRuins, "Ancient Ruins");
+            this.btnAncientRuins.UseVisualStyleBackColor = true;
+            // 
+            // btnHuntingCamp
+            // 
+            this.btnHuntingCamp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnHuntingCamp.BackgroundImage = global::SaltCharts.Properties.Resources.HuntingCamp;
+            this.btnHuntingCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHuntingCamp.Location = new System.Drawing.Point(80, 46);
+            this.btnHuntingCamp.Name = "btnHuntingCamp";
+            this.btnHuntingCamp.Size = new System.Drawing.Size(35, 35);
+            this.btnHuntingCamp.TabIndex = 41;
+            this.btnHuntingCamp.Tag = SaltCharts.MarkerType.HuntingCamp;
+            this.toolTip1.SetToolTip(this.btnHuntingCamp, "Hunting Camp");
+            this.btnHuntingCamp.UseVisualStyleBackColor = true;
+            // 
+            // btnInnkeeper
+            // 
+            this.btnInnkeeper.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnInnkeeper.BackgroundImage = global::SaltCharts.Properties.Resources.Innkeeper;
+            this.btnInnkeeper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInnkeeper.Location = new System.Drawing.Point(44, 46);
+            this.btnInnkeeper.Name = "btnInnkeeper";
+            this.btnInnkeeper.Size = new System.Drawing.Size(35, 35);
+            this.btnInnkeeper.TabIndex = 40;
+            this.btnInnkeeper.Tag = SaltCharts.MarkerType.Innkeeper;
+            this.toolTip1.SetToolTip(this.btnInnkeeper, "Innkeeper");
+            this.btnInnkeeper.UseVisualStyleBackColor = true;
+            // 
+            // btnMerchant
+            // 
+            this.btnMerchant.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnMerchant.BackgroundImage = global::SaltCharts.Properties.Resources.Merchant;
+            this.btnMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMerchant.Location = new System.Drawing.Point(8, 46);
+            this.btnMerchant.Name = "btnMerchant";
+            this.btnMerchant.Size = new System.Drawing.Size(35, 35);
+            this.btnMerchant.TabIndex = 39;
+            this.btnMerchant.Tag = SaltCharts.MarkerType.Merchant;
+            this.toolTip1.SetToolTip(this.btnMerchant, "Merchant");
+            this.btnMerchant.UseVisualStyleBackColor = true;
+            // 
+            // btnHighMountain
+            // 
+            this.btnHighMountain.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnHighMountain.BackgroundImage = global::SaltCharts.Properties.Resources.HighMountain;
+            this.btnHighMountain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHighMountain.Location = new System.Drawing.Point(81, 5);
+            this.btnHighMountain.Name = "btnHighMountain";
+            this.btnHighMountain.Size = new System.Drawing.Size(35, 35);
+            this.btnHighMountain.TabIndex = 38;
+            this.btnHighMountain.Tag = SaltCharts.MarkerType.HighMountain;
+            this.toolTip1.SetToolTip(this.btnHighMountain, "High Mountain");
+            this.btnHighMountain.UseVisualStyleBackColor = true;
+            // 
+            // btnDesert
+            // 
+            this.btnDesert.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDesert.BackgroundImage = global::SaltCharts.Properties.Resources.Desert;
+            this.btnDesert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDesert.Location = new System.Drawing.Point(45, 5);
+            this.btnDesert.Name = "btnDesert";
+            this.btnDesert.Size = new System.Drawing.Size(35, 35);
+            this.btnDesert.TabIndex = 37;
+            this.btnDesert.Tag = SaltCharts.MarkerType.Desert;
+            this.toolTip1.SetToolTip(this.btnDesert, "Desert");
+            this.btnDesert.UseVisualStyleBackColor = true;
+            // 
+            // btnNoMarker
+            // 
+            this.btnNoMarker.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNoMarker.BackgroundImage = global::SaltCharts.Properties.Resources.No;
+            this.btnNoMarker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNoMarker.Checked = true;
+            this.btnNoMarker.Location = new System.Drawing.Point(8, 5);
+            this.btnNoMarker.Name = "btnNoMarker";
+            this.btnNoMarker.Size = new System.Drawing.Size(35, 35);
+            this.btnNoMarker.TabIndex = 36;
+            this.btnNoMarker.TabStop = true;
+            this.btnNoMarker.Tag = SaltCharts.MarkerType.None;
+            this.toolTip1.SetToolTip(this.btnNoMarker, "No Marker");
+            this.btnNoMarker.UseVisualStyleBackColor = true;
+            // 
+            // btnQuestion
+            // 
+            this.btnQuestion.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnQuestion.BackgroundImage = global::SaltCharts.Properties.Resources.Question;
+            this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnQuestion.Location = new System.Drawing.Point(80, 251);
+            this.btnQuestion.Name = "btnQuestion";
+            this.btnQuestion.Size = new System.Drawing.Size(35, 35);
+            this.btnQuestion.TabIndex = 56;
+            this.btnQuestion.Tag = SaltCharts.MarkerType.Question;
+            this.toolTip1.SetToolTip(this.btnQuestion, "Question");
+            this.btnQuestion.UseVisualStyleBackColor = true;
+            // 
+            // btnX
+            // 
+            this.btnX.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnX.BackgroundImage = global::SaltCharts.Properties.Resources.X;
+            this.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnX.Location = new System.Drawing.Point(44, 251);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(35, 35);
+            this.btnX.TabIndex = 55;
+            this.btnX.Tag = SaltCharts.MarkerType.X;
+            this.toolTip1.SetToolTip(this.btnX, "X");
+            this.btnX.UseVisualStyleBackColor = true;
+            // 
+            // btnFlower
+            // 
+            this.btnFlower.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnFlower.BackgroundImage = global::SaltCharts.Properties.Resources.Flower;
+            this.btnFlower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFlower.Location = new System.Drawing.Point(8, 251);
+            this.btnFlower.Name = "btnFlower";
+            this.btnFlower.Size = new System.Drawing.Size(35, 35);
+            this.btnFlower.TabIndex = 54;
+            this.btnFlower.Tag = SaltCharts.MarkerType.Flower;
+            this.toolTip1.SetToolTip(this.btnFlower, "Hightop Bloom");
+            this.btnFlower.UseVisualStyleBackColor = true;
+            // 
+            // btnDeer
+            // 
+            this.btnDeer.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDeer.BackgroundImage = global::SaltCharts.Properties.Resources.Deer;
+            this.btnDeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeer.Location = new System.Drawing.Point(80, 210);
+            this.btnDeer.Name = "btnDeer";
+            this.btnDeer.Size = new System.Drawing.Size(35, 35);
+            this.btnDeer.TabIndex = 53;
+            this.btnDeer.Tag = SaltCharts.MarkerType.Deer;
+            this.toolTip1.SetToolTip(this.btnDeer, "Deer");
+            this.btnDeer.UseVisualStyleBackColor = true;
+            // 
+            // btnSpiderQueen
+            // 
+            this.btnSpiderQueen.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSpiderQueen.BackgroundImage = global::SaltCharts.Properties.Resources.SpiderQueen;
+            this.btnSpiderQueen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSpiderQueen.Location = new System.Drawing.Point(44, 210);
+            this.btnSpiderQueen.Name = "btnSpiderQueen";
+            this.btnSpiderQueen.Size = new System.Drawing.Size(35, 35);
+            this.btnSpiderQueen.TabIndex = 52;
+            this.btnSpiderQueen.Tag = SaltCharts.MarkerType.SpiderQueen;
+            this.toolTip1.SetToolTip(this.btnSpiderQueen, "Spider Queen");
+            this.btnSpiderQueen.UseVisualStyleBackColor = true;
+            // 
+            // btnMoonrock
+            // 
+            this.btnMoonrock.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnMoonrock.BackgroundImage = global::SaltCharts.Properties.Resources.Moonrock;
+            this.btnMoonrock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMoonrock.Location = new System.Drawing.Point(8, 210);
+            this.btnMoonrock.Name = "btnMoonrock";
+            this.btnMoonrock.Size = new System.Drawing.Size(35, 35);
+            this.btnMoonrock.TabIndex = 51;
+            this.btnMoonrock.Tag = SaltCharts.MarkerType.Moonrock;
+            this.toolTip1.SetToolTip(this.btnMoonrock, "Moonrocks");
+            this.btnMoonrock.UseVisualStyleBackColor = true;
+            // 
+            // btnCompass
+            // 
+            this.btnCompass.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnCompass.BackgroundImage = global::SaltCharts.Properties.Resources.Compass;
+            this.btnCompass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCompass.Location = new System.Drawing.Point(80, 169);
+            this.btnCompass.Name = "btnCompass";
+            this.btnCompass.Size = new System.Drawing.Size(35, 35);
+            this.btnCompass.TabIndex = 50;
+            this.btnCompass.Tag = SaltCharts.MarkerType.Compass;
+            this.toolTip1.SetToolTip(this.btnCompass, "Compass");
+            this.btnCompass.UseVisualStyleBackColor = true;
+            // 
+            // btnSilverChest
+            // 
+            this.btnSilverChest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSilverChest.BackgroundImage = global::SaltCharts.Properties.Resources.SilverChest;
+            this.btnSilverChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSilverChest.Location = new System.Drawing.Point(44, 169);
+            this.btnSilverChest.Name = "btnSilverChest";
+            this.btnSilverChest.Size = new System.Drawing.Size(35, 35);
+            this.btnSilverChest.TabIndex = 49;
+            this.btnSilverChest.Tag = SaltCharts.MarkerType.SilverChest;
+            this.toolTip1.SetToolTip(this.btnSilverChest, "Silver Chest");
+            this.btnSilverChest.UseVisualStyleBackColor = true;
+            // 
+            // btnBronzeChest
+            // 
+            this.btnBronzeChest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnBronzeChest.BackgroundImage = global::SaltCharts.Properties.Resources.BronzeChest;
+            this.btnBronzeChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBronzeChest.Location = new System.Drawing.Point(8, 169);
+            this.btnBronzeChest.Name = "btnBronzeChest";
+            this.btnBronzeChest.Size = new System.Drawing.Size(35, 35);
+            this.btnBronzeChest.TabIndex = 48;
+            this.btnBronzeChest.Tag = SaltCharts.MarkerType.BronzeChest;
+            this.toolTip1.SetToolTip(this.btnBronzeChest, "Bronze Chest");
+            this.btnBronzeChest.UseVisualStyleBackColor = true;
             // 
             // imageSaveDialog
             // 
@@ -889,28 +611,137 @@
             this.imageSaveDialog.Filter = "Portable Network Graphic|*.png|JPEG|*.jpg|Graphics Interchange Format|*.gif|Bitma" +
     "p Image|*.bmp|Tagged Image File Format|*.tif";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEast);
+            this.panel1.Controls.Add(this.btnWest);
+            this.panel1.Controls.Add(this.btnSouth);
+            this.panel1.Controls.Add(this.btnCenter);
+            this.panel1.Controls.Add(this.btnNorth);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(123, 116);
+            this.panel1.TabIndex = 5;
+            // 
+            // btnEast
+            // 
+            this.btnEast.Image = global::SaltCharts.Properties.Resources.right;
+            this.btnEast.Location = new System.Drawing.Point(80, 40);
+            this.btnEast.Name = "btnEast";
+            this.btnEast.Size = new System.Drawing.Size(35, 35);
+            this.btnEast.TabIndex = 4;
+            this.btnEast.UseVisualStyleBackColor = true;
+            this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
+            // 
+            // btnWest
+            // 
+            this.btnWest.Image = global::SaltCharts.Properties.Resources.left;
+            this.btnWest.Location = new System.Drawing.Point(8, 40);
+            this.btnWest.Name = "btnWest";
+            this.btnWest.Size = new System.Drawing.Size(35, 35);
+            this.btnWest.TabIndex = 3;
+            this.btnWest.UseVisualStyleBackColor = true;
+            this.btnWest.Click += new System.EventHandler(this.btnWest_Click);
+            // 
+            // btnSouth
+            // 
+            this.btnSouth.Image = global::SaltCharts.Properties.Resources.down;
+            this.btnSouth.Location = new System.Drawing.Point(44, 76);
+            this.btnSouth.Name = "btnSouth";
+            this.btnSouth.Size = new System.Drawing.Size(35, 35);
+            this.btnSouth.TabIndex = 2;
+            this.btnSouth.UseVisualStyleBackColor = true;
+            this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
+            // 
+            // btnCenter
+            // 
+            this.btnCenter.Image = global::SaltCharts.Properties.Resources.globe;
+            this.btnCenter.Location = new System.Drawing.Point(44, 40);
+            this.btnCenter.Name = "btnCenter";
+            this.btnCenter.Size = new System.Drawing.Size(35, 35);
+            this.btnCenter.TabIndex = 1;
+            this.btnCenter.UseVisualStyleBackColor = true;
+            this.btnCenter.Click += new System.EventHandler(this.btnCenter_Click);
+            // 
+            // btnNorth
+            // 
+            this.btnNorth.Image = global::SaltCharts.Properties.Resources.up;
+            this.btnNorth.Location = new System.Drawing.Point(44, 4);
+            this.btnNorth.Name = "btnNorth";
+            this.btnNorth.Size = new System.Drawing.Size(35, 35);
+            this.btnNorth.TabIndex = 0;
+            this.btnNorth.UseVisualStyleBackColor = true;
+            this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
+            // 
+            // markerPanel
+            // 
+            this.markerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.markerPanel.Controls.Add(this.btnQuestion);
+            this.markerPanel.Controls.Add(this.btnX);
+            this.markerPanel.Controls.Add(this.btnFlower);
+            this.markerPanel.Controls.Add(this.btnDeer);
+            this.markerPanel.Controls.Add(this.btnSpiderQueen);
+            this.markerPanel.Controls.Add(this.btnMoonrock);
+            this.markerPanel.Controls.Add(this.btnCompass);
+            this.markerPanel.Controls.Add(this.btnSilverChest);
+            this.markerPanel.Controls.Add(this.btnBronzeChest);
+            this.markerPanel.Controls.Add(this.btnPirateShip);
+            this.markerPanel.Controls.Add(this.btnHighMountain);
+            this.markerPanel.Controls.Add(this.btnPirateTownship);
+            this.markerPanel.Controls.Add(this.btnPirateCamp);
+            this.markerPanel.Controls.Add(this.radioButton1);
+            this.markerPanel.Controls.Add(this.btnAncientAltar);
+            this.markerPanel.Controls.Add(this.btnAncientRuins);
+            this.markerPanel.Controls.Add(this.btnHuntingCamp);
+            this.markerPanel.Controls.Add(this.btnInnkeeper);
+            this.markerPanel.Controls.Add(this.btnMerchant);
+            this.markerPanel.Controls.Add(this.btnDesert);
+            this.markerPanel.Controls.Add(this.btnNoMarker);
+            this.markerPanel.Location = new System.Drawing.Point(0, 288);
+            this.markerPanel.Name = "markerPanel";
+            this.markerPanel.Size = new System.Drawing.Size(123, 350);
+            this.markerPanel.TabIndex = 3;
+            // 
+            // islandPanel
+            // 
+            this.islandPanel.Controls.Add(this.radioButton10);
+            this.islandPanel.Controls.Add(this.radioButton11);
+            this.islandPanel.Controls.Add(this.radioButton8);
+            this.islandPanel.Controls.Add(this.radioButton9);
+            this.islandPanel.Controls.Add(this.btnSingle);
+            this.islandPanel.Controls.Add(this.btnNoIsland);
+            this.islandPanel.Location = new System.Drawing.Point(0, 117);
+            this.islandPanel.Name = "islandPanel";
+            this.islandPanel.Size = new System.Drawing.Size(123, 167);
+            this.islandPanel.TabIndex = 3;
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 647);
+            this.ClientSize = new System.Drawing.Size(1280, 662);
+            this.Controls.Add(this.islandPanel);
+            this.Controls.Add(this.markerPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MapPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "Map";
             this.Text = "Salt Charts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Map_FormClosing);
             this.Load += new System.EventHandler(this.Map_Load);
             this.MapPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).EndInit();
-            this.mnuRightClick.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.mnuWaypointRightClick.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.markerPanel.ResumeLayout(false);
+            this.islandPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -923,97 +754,53 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusCoord;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnCenterMap;
-        private System.Windows.Forms.ContextMenuStrip mnuRightClick;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIsland;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIsland;
         private System.Windows.Forms.ToolStripButton btnSave;
-        private System.Windows.Forms.ToolStripMenuItem merchantIsland;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIsland;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIsland;
-        private System.Windows.Forms.ToolStripMenuItem highMountainsIsland;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ContextMenuStrip mnuWaypointRightClick;
-        private System.Windows.Forms.ToolStripMenuItem deleteWaypointToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem desertIsland;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem uninhabitedIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem desertIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem desertIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem desertIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem desertIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem desertIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem pirateCampIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem pirateTownshipIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem ancientRuinsIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem merchantIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem merchantIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem merchantIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem merchantIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem merchantIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem highMountainIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem highMountainIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem highMountainIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIsland;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem ancientAltarIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIsland;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem huntingCampIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIsland;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSingle;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandNorthWest;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandNorthEast;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSouthWest;
-        private System.Windows.Forms.ToolStripMenuItem innkeeperIslandSouthEast;
-        private System.Windows.Forms.ToolStripMenuItem markers;
-        private System.Windows.Forms.ToolStripMenuItem markerPirateShip;
-        private System.Windows.Forms.ToolStripMenuItem markerMoonstones;
-        private System.Windows.Forms.ToolStripMenuItem markerGoodResources;
-        private System.Windows.Forms.ToolStripMenuItem markerBronzeChest;
-        private System.Windows.Forms.ToolStripMenuItem markerSilverChest;
-        private System.Windows.Forms.ToolStripMenuItem markerSpiderQueen;
-        private System.Windows.Forms.ToolStripMenuItem markerCompass;
-        private System.Windows.Forms.ToolStripMenuItem markerX;
-        private System.Windows.Forms.ToolStripMenuItem markerQuestion;
         private System.Windows.Forms.ToolStripButton btnNew;
         private System.Windows.Forms.ToolStripButton btnOpen;
         private System.Windows.Forms.ToolStripButton btnInfo;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnWest;
-        private System.Windows.Forms.ToolStripButton btnEast;
-        private System.Windows.Forms.ToolStripButton btnNorth;
-        private System.Windows.Forms.ToolStripButton btnSouth;
         private System.Windows.Forms.ToolStripStatusLabel statusPoint;
         private System.Windows.Forms.ToolStripStatusLabel statusRawCoord;
         private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
         private System.Windows.Forms.ToolStripButton btnSettings;
         private System.Windows.Forms.ToolStripButton btnSaveImage;
         private System.Windows.Forms.SaveFileDialog imageSaveDialog;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEast;
+        private System.Windows.Forms.Button btnWest;
+        private System.Windows.Forms.Button btnSouth;
+        private System.Windows.Forms.Button btnCenter;
+        private System.Windows.Forms.Button btnNorth;
+        private System.Windows.Forms.RadioButton btnPirateShip;
+        private System.Windows.Forms.RadioButton btnPirateTownship;
+        private System.Windows.Forms.RadioButton btnPirateCamp;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton btnAncientAltar;
+        private System.Windows.Forms.RadioButton btnAncientRuins;
+        private System.Windows.Forms.RadioButton btnHuntingCamp;
+        private System.Windows.Forms.RadioButton btnInnkeeper;
+        private System.Windows.Forms.RadioButton btnMerchant;
+        private System.Windows.Forms.RadioButton btnHighMountain;
+        private System.Windows.Forms.RadioButton btnDesert;
+        private System.Windows.Forms.RadioButton btnNoMarker;
+        private System.Windows.Forms.Panel markerPanel;
+        private System.Windows.Forms.RadioButton btnCompass;
+        private System.Windows.Forms.RadioButton btnSilverChest;
+        private System.Windows.Forms.RadioButton btnBronzeChest;
+        private System.Windows.Forms.RadioButton btnQuestion;
+        private System.Windows.Forms.RadioButton btnX;
+        private System.Windows.Forms.RadioButton btnFlower;
+        private System.Windows.Forms.RadioButton btnDeer;
+        private System.Windows.Forms.RadioButton btnSpiderQueen;
+        private System.Windows.Forms.RadioButton btnMoonrock;
+        private System.Windows.Forms.Panel islandPanel;
+        private System.Windows.Forms.RadioButton btnSingle;
+        private System.Windows.Forms.RadioButton btnNoIsland;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
 
     }
 }

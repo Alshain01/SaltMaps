@@ -12,8 +12,8 @@ namespace SaltCharts
 {
     public partial class PoiDetails : Form
     {
-        private MapPoint _mapPoint;
-        public PoiDetails(MapPoint mp)
+        private Waypoint _mapPoint;
+        public PoiDetails(Waypoint mp)
         {
             InitializeComponent();
 

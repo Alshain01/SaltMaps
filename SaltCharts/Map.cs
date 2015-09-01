@@ -14,24 +14,36 @@ namespace SaltCharts
      public partial class Map : Form
     {
         private const string MAP_EXTENSION = ".map";
-        private const string SETTINGS_FILE = "Settings.cfg";
         private const string DEFAULT_SEED = "Default";
 
-        private List<MapPoint> mapPoints;
-        //private Config _config;
+        private List<Waypoint> waypoints;
         private string mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + DEFAULT_SEED + MAP_EXTENSION;
-        //private string _settingsFile = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SETTINGS_FILE;
         private Point mouseDownLoc;
-        private Point rightMouseDownLoc;
+        //private Point rightMouseDownLoc;
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
 
         public Map()
         {
             InitializeComponent();
-            LoadConfigFile();
+            LoadMapFile();
             PlotMapPoints();
-            DelegateEvents();
             btnSave.Enabled = false;
+        }
+
+        private void setDebug(bool state)
+        {
+            // Set Debug Options On
+            statusPoint.Visible = state;
+            statusRawCoord.Visible = state;
+            statusChartLocation.Visible = state;
+        }
+
+        private void setDebug()
+        {
+            setDebug(SaltCharts.Properties.Settings.Default.Debug);
+            #if DEBUG // Override settings for compiler directive
+                setDebug(true);
+            #endif
         }
 
         /*
@@ -49,22 +61,96 @@ namespace SaltCharts
          */
         private void PlotMapPoints()
         {
-            foreach (var mp in mapPoints)
-                AddPOIToMap(mp);
+            foreach (var mp in waypoints)
+                AddWaypointToMap(mp);
+        }
+
+        /*
+         * Place the center of the map image in the center of the map panel.
+         */
+        private void CenterMap()
+        {
+            SeaChart.Location = new Point(-(SeaChart.Image.Width / 2 - MapPanel.Width / 2), -(SeaChart.Image.Height / 2 - MapPanel.Height / 2));
+        }
+
+        private void LoadMapFile()
+        {
+            var serializer = new YamlSerializer();
+            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + MAP_EXTENSION;
+
+            if (File.Exists(mapFilepath))
+            {
+                var obj = serializer.DeserializeFromFile(mapFilepath);
+                waypoints = (List<Waypoint>)obj[0];
+            }
+            else
+                waypoints = new List<Waypoint>();
+
+
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(SaltCharts.Properties.Settings.Default.LastMapFile).ToString();
+        }
+
+        private void SaveMapFile()
+        {
+            var serializer = new YamlSerializer();
+            serializer.SerializeToFile(mapFilepath, waypoints);
+        }
+
+        public void EnableSaveButton()
+        {
+            if (SaltCharts.Properties.Settings.Default.AutoSave)
+                SaveMapFile();
+            else
+                btnSave.Enabled = true;
+        }
+
+        private void AddWaypointToMap(Waypoint wp)
+        {
+            // Draw the waypoint image over the map.
+            var wpImg = new PictureBox();
+            // Properties
+            wpImg.SizeMode = PictureBoxSizeMode.AutoSize;
+            wpImg.Parent = SeaChart;
+            wpImg.BackColor = Color.Transparent;
+            wpImg.Location = wp.getLocation();
+            wpImg.Image = wp.getImage();
+            wpImg.BringToFront();
+            wpImg.Tag = wp;
+
+            //Events
+            wpImg.MouseUp += Waypoint_MouseUp;
+            wpImg.MouseEnter += Waypoint_MouseEnter;
+            wpImg.MouseDown += Waypoint_MouseDown;
+
+            //Add to storage
+            pictureBoxes.Add(wpImg);
+        }
+
+        private void Map_Load(object sender, EventArgs e)
+        {
+            this.Size = SaltCharts.Properties.Settings.Default.FormSize;
+            this.Location = SaltCharts.Properties.Settings.Default.FormLocation;
+            this.WindowState = SaltCharts.Properties.Settings.Default.FormState;
+            btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            CenterMap();
+            setDebug();
+        }
+
+        private void Map_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaltCharts.Properties.Settings.Default.FormState = this.WindowState;
+            SaltCharts.Properties.Settings.Default.FormSize = this.Size;
+            SaltCharts.Properties.Settings.Default.FormLocation = this.Location;
+            SaltCharts.Properties.Settings.Default.Save();
         }
 
         private void SeaChart_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDownLoc = e.Location;
             if (e.Button == MouseButtons.Left)
-            {
                 this.Cursor = Cursors.Hand;
-            }
-            else if(e.Button == MouseButtons.Right)
-            {
-                rightMouseDownLoc = e.Location;
-            }
-
+            else if (e.Button == MouseButtons.Right)
+                addWaypoint(e.Location);
         }
 
         private void SeaChart_MouseUp(object sender, MouseEventArgs e)
@@ -89,149 +175,73 @@ namespace SaltCharts
             }
             else if (e.Button == MouseButtons.None)
             {
-                statusCoord.Text = MapPoint.getFormatted(e.Location);
+                statusCoord.Text = Waypoint.getFormatted(e.Location);
+                
+                // Debug information
                 statusPoint.Text = string.Format("Point: {0},{1}", e.Location.X, e.Location.Y);
-                statusRawCoord.Text = string.Format("Raw Coordinate: {0},{1}", MapPoint.getCoordinate(e.Location.X), MapPoint.getCoordinate(e.Location.Y));
+                statusRawCoord.Text = string.Format("Raw Coordinate: {0},{1}", Waypoint.getCoordinate(e.Location.X), Waypoint.getCoordinate(e.Location.Y));
                 statusChartLocation.Text = string.Format("Chart Location: {0}, {1}", SeaChart.Location.X, SeaChart.Location.Y);
             }
         }
 
-
-        private void btnCenterMap_Click(object sender, EventArgs e)
+        /*
+         * Event Handler for all context menu clicks (except delete)
+         */
+        private void addWaypoint(Point location)
         {
-            CenterMap();
-        }
+            IslandType island = getActiveIsland();
+            MarkerType marker = getActiveMarker();
 
-        private void CenterMap()
-        {
-            SeaChart.Location = new Point(-(SeaChart.Image.Width / 2 - MapPanel.Width / 2), -(SeaChart.Image.Height / 2 - MapPanel.Height / 2));
-            //SeaChart.Location = new Point(-1434, -1769);
-        }
-
-        private void AddPOIToMap(MapPoint mp)
-        {
-            
-            var newPic = new PictureBox();
-            newPic.SizeMode = PictureBoxSizeMode.AutoSize;
-            newPic.Parent = SeaChart;
-            newPic.BackColor = Color.Transparent;
-            
-            newPic.Location = mp.getPosition();
-
-            string imageName = (mp.PoiSubType != POISubType.None && mp.PoiSubType != POISubType.Single) 
-                ? mp.PoiType.ToString() + mp.PoiSubType.ToString() : mp.PoiType.ToString();
-
-            newPic.Image = (Image)SaltCharts.Properties.Resources.ResourceManager.GetObject(imageName);
-            newPic.BringToFront();
-            newPic.Tag = mp;
-            newPic.ContextMenuStrip = mnuWaypointRightClick;
-            newPic.Click += Waypoint_Click;
-            newPic.MouseEnter += Waypoint_MouseEnter;
-            newPic.MouseDown += Waypoint_MouseDown;
-            pictureBoxes.Add(newPic);
-        }
-
-        void Waypoint_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDownLoc = e.Location;
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Cursor = Cursors.Hand;
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                rightMouseDownLoc = e.Location;
-            }
-        }
-
-        private void Waypoint_Click(object sender, EventArgs e)
-        {
-            PictureBox pb = (PictureBox)sender;
-            MapPoint mp = (MapPoint)pb.Tag;
-            var frm = new PoiDetails(mp);
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
-            frm.ShowDialog(this);
-        }
-
-        private void Waypoint_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pix = ((PictureBox)sender);
-            MapPoint mp = (MapPoint)pix.Tag;
-            statusCoord.Text = mp.ToString();
-            toolTip1.SetToolTip(pix, mp.Notes);
-        }
-
-        private void LoadConfigFile()
-        {
-            
-            var serializer = new YamlSerializer();
-            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + MAP_EXTENSION;
-
-            if (File.Exists(mapFilepath))
-            {
-                var obj = serializer.DeserializeFromFile(mapFilepath);
-                mapPoints = (List<MapPoint>)obj[0];
-            }
-            else
-                mapPoints = new List<MapPoint>();
-
-
-            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(SaltCharts.Properties.Settings.Default.LastMapFile).ToString();
-        }
-
-        private void SaveConfigfile()
-        {
-            var serializer = new YamlSerializer();
-            serializer.SerializeToFile(mapFilepath, mapPoints);
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveConfigfile();
-            btnSave.Enabled = false;
-        }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            string mapName = Interaction.InputBox("Map name? (This is usually the name of the seed you used when you created your world)", "New Map");
-            if (string.IsNullOrEmpty(mapName))
-            {
-                MessageBox.Show("You must enter a name for the map.", "Map Name Required!", MessageBoxButtons.OK);
+            if (island == IslandType.None && marker == MarkerType.None)
                 return;
-            }
 
-            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + mapName + MAP_EXTENSION;
-            SaltCharts.Properties.Settings.Default.LastMapFile = mapName;
-
-            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(mapName).ToString();
-            btnSave.Enabled = false;
-            mapPoints = new List<MapPoint>();
-
-            //clear all the map points
-            ClearMapPoints();
-        }
-
-        public void EnableSaveButton()
-        {
+            Waypoint wp = new Waypoint(location, marker, island);
+            waypoints.Add(wp);
+            AddWaypointToMap(wp);
             if (SaltCharts.Properties.Settings.Default.AutoSave)
-                SaveConfigfile();
+                SaveMapFile();
             else
                 btnSave.Enabled = true;
         }
 
-        private void btnOpen_Click(object sender, EventArgs e)
-        {
-            if(openFileDialog1.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-            {
-                ClearMapPoints();
-                SaltCharts.Properties.Settings.Default.LastMapFile = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
-                LoadConfigFile();
-                PlotMapPoints();
+         private IslandType getActiveIsland()
+         {
+            IslandType island = IslandType.None;
+            foreach (RadioButton b in islandPanel.Controls)
+                if (b.Checked)
+                {
+                    island = (IslandType)b.Tag;
+                    break;
+                }
+            return island;
+         }
 
-                this.Text = "Salt Charts - " + SaltCharts.Properties.Settings.Default.LastMapFile;
-            }
+         private MarkerType getActiveMarker()
+         {
+             MarkerType marker = MarkerType.None;
+             foreach (RadioButton b in markerPanel.Controls)
+                 if (b.Checked)
+                 {
+                     marker = (MarkerType)b.Tag;
+                     break;
+                 }
+             return marker;
+         }
+
+         private void deleteWaypoint(PictureBox waypointPicBox)
+        {
+            Waypoint wp = (Waypoint)waypointPicBox.Tag;
+            if(!String.IsNullOrEmpty(wp.Name) || !String.IsNullOrEmpty(wp.Notes))
+                if(MessageBox.Show("This waypoint has notes. Are you sure you want to delete it?", "Are you sure?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.OK)
+                    return;
+
+            waypoints.Remove(wp);
+            waypointPicBox.Dispose();
+            
+            if (SaltCharts.Properties.Settings.Default.AutoSave)
+                SaveMapFile();
+            else
+                btnSave.Enabled = true;
         }
 
         private void deleteWaypointToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -249,134 +259,115 @@ namespace SaltCharts
                 }
             }
 
-                        
+
             if (waypointPB != null)
             {
-                var mp = (MapPoint)waypointPB.Tag;
-                mapPoints.Remove(mp);
+                var mp = (Waypoint)waypointPB.Tag;
+                waypoints.Remove(mp);
                 waypointPB.Dispose();
                 if (SaltCharts.Properties.Settings.Default.AutoSave)
-                    SaveConfigfile();
+                    SaveMapFile();
                 else
                     btnSave.Enabled = true;
             }
         }
 
-        /*
-         * Event Handler for all context menu clicks (except delete)
-         */
-        private void addPOI(object sender, EventArgs e, POIType type, POISubType subType)
+        void Waypoint_MouseDown(object sender, MouseEventArgs e)
         {
-            MapPoint mp = new MapPoint(mouseDownLoc, type, subType);
-            mapPoints.Add(mp);
-            AddPOIToMap(mp);
-            if (SaltCharts.Properties.Settings.Default.AutoSave)
-                SaveConfigfile();
-            else
-                btnSave.Enabled = true;
-        }
-         
-        /*
-         * Define the click events with custom arguments for the context menu
-         */
-        private void DelegateEvents()
-        {
-            // Uninhabited Island
-            this.uninhabitedIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.Single); };
-            this.uninhabitedIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.NorthWest); };
-            this.uninhabitedIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.NorthEast); };
-            this.uninhabitedIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.SouthWest); };
-            this.uninhabitedIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.UninhabitedIsland, POISubType.SouthEast); };
-
-            // Desert Island
-            this.desertIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.Single); };
-            this.desertIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.NorthWest); };
-            this.desertIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.NorthEast); };
-            this.desertIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.SouthWest); };
-            this.desertIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.DesertIsland, POISubType.SouthEast); };
-
-            //High Mountain Island
-            this.highMountainIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.Single); };
-            this.highMountainIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.NorthWest); };
-            this.highMountainIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.NorthEast); };
-            this.highMountainIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.SouthWest); };
-            this.highMountainIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HighMountainIsland, POISubType.SouthEast); };
-
-            // Pirate Camp Island
-            this.pirateCampIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.Single); };
-            this.pirateCampIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.NorthWest); };
-            this.pirateCampIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.NorthEast); };
-            this.pirateCampIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.SouthWest); };
-            this.pirateCampIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateCampIsland, POISubType.SouthEast); };
-
-            // Pirate Township Island
-            this.pirateTownshipIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.Single); };
-            this.pirateTownshipIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.NorthWest); };
-            this.pirateTownshipIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.NorthEast); };
-            this.pirateTownshipIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.SouthWest); };
-            this.pirateTownshipIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.PirateTownshipIsland, POISubType.SouthEast); };
-
-            // Ancient Ruins Island
-            this.ancientRuinsIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.Single); };
-            this.ancientRuinsIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.NorthWest); };
-            this.ancientRuinsIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.NorthEast); };
-            this.ancientRuinsIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.SouthWest); };
-            this.ancientRuinsIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientRuinsIsland, POISubType.SouthEast); };
-
-            // Ancient Ruins Island
-            this.ancientAltarIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.Single); };
-            this.ancientAltarIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.NorthWest); };
-            this.ancientAltarIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.NorthEast); };
-            this.ancientAltarIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.SouthWest); };
-            this.ancientAltarIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.AncientAltarIsland, POISubType.SouthEast); };
-
-            // Merchant Island
-            this.merchantIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.Single); };
-            this.merchantIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.NorthWest); };
-            this.merchantIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.NorthEast); };
-            this.merchantIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.SouthWest); };
-            this.merchantIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MerchantIsland, POISubType.SouthEast); };
-
-            // Hunting Camp
-            this.huntingCampIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.Single); };
-            this.huntingCampIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.NorthWest); };
-            this.huntingCampIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.NorthEast); };
-            this.huntingCampIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.SouthWest); };
-            this.huntingCampIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.HuntingCampIsland, POISubType.SouthEast); };
-
-            //Innkeeper
-            this.innkeeperIslandSingle.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.Single); };
-            this.innkeeperIslandNorthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.NorthWest); };
-            this.innkeeperIslandNorthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.NorthEast); };
-            this.innkeeperIslandSouthWest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.SouthWest); };
-            this.innkeeperIslandSouthEast.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.InnkeeperIsland, POISubType.SouthEast); };
-
-            //Markers
-            this.markerPirateShip.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerPirateShip, POISubType.None); };
-            this.markerMoonstones.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerMoonstones, POISubType.None); };
-            this.markerGoodResources.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerGoodResources, POISubType.None); };
-            this.markerBronzeChest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerBronzeChest, POISubType.None); };
-            this.markerSilverChest.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerSilverChest, POISubType.None); };
-            this.markerCompass.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerCompass, POISubType.None); };
-            this.markerSpiderQueen.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerSpiderQueen, POISubType.None); };
-            this.markerX.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerX, POISubType.None); };
-            this.markerQuestion.Click += delegate(object sender, System.EventArgs e) { this.addPOI(sender, e, POIType.MarkerQuestion, POISubType.None); };
+            mouseDownLoc = e.Location;
+            if (e.Button == MouseButtons.Left)
+                this.Cursor = Cursors.Hand;
         }
 
-        private void btnInfo_Click(object sender, EventArgs e)
+        private void Waypoint_MouseUp(object sender, MouseEventArgs e)
         {
-            var about = new AboutBox();
-            about.ShowDialog(this);
+            if (e.Button == MouseButtons.Left)
+            {
+                PictureBox pb = (PictureBox)sender;
+                Waypoint mp = (Waypoint)pb.Tag;
+                var frm = new PoiDetails(mp);
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
+                frm.ShowDialog(this);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                if (btnNoIsland.Checked && btnNoMarker.Checked)
+                    deleteWaypoint((PictureBox)sender);
+                else
+                {
+                    IslandType island = getActiveIsland();
+                    MarkerType marker = getActiveMarker();
+                    PictureBox pb = (PictureBox)sender;
+                    Waypoint wp = (Waypoint)pb.Tag;
+                    bool updated = false;
+
+                    if (wp.Island != island || wp.Marker != marker)
+                    {
+                        wp.Island = island;
+                        wp.Marker = marker;
+                        pb.Image = wp.getImage();
+                    }
+                }
+            }
         }
 
-        private void Map_Load(object sender, EventArgs e)
+        private void Waypoint_MouseEnter(object sender, EventArgs e)
         {
-            this.Size = SaltCharts.Properties.Settings.Default.FormSize;
-            this.Location = SaltCharts.Properties.Settings.Default.FormLocation;
-            this.WindowState = SaltCharts.Properties.Settings.Default.FormState;
-            btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
+            PictureBox pix = ((PictureBox)sender);
+            Waypoint mp = (Waypoint)pix.Tag;
+            statusCoord.Text = mp.ToString();
+            toolTip1.SetToolTip(pix, mp.Notes);
+        }
+
+        #region Button Click Events
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            string mapName = Interaction.InputBox("Map name? (This is usually the name of the seed you used when you created your world)", "New Map");
+            if (string.IsNullOrEmpty(mapName))
+            {
+                MessageBox.Show("You must enter a name for the map.", "Map Name Required!", MessageBoxButtons.OK);
+                return;
+            }
+
+            mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + mapName + MAP_EXTENSION;
+            SaltCharts.Properties.Settings.Default.LastMapFile = mapName;
+
+            this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(mapName).ToString();
+            btnSave.Enabled = false;
+            waypoints = new List<Waypoint>();
+
+            //clear all the map points
+            ClearMapPoints();
+        }
+
+        private void btnCenter_Click(object sender, EventArgs e)
+        {
             CenterMap();
-            setDebug();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveMapFile();
+            btnSave.Enabled = false;
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                ClearMapPoints();
+                SaltCharts.Properties.Settings.Default.LastMapFile = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
+                LoadMapFile();
+                PlotMapPoints();
+
+                this.Text = "Salt Charts - " + SaltCharts.Properties.Settings.Default.LastMapFile;
+            }
+        }
+
+        private void btnNorth_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (MapPanel.Height / 2), -1));
         }
 
         private void btnWest_Click(object sender, EventArgs e)
@@ -387,11 +378,6 @@ namespace SaltCharts
         private void btnEast_Click(object sender, EventArgs e)
         {
             SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (MapPanel.Width / 2), -(SeaChart.Image.Width - MapPanel.Width)), SeaChart.Location.Y);
-        }
-
-        private void btnNorth_Click(object sender, EventArgs e)
-        {
-            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (MapPanel.Height / 2), -1));
         }
 
         private void btnSouth_Click(object sender, EventArgs e)
@@ -408,7 +394,7 @@ namespace SaltCharts
             if (btnSave.Enabled && auto)
             {
                 // Trigger and immediate autosave if necessary.
-                SaveConfigfile();
+                SaveMapFile();
                 btnSave.Enabled = false;
             }
             btnSave.Visible = !auto;
@@ -416,23 +402,13 @@ namespace SaltCharts
             setDebug();
         }
 
-        private void setDebug(bool state)
+        private void btnInfo_Click(object sender, EventArgs e)
         {
-            // Set Debug Options On
-            statusPoint.Visible = state;
-            statusRawCoord.Visible = state;
-            statusChartLocation.Visible = state;
+            var about = new AboutBox();
+            about.ShowDialog(this);
         }
 
-        private void setDebug()
-        {
-            setDebug(SaltCharts.Properties.Settings.Default.Debug);
-            #if DEBUG // Override settings for compiler directive
-                setDebug(true);
-            #endif
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void btnSaveImage_Click(object sender, EventArgs e)
         {
             imageSaveDialog.FileName = SaltCharts.Properties.Settings.Default.LastMapFile + ".png";
             if (imageSaveDialog.ShowDialog() == DialogResult.OK)
@@ -440,14 +416,9 @@ namespace SaltCharts
                 // Build the Image
                 Bitmap bmp = new Bitmap(SaltCharts.Properties.Resources.Grid);
                 Graphics g = Graphics.FromImage(bmp);
-                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
-                foreach (MapPoint mp in mapPoints)
-                {
-                    string imageName = (mp.PoiSubType != POISubType.None && mp.PoiSubType != POISubType.Single)
-                        ? mp.PoiType.ToString() + mp.PoiSubType.ToString() : mp.PoiType.ToString();
-
-                    g.DrawImageUnscaled((Image)SaltCharts.Properties.Resources.ResourceManager.GetObject(imageName), mp.getPosition().X, mp.getPosition().Y);
-                }
+                //g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                foreach (Waypoint mp in waypoints)
+                    g.DrawImageUnscaled(mp.getImage(), mp.getLocation().X, mp.getLocation().Y);
 
                 // Find the format
                 ImageFormat format;
@@ -456,7 +427,7 @@ namespace SaltCharts
                 if (split.GetLength(0) < 2)
                     extension = ".err";
                 else
-                    extension = split[0];
+                    extension = split[1];
 
                 switch (extension.ToLower())
                 {
@@ -486,13 +457,6 @@ namespace SaltCharts
             }
 
         }
-
-        private void Map_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaltCharts.Properties.Settings.Default.FormState = this.WindowState;
-            SaltCharts.Properties.Settings.Default.FormSize = this.Size;
-            SaltCharts.Properties.Settings.Default.FormLocation = this.Location;
-            SaltCharts.Properties.Settings.Default.Save();
-        }
+        #endregion
     }
 }

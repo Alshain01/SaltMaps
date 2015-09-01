@@ -73,9 +73,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIcon {
+        internal static System.Drawing.Bitmap AncientAltar {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("AncientAltar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIsland {
+        internal static System.Drawing.Bitmap AncientRuins {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIsland", resourceCulture);
+                object obj = ResourceManager.GetObject("AncientRuins", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIslandNorthEast {
+        internal static System.Drawing.Bitmap BronzeChest {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIslandNorthEast", resourceCulture);
+                object obj = ResourceManager.GetObject("BronzeChest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIslandNorthWest {
+        internal static System.Drawing.Bitmap Cell {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIslandNorthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("Cell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIslandSouthEast {
+        internal static System.Drawing.Bitmap Compass {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIslandSouthEast", resourceCulture);
+                object obj = ResourceManager.GetObject("Compass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientAltarIslandSouthWest {
+        internal static System.Drawing.Bitmap Deer {
             get {
-                object obj = ResourceManager.GetObject("AncientAltarIslandSouthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("Deer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,129 +133,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIcon {
+        internal static System.Drawing.Bitmap Desert {
             get {
-                object obj = ResourceManager.GetObject("AncientRuinsIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIsland {
-            get {
-                object obj = ResourceManager.GetObject("AncientRuinsIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("AncientRuinsIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("AncientRuinsIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("AncientRuinsIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AncientRuinsIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("AncientRuinsIslandSouthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap compass {
-            get {
-                object obj = ResourceManager.GetObject("compass", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIcon {
-            get {
-                object obj = ResourceManager.GetObject("DesertIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIsland {
-            get {
-                object obj = ResourceManager.GetObject("DesertIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("DesertIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("DesertIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("DesertIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DesertIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("DesertIslandSouthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("Desert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +163,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Flower {
+            get {
+                object obj = ResourceManager.GetObject("Flower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gear {
             get {
                 object obj = ResourceManager.GetObject("gear", resourceCulture);
@@ -303,6 +193,16 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GoodResources {
+            get {
+                object obj = ResourceManager.GetObject("GoodResources", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grid {
             get {
                 object obj = ResourceManager.GetObject("Grid", resourceCulture);
@@ -313,9 +213,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIcon {
+        internal static System.Drawing.Bitmap HighMountain {
             get {
-                object obj = ResourceManager.GetObject("HighMountainIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("HighMountain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,109 +223,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIsland {
+        internal static System.Drawing.Bitmap HuntingCamp {
             get {
-                object obj = ResourceManager.GetObject("HighMountainIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("HighMountainIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("HighMountainIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("HighMountainIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HighMountainIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("HighMountainIslandSouthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIcon {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIsland {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap HuntingCampIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("HuntingCampIslandSouthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("HuntingCamp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,59 +243,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap InkeeperIcon {
+        internal static System.Drawing.Bitmap Innkeeper {
             get {
-                object obj = ResourceManager.GetObject("InkeeperIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InnkeeperIsland {
-            get {
-                object obj = ResourceManager.GetObject("InnkeeperIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InnkeeperIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("InnkeeperIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InnkeeperIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("InnkeeperIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InnkeeperIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("InnkeeperIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InnkeeperIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("InnkeeperIslandSouthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("Innkeeper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +273,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerBronzeChest {
+        internal static System.Drawing.Bitmap Merchant {
             get {
-                object obj = ResourceManager.GetObject("MarkerBronzeChest", resourceCulture);
+                object obj = ResourceManager.GetObject("Merchant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,9 +283,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerCompass {
+        internal static System.Drawing.Bitmap Moonrock {
             get {
-                object obj = ResourceManager.GetObject("MarkerCompass", resourceCulture);
+                object obj = ResourceManager.GetObject("Moonrock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +293,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerGoodResources {
+        internal static System.Drawing.Bitmap No {
             get {
-                object obj = ResourceManager.GetObject("MarkerGoodResources", resourceCulture);
+                object obj = ResourceManager.GetObject("No", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,9 +303,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerIcon {
+        internal static System.Drawing.Bitmap NorthEast {
             get {
-                object obj = ResourceManager.GetObject("MarkerIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("NorthEast", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,9 +313,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerMoonstones {
+        internal static System.Drawing.Bitmap NorthWest {
             get {
-                object obj = ResourceManager.GetObject("MarkerMoonstones", resourceCulture);
+                object obj = ResourceManager.GetObject("NorthWest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,9 +323,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerPirateShip {
+        internal static System.Drawing.Bitmap PirateCamp {
             get {
-                object obj = ResourceManager.GetObject("MarkerPirateShip", resourceCulture);
+                object obj = ResourceManager.GetObject("PirateCamp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +333,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerQuestion {
+        internal static System.Drawing.Bitmap PirateShip {
             get {
-                object obj = ResourceManager.GetObject("MarkerQuestion", resourceCulture);
+                object obj = ResourceManager.GetObject("PirateShip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,9 +343,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerSilverChest {
+        internal static System.Drawing.Bitmap PirateTownship {
             get {
-                object obj = ResourceManager.GetObject("MarkerSilverChest", resourceCulture);
+                object obj = ResourceManager.GetObject("PirateTownship", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,199 +353,9 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MarkerSpiderQueen {
+        internal static System.Drawing.Bitmap Question {
             get {
-                object obj = ResourceManager.GetObject("MarkerSpiderQueen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MarkerX {
-            get {
-                object obj = ResourceManager.GetObject("MarkerX", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIcon {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIsland {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MerchantIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("MerchantIslandSouthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIcon {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIsland {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateCampIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("PirateCampIslandSouthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateShipIcon {
-            get {
-                object obj = ResourceManager.GetObject("PirateShipIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateTownshipIsland {
-            get {
-                object obj = ResourceManager.GetObject("PirateTownshipIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateTownshipIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("PirateTownshipIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateTownshipIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("PirateTownshipIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateTownshipIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("PirateTownshipIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PirateTownshipIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("PirateTownshipIslandSouthWest", resourceCulture);
+                object obj = ResourceManager.GetObject("Question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -833,6 +393,56 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SilverChest {
+            get {
+                object obj = ResourceManager.GetObject("SilverChest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Single {
+            get {
+                object obj = ResourceManager.GetObject("Single", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SouthEast {
+            get {
+                object obj = ResourceManager.GetObject("SouthEast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SouthWest {
+            get {
+                object obj = ResourceManager.GetObject("SouthWest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpiderQueen {
+            get {
+                object obj = ResourceManager.GetObject("SpiderQueen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap start_here_icon {
             get {
                 object obj = ResourceManager.GetObject("start_here_icon", resourceCulture);
@@ -843,79 +453,19 @@ namespace SaltCharts.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TownshipIcon {
-            get {
-                object obj = ResourceManager.GetObject("TownshipIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIsland {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIslandIcon {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIslandIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIslandNorthEast {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIslandNorthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIslandNorthWest {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIslandNorthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIslandSouthEast {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIslandSouthEast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UninhabitedIslandSouthWest {
-            get {
-                object obj = ResourceManager.GetObject("UninhabitedIslandSouthWest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap up {
             get {
                 object obj = ResourceManager.GetObject("up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X {
+            get {
+                object obj = ResourceManager.GetObject("X", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

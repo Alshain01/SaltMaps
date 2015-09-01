@@ -1,29 +1,31 @@
 ﻿namespace SaltCharts
 {
-    public enum POIType
+    public enum MarkerType
     {
-        UninhabitedIsland,
-        DesertIsland,
-        HighMountainIsland,
-        PirateCampIsland,
-        PirateTownshipIsland,
-        AncientRuinsIsland,
-        AncientAltarIsland,
-        MerchantIsland,
-        HuntingCampIsland,
-        InnkeeperIsland,
-        MarkerPirateShip,
-        MarkerMoonstones,
-        MarkerGoodResources,
-        MarkerBronzeChest,
-        MarkerSilverChest,
-        MarkerCompass,
-        MarkerX,
-        MarkerSpiderQueen,
-        MarkerQuestion
+        None,
+        Desert,
+        HighMountain,
+        PirateCamp,
+        PirateTownship,
+        AncientRuins,
+        AncientAltar,
+        Merchant,
+        HuntingCamp,
+        Innkeeper,
+        PirateShip,
+        Moonrock,
+        GoodResources,
+        BronzeChest,
+        SilverChest,
+        Compass,
+        X,
+        SpiderQueen,
+        Deer,
+        Flower,
+        Question
     }
 
-    public enum POISubType
+    public enum IslandType
     {
         None,
         Single,
