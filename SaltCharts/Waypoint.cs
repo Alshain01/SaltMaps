@@ -35,32 +35,17 @@ namespace SaltCharts
         {
             this.X = getCoordinate(p.X);
             this.Y = getCoordinate(p.Y);
-            this.getCoordinates(p.X, p.Y);
             this.Marker = marker;
             this.Island = island;
             this.Name = string.Empty;
        }
 
-        private void getCoordinates(int xPix, int yPix)
-        {
-            //calc east/west
-            int xCoordinate = xPix - GRID_CENTER;
-            if (xCoordinate != 0)
-                xCoordinate = (xCoordinate + Math.Abs(xCoordinate) / xCoordinate * (CELL_SIZE / 2)) / CELL_SIZE;
-
-            //calc north south
-            int yCoordinate = yPix - GRID_CENTER;
-            if (yCoordinate != 0)
-                yCoordinate = (yCoordinate + Math.Abs(yCoordinate) / yCoordinate * (CELL_SIZE / 2)) / CELL_SIZE;
-
-            this.X = xCoordinate;
-            this.Y = yCoordinate;
-        }
-
         public Point getLocation()
         {
             int yPos = Y * CELL_SIZE + GRID_CENTER - CELL_SIZE / 2;
-            if (Y >= 0) yPos++; // There is a 1 pixel inconsistency in the grid image along the 0 x-axis.
+            // These lines correct for slight inconsitencies in the map.
+            if (Y >= 0) yPos++; 
+            if (Y >= 40) yPos++;
 
             return new Point (X * CELL_SIZE + GRID_CENTER - CELL_SIZE /2 -1, yPos);
         }

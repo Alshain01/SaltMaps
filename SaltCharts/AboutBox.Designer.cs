@@ -28,6 +28,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.labelSource = new System.Windows.Forms.Label();
+            this.labelDiscussion = new System.Windows.Forms.Label();
             this.labelReleases = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelProductName = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.textBoxContributors = new System.Windows.Forms.TextBox();
-            this.labelDiscussion = new System.Windows.Forms.Label();
-            this.labelSource = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,40 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(417, 265);
             this.tableLayoutPanel.TabIndex = 0;
             this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_Paint);
+            // 
+            // labelSource
+            // 
+            this.labelSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSource.ForeColor = System.Drawing.Color.Blue;
+            this.labelSource.Location = new System.Drawing.Point(6, 209);
+            this.labelSource.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelSource.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelSource.Name = "labelSource";
+            this.labelSource.Size = new System.Drawing.Size(128, 17);
+            this.labelSource.TabIndex = 28;
+            this.labelSource.Text = "Source Code";
+            this.labelSource.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSource.Click += new System.EventHandler(this.labelSource_Click);
+            this.labelSource.MouseEnter += new System.EventHandler(this.Hyperlink_MouseEnter);
+            this.labelSource.MouseLeave += new System.EventHandler(this.Hyperlink_MouseLeave);
+            // 
+            // labelDiscussion
+            // 
+            this.labelDiscussion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDiscussion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiscussion.ForeColor = System.Drawing.Color.Blue;
+            this.labelDiscussion.Location = new System.Drawing.Point(6, 183);
+            this.labelDiscussion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelDiscussion.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelDiscussion.Name = "labelDiscussion";
+            this.labelDiscussion.Size = new System.Drawing.Size(128, 17);
+            this.labelDiscussion.TabIndex = 27;
+            this.labelDiscussion.Text = "Dsicussion";
+            this.labelDiscussion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDiscussion.Click += new System.EventHandler(this.labelDiscussion_Click);
+            this.labelDiscussion.MouseEnter += new System.EventHandler(this.Hyperlink_MouseEnter);
+            this.labelDiscussion.MouseLeave += new System.EventHandler(this.Hyperlink_MouseLeave);
             // 
             // labelReleases
             // 
@@ -192,40 +226,6 @@
             this.textBoxContributors.TabIndex = 24;
             this.textBoxContributors.TabStop = false;
             this.textBoxContributors.Text = "Contributors";
-            // 
-            // labelDiscussion
-            // 
-            this.labelDiscussion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDiscussion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiscussion.ForeColor = System.Drawing.Color.Blue;
-            this.labelDiscussion.Location = new System.Drawing.Point(6, 183);
-            this.labelDiscussion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelDiscussion.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelDiscussion.Name = "labelDiscussion";
-            this.labelDiscussion.Size = new System.Drawing.Size(128, 17);
-            this.labelDiscussion.TabIndex = 27;
-            this.labelDiscussion.Text = "Dsicussion";
-            this.labelDiscussion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelDiscussion.Click += new System.EventHandler(this.labelDiscussion_Click);
-            this.labelDiscussion.MouseEnter += new System.EventHandler(this.Hyperlink_MouseEnter);
-            this.labelDiscussion.MouseLeave += new System.EventHandler(this.Hyperlink_MouseLeave);
-            // 
-            // labelSource
-            // 
-            this.labelSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSource.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSource.ForeColor = System.Drawing.Color.Blue;
-            this.labelSource.Location = new System.Drawing.Point(6, 209);
-            this.labelSource.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelSource.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelSource.Name = "labelSource";
-            this.labelSource.Size = new System.Drawing.Size(128, 17);
-            this.labelSource.TabIndex = 28;
-            this.labelSource.Text = "Source Code";
-            this.labelSource.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSource.Click += new System.EventHandler(this.labelSource_Click);
-            this.labelSource.MouseEnter += new System.EventHandler(this.Hyperlink_MouseEnter);
-            this.labelSource.MouseLeave += new System.EventHandler(this.Hyperlink_MouseLeave);
             // 
             // AboutBox
             // 

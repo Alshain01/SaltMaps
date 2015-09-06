@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -101,7 +102,6 @@
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="WaypointType.cs" />
-    <Compile Include="Config.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +114,11 @@
     <Compile Include="Map.Designer.cs">
       <DependentUpon>Map.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoiDetails.cs">
+    <Compile Include="WaypointDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PoiDetails.Designer.cs">
-      <DependentUpon>PoiDetails.cs</DependentUpon>
+    <Compile Include="WaypointDetails.Designer.cs">
+      <DependentUpon>WaypointDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Waypoint.cs" />
     <Compile Include="Program.cs" />
@@ -128,7 +128,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,8 +137,8 @@
     <EmbeddedResource Include="Map.resx">
       <DependentUpon>Map.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PoiDetails.resx">
-      <DependentUpon>PoiDetails.cs</DependentUpon>
+    <EmbeddedResource Include="WaypointDetails.resx">
+      <DependentUpon>WaypointDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

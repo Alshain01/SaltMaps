@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SaltCharts
 {
-    public partial class PoiDetails : Form
+    public partial class WaypointDetails : Form
     {
         private Waypoint _mapPoint;
-        public PoiDetails(Waypoint mp)
+        public WaypointDetails(Waypoint mp)
         {
             InitializeComponent();
 

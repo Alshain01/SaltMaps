@@ -20,7 +20,6 @@ namespace SaltCharts
         private string mapFilepath = Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + DEFAULT_SEED + MAP_EXTENSION;
         private Point mouseDownLoc;
         private Point mapBoxLoc;
-        //private Point rightMouseDownLoc;
         private List<PictureBox> pictureBoxes = new List<PictureBox>();
 
         public Map()
@@ -275,7 +274,7 @@ namespace SaltCharts
             {
                 PictureBox pb = (PictureBox)sender;
                 Waypoint mp = (Waypoint)pb.Tag;
-                var frm = new PoiDetails(mp);
+                var frm = new WaypointDetails(mp);
                 frm.StartPosition = FormStartPosition.Manual;
                 frm.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
                 frm.ShowDialog(this);

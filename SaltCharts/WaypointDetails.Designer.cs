@@ -1,6 +1,6 @@
 ﻿namespace SaltCharts
 {
-    partial class PoiDetails
+    partial class WaypointDetails
     {
         /// <summary>
         /// Required designer variable.
