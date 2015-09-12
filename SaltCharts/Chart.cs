@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using System.Yaml.Serialization;
 using Microsoft.VisualBasic;
 
 namespace SaltCharts
@@ -92,7 +88,6 @@ namespace SaltCharts
             pb.BackColor = Color.Transparent;
             pb.Image = item.GetImage();
             pb.BringToFront();
-            pb.Tag = item;
             //Events
             pb.MouseMove += IMapItem_MouseMove;
 
@@ -275,12 +270,13 @@ namespace SaltCharts
 
         private void Waypoint_MouseUp(object sender, MouseEventArgs e)
         {
+            PictureBox pb = (PictureBox)sender;
+            Waypoint wp = map.GetWaypoint(pb.Location);
             this.Cursor = Cursors.Arrow;
-            if (e.Button == MouseButtons.Left && mapBoxLoc.Equals(((PictureBox)sender).Parent.Location))
+
+            if (e.Button == MouseButtons.Left && mapBoxLoc.Equals(pb.Parent.Location))
             {
-                PictureBox pb = (PictureBox)sender;
-                Waypoint mp = (Waypoint)pb.Tag;
-                var frm = new WaypointDetails(mp);
+                var frm = new WaypointDetails(wp);
                 frm.StartPosition = FormStartPosition.Manual;
                 frm.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
                 frm.ShowDialog(this);
@@ -288,18 +284,13 @@ namespace SaltCharts
             else if (e.Button == MouseButtons.Right)
             {
                 if (btnNoIsland.Checked && btnNoMarker.Checked)
-                    DeleteWaypoint((PictureBox)sender);
+                    DeleteWaypoint(pb);
                 else if (btnStamp.Checked)
-                {
-                    Point wpLoc = ((PictureBox)sender).Location;
-                    AddStamp(new Point(wpLoc.X + e.Location.X, wpLoc.Y + e.Location.Y));
-                }
+                    AddStamp(new Point(pb.Location.X + e.Location.X, pb.Location.Y + e.Location.Y));
                 else
                 {
                     IslandType island = ActiveIsland();
                     MarkerType marker = ActiveMarker();
-                    PictureBox pb = (PictureBox)sender;
-                    Waypoint wp = (Waypoint)pb.Tag;
 
                     if (wp.Island != island || wp.Marker != marker)
                     {
@@ -314,7 +305,7 @@ namespace SaltCharts
         private void Waypoint_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pix = ((PictureBox)sender);
-            Waypoint mp = (Waypoint)pix.Tag;
+            Waypoint mp = map.GetWaypoint(pix.Location);
             statusCoord.Text = mp.ToString();
             if(!String.IsNullOrEmpty(mp.Name))
                 statusName.Text = "Name: " + mp.Name;
@@ -389,11 +380,6 @@ namespace SaltCharts
             ClearMap();
         }
 
-        private void btnCenter_Click(object sender, EventArgs e)
-        {
-            CenterMap();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             FileIO.Save(Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + MAP_EXTENSION, map);
@@ -411,26 +397,6 @@ namespace SaltCharts
 
                 this.Text = new StringBuilder("Salt Charts v").Append(Application.ProductVersion).Append(" - ").Append(SaltCharts.Properties.Settings.Default.LastMapFile).ToString();
             }
-        }
-
-        private void btnNorth_Click(object sender, EventArgs e)
-        {
-            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (panelChart.Height / 2), -1));
-        }
-
-        private void btnWest_Click(object sender, EventArgs e)
-        {
-            SeaChart.Location = new Point(Math.Min(SeaChart.Location.X + (panelChart.Width / 2), -1), SeaChart.Location.Y);
-        }
-
-        private void btnEast_Click(object sender, EventArgs e)
-        {
-            SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (panelChart.Width / 2), -(SeaChart.Image.Width - panelChart.Width)), SeaChart.Location.Y);
-        }
-
-        private void btnSouth_Click(object sender, EventArgs e)
-        {
-            SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (panelChart.Height / 2), -(SeaChart.Image.Height - panelChart.Height)));
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -463,6 +429,31 @@ namespace SaltCharts
         private void btnHelp_Click(object sender, EventArgs e)
         {
             new Help().Show(this);
+        }
+
+        private void btnCenter_Click(object sender, EventArgs e)
+        {
+            CenterMap();
+        }
+         
+        private void btnNorth_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Min(SeaChart.Location.Y + (panelChart.Height / 2), -1));
+        }
+
+        private void btnWest_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(Math.Min(SeaChart.Location.X + (panelChart.Width / 2), -1), SeaChart.Location.Y);
+        }
+
+        private void btnEast_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(Math.Max(SeaChart.Location.X - (panelChart.Width / 2), -(SeaChart.Image.Width - panelChart.Width)), SeaChart.Location.Y);
+        }
+
+        private void btnSouth_Click(object sender, EventArgs e)
+        {
+            SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (panelChart.Height / 2), -(SeaChart.Image.Height - panelChart.Height)));
         }
         #endregion
 
