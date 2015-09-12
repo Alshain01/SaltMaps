@@ -918,8 +918,8 @@
             this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "Chart";
             this.Text = "Salt Charts";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Map_FormClosing);
-            this.Load += new System.EventHandler(this.Map_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chart_FormClosing);
+            this.Load += new System.EventHandler(this.Chart_Load);
             this.panelChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).EndInit();
             this.statusStrip1.ResumeLayout(false);
