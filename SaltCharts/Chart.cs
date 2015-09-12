@@ -89,17 +89,15 @@ namespace SaltCharts
             pb.Image = item.GetImage();
             pb.BringToFront();
             pb.MouseMove += IMapItem_MouseMove;
+            pb.Location = item.GetLocation();
 
             if (item.GetType() == typeof(Stamp))
             {
-                //Stamps should be centered at the mouse click
-                pb.Location = new Point(item.GetLocation().X - pb.Size.Width / 2, item.GetLocation().Y - pb.Size.Height / 2);
                 pb.MouseUp += Stamp_MouseUp;
                 pb.MouseDown += Stamp_MouseDown;
             }
             else if (item.GetType() == typeof(Waypoint))
             {
-                pb.Location = item.GetLocation();
                 pb.MouseUp += Waypoint_MouseUp;
                 pb.MouseEnter += Waypoint_MouseEnter;
                 pb.MouseLeave += Waypoint_MouseLeave;
@@ -144,7 +142,9 @@ namespace SaltCharts
             if (marker == MarkerType.None)
                 return;
 
-            AddToMap(map.AddStamp(marker, (int)txtStampSize.Value, location));
+            //Center the location
+            Point centered = new Point(location.X - (int)txtStampSize.Value / 2, location.Y - (int)txtStampSize.Value / 2);
+            AddToMap(map.AddStamp(marker, (int)txtStampSize.Value, centered));
             AutoSave();
         }
 
