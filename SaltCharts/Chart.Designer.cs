@@ -1,6 +1,6 @@
 ﻿namespace SaltCharts
 {
-    partial class Map
+    partial class Chart
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Map));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chart));
             this.panelChart = new System.Windows.Forms.Panel();
             this.SeaChart = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -49,12 +49,18 @@
             this.btnSettings = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnStamp = new System.Windows.Forms.RadioButton();
+            this.btnDeepSea = new System.Windows.Forms.RadioButton();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.btnSingle = new System.Windows.Forms.RadioButton();
             this.btnNoIsland = new System.Windows.Forms.RadioButton();
+            this.btnHighMountain = new System.Windows.Forms.RadioButton();
+            this.btnMerchant = new System.Windows.Forms.RadioButton();
+            this.btnDesert = new System.Windows.Forms.RadioButton();
+            this.btnNoMarker = new System.Windows.Forms.RadioButton();
             this.btnQuestion = new System.Windows.Forms.RadioButton();
             this.btnX = new System.Windows.Forms.RadioButton();
             this.btnFlower = new System.Windows.Forms.RadioButton();
@@ -65,7 +71,6 @@
             this.btnSilverChest = new System.Windows.Forms.RadioButton();
             this.btnBronzeChest = new System.Windows.Forms.RadioButton();
             this.btnPirateShip = new System.Windows.Forms.RadioButton();
-            this.btnHighMountain = new System.Windows.Forms.RadioButton();
             this.btnPirateTownship = new System.Windows.Forms.RadioButton();
             this.btnPirateCamp = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -73,9 +78,7 @@
             this.btnAncientRuins = new System.Windows.Forms.RadioButton();
             this.btnHuntingCamp = new System.Windows.Forms.RadioButton();
             this.btnInnkeeper = new System.Windows.Forms.RadioButton();
-            this.btnMerchant = new System.Windows.Forms.RadioButton();
-            this.btnDesert = new System.Windows.Forms.RadioButton();
-            this.btnNoMarker = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.imageSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.btnEast = new System.Windows.Forms.Button();
@@ -85,6 +88,8 @@
             this.btnNorth = new System.Windows.Forms.Button();
             this.markerPanel = new System.Windows.Forms.Panel();
             this.panelIsland = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtStampSize = new System.Windows.Forms.NumericUpDown();
             this.panelHorizontal = new System.Windows.Forms.Panel();
             this.horizontalNavigation = new System.Windows.Forms.PictureBox();
             this.panelVertical = new System.Windows.Forms.Panel();
@@ -97,6 +102,7 @@
             this.panelNavigation.SuspendLayout();
             this.markerPanel.SuspendLayout();
             this.panelIsland.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStampSize)).BeginInit();
             this.panelHorizontal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalNavigation)).BeginInit();
             this.panelVertical.SuspendLayout();
@@ -129,7 +135,7 @@
             this.SeaChart.LocationChanged += new System.EventHandler(this.SeaChart_LocationChanged);
             this.SeaChart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseDown);
             this.SeaChart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseMove);
-            this.SeaChart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SeaChart_MouseUp);
+            this.SeaChart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Navigation_MouseUp);
             // 
             // statusStrip1
             // 
@@ -292,16 +298,42 @@
             this.openFileDialog1.Filter = "Map File|*.map";
             this.openFileDialog1.Title = "Select Map File";
             // 
+            // btnStamp
+            // 
+            this.btnStamp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnStamp.BackgroundImage = global::SaltCharts.Properties.Resources.stamp_icon;
+            this.btnStamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStamp.Location = new System.Drawing.Point(8, 85);
+            this.btnStamp.Name = "btnStamp";
+            this.btnStamp.Size = new System.Drawing.Size(35, 35);
+            this.btnStamp.TabIndex = 64;
+            this.btnStamp.Tag = "Stamp";
+            this.toolTip1.SetToolTip(this.btnStamp, "Stamp");
+            this.btnStamp.UseVisualStyleBackColor = true;
+            // 
+            // btnDeepSea
+            // 
+            this.btnDeepSea.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDeepSea.BackgroundImage = global::SaltCharts.Properties.Resources.DeepSea;
+            this.btnDeepSea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeepSea.Location = new System.Drawing.Point(8, 44);
+            this.btnDeepSea.Name = "btnDeepSea";
+            this.btnDeepSea.Size = new System.Drawing.Size(35, 35);
+            this.btnDeepSea.TabIndex = 63;
+            this.btnDeepSea.Tag = "DeepSea";
+            this.toolTip1.SetToolTip(this.btnDeepSea, "Deep Sea");
+            this.btnDeepSea.UseVisualStyleBackColor = true;
+            // 
             // radioButton10
             // 
             this.radioButton10.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton10.BackgroundImage")));
             this.radioButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton10.Location = new System.Drawing.Point(66, 115);
+            this.radioButton10.Location = new System.Drawing.Point(80, 85);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(50, 50);
+            this.radioButton10.Size = new System.Drawing.Size(35, 35);
             this.radioButton10.TabIndex = 62;
-            this.radioButton10.Tag = SaltCharts.IslandType.SouthEast;
+            this.radioButton10.Tag = "SouthEast";
             this.toolTip1.SetToolTip(this.radioButton10, "SouthEast Island");
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
@@ -310,11 +342,11 @@
             this.radioButton11.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton11.BackgroundImage")));
             this.radioButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton11.Location = new System.Drawing.Point(8, 115);
+            this.radioButton11.Location = new System.Drawing.Point(44, 85);
             this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(50, 50);
+            this.radioButton11.Size = new System.Drawing.Size(35, 35);
             this.radioButton11.TabIndex = 61;
-            this.radioButton11.Tag = SaltCharts.IslandType.SouthWest;
+            this.radioButton11.Tag = "SouthWest";
             this.toolTip1.SetToolTip(this.radioButton11, "SouthWest Island");
             this.radioButton11.UseVisualStyleBackColor = true;
             // 
@@ -323,11 +355,11 @@
             this.radioButton8.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton8.BackgroundImage")));
             this.radioButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton8.Location = new System.Drawing.Point(66, 59);
+            this.radioButton8.Location = new System.Drawing.Point(80, 44);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(50, 50);
+            this.radioButton8.Size = new System.Drawing.Size(35, 35);
             this.radioButton8.TabIndex = 60;
-            this.radioButton8.Tag = SaltCharts.IslandType.NorthEast;
+            this.radioButton8.Tag = "NorthEast";
             this.toolTip1.SetToolTip(this.radioButton8, "NorthEast Island");
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
@@ -336,11 +368,11 @@
             this.radioButton9.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton9.BackgroundImage")));
             this.radioButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton9.Location = new System.Drawing.Point(8, 59);
+            this.radioButton9.Location = new System.Drawing.Point(44, 44);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(50, 50);
+            this.radioButton9.Size = new System.Drawing.Size(35, 35);
             this.radioButton9.TabIndex = 59;
-            this.radioButton9.Tag = SaltCharts.IslandType.NorthWest;
+            this.radioButton9.Tag = "NorthWest";
             this.toolTip1.SetToolTip(this.radioButton9, "NorthWest Island");
             this.radioButton9.UseVisualStyleBackColor = true;
             // 
@@ -349,11 +381,11 @@
             this.btnSingle.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnSingle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSingle.BackgroundImage")));
             this.btnSingle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSingle.Location = new System.Drawing.Point(66, 3);
+            this.btnSingle.Location = new System.Drawing.Point(44, 3);
             this.btnSingle.Name = "btnSingle";
-            this.btnSingle.Size = new System.Drawing.Size(50, 50);
+            this.btnSingle.Size = new System.Drawing.Size(35, 35);
             this.btnSingle.TabIndex = 58;
-            this.btnSingle.Tag = SaltCharts.IslandType.Single;
+            this.btnSingle.Tag = "Single";
             this.toolTip1.SetToolTip(this.btnSingle, "Single Island");
             this.btnSingle.UseVisualStyleBackColor = true;
             // 
@@ -365,142 +397,12 @@
             this.btnNoIsland.Checked = true;
             this.btnNoIsland.Location = new System.Drawing.Point(8, 3);
             this.btnNoIsland.Name = "btnNoIsland";
-            this.btnNoIsland.Size = new System.Drawing.Size(50, 50);
+            this.btnNoIsland.Size = new System.Drawing.Size(35, 35);
             this.btnNoIsland.TabIndex = 57;
             this.btnNoIsland.TabStop = true;
-            this.btnNoIsland.Tag = SaltCharts.IslandType.None;
+            this.btnNoIsland.Tag = "None";
             this.toolTip1.SetToolTip(this.btnNoIsland, "No Island");
             this.btnNoIsland.UseVisualStyleBackColor = true;
-            // 
-            // btnQuestion
-            // 
-            this.btnQuestion.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnQuestion.BackgroundImage = global::SaltCharts.Properties.Resources.Question;
-            this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnQuestion.Location = new System.Drawing.Point(80, 251);
-            this.btnQuestion.Name = "btnQuestion";
-            this.btnQuestion.Size = new System.Drawing.Size(35, 35);
-            this.btnQuestion.TabIndex = 56;
-            this.btnQuestion.Tag = SaltCharts.MarkerType.Question;
-            this.toolTip1.SetToolTip(this.btnQuestion, "Question");
-            this.btnQuestion.UseVisualStyleBackColor = true;
-            // 
-            // btnX
-            // 
-            this.btnX.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnX.BackgroundImage = global::SaltCharts.Properties.Resources.X;
-            this.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnX.Location = new System.Drawing.Point(44, 251);
-            this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(35, 35);
-            this.btnX.TabIndex = 55;
-            this.btnX.Tag = SaltCharts.MarkerType.X;
-            this.toolTip1.SetToolTip(this.btnX, "X");
-            this.btnX.UseVisualStyleBackColor = true;
-            // 
-            // btnFlower
-            // 
-            this.btnFlower.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnFlower.BackgroundImage = global::SaltCharts.Properties.Resources.Flower;
-            this.btnFlower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFlower.Location = new System.Drawing.Point(8, 251);
-            this.btnFlower.Name = "btnFlower";
-            this.btnFlower.Size = new System.Drawing.Size(35, 35);
-            this.btnFlower.TabIndex = 54;
-            this.btnFlower.Tag = SaltCharts.MarkerType.Flower;
-            this.toolTip1.SetToolTip(this.btnFlower, "Hightop Bloom");
-            this.btnFlower.UseVisualStyleBackColor = true;
-            // 
-            // btnDeer
-            // 
-            this.btnDeer.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnDeer.BackgroundImage = global::SaltCharts.Properties.Resources.Deer;
-            this.btnDeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeer.Location = new System.Drawing.Point(80, 210);
-            this.btnDeer.Name = "btnDeer";
-            this.btnDeer.Size = new System.Drawing.Size(35, 35);
-            this.btnDeer.TabIndex = 53;
-            this.btnDeer.Tag = SaltCharts.MarkerType.Deer;
-            this.toolTip1.SetToolTip(this.btnDeer, "Deer");
-            this.btnDeer.UseVisualStyleBackColor = true;
-            // 
-            // btnSpiderQueen
-            // 
-            this.btnSpiderQueen.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSpiderQueen.BackgroundImage = global::SaltCharts.Properties.Resources.SpiderQueen;
-            this.btnSpiderQueen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSpiderQueen.Location = new System.Drawing.Point(44, 210);
-            this.btnSpiderQueen.Name = "btnSpiderQueen";
-            this.btnSpiderQueen.Size = new System.Drawing.Size(35, 35);
-            this.btnSpiderQueen.TabIndex = 52;
-            this.btnSpiderQueen.Tag = SaltCharts.MarkerType.SpiderQueen;
-            this.toolTip1.SetToolTip(this.btnSpiderQueen, "Spider Queen");
-            this.btnSpiderQueen.UseVisualStyleBackColor = true;
-            // 
-            // btnMoonrock
-            // 
-            this.btnMoonrock.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnMoonrock.BackgroundImage = global::SaltCharts.Properties.Resources.Moonrock;
-            this.btnMoonrock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMoonrock.Location = new System.Drawing.Point(8, 210);
-            this.btnMoonrock.Name = "btnMoonrock";
-            this.btnMoonrock.Size = new System.Drawing.Size(35, 35);
-            this.btnMoonrock.TabIndex = 51;
-            this.btnMoonrock.Tag = SaltCharts.MarkerType.Moonrock;
-            this.toolTip1.SetToolTip(this.btnMoonrock, "Moonrocks");
-            this.btnMoonrock.UseVisualStyleBackColor = true;
-            // 
-            // btnCompass
-            // 
-            this.btnCompass.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCompass.BackgroundImage = global::SaltCharts.Properties.Resources.Compass;
-            this.btnCompass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCompass.Location = new System.Drawing.Point(80, 169);
-            this.btnCompass.Name = "btnCompass";
-            this.btnCompass.Size = new System.Drawing.Size(35, 35);
-            this.btnCompass.TabIndex = 50;
-            this.btnCompass.Tag = SaltCharts.MarkerType.Compass;
-            this.toolTip1.SetToolTip(this.btnCompass, "Compass");
-            this.btnCompass.UseVisualStyleBackColor = true;
-            // 
-            // btnSilverChest
-            // 
-            this.btnSilverChest.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSilverChest.BackgroundImage = global::SaltCharts.Properties.Resources.SilverChest;
-            this.btnSilverChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSilverChest.Location = new System.Drawing.Point(44, 169);
-            this.btnSilverChest.Name = "btnSilverChest";
-            this.btnSilverChest.Size = new System.Drawing.Size(35, 35);
-            this.btnSilverChest.TabIndex = 49;
-            this.btnSilverChest.Tag = SaltCharts.MarkerType.SilverChest;
-            this.toolTip1.SetToolTip(this.btnSilverChest, "Silver Chest");
-            this.btnSilverChest.UseVisualStyleBackColor = true;
-            // 
-            // btnBronzeChest
-            // 
-            this.btnBronzeChest.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnBronzeChest.BackgroundImage = global::SaltCharts.Properties.Resources.BronzeChest;
-            this.btnBronzeChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBronzeChest.Location = new System.Drawing.Point(8, 169);
-            this.btnBronzeChest.Name = "btnBronzeChest";
-            this.btnBronzeChest.Size = new System.Drawing.Size(35, 35);
-            this.btnBronzeChest.TabIndex = 48;
-            this.btnBronzeChest.Tag = SaltCharts.MarkerType.BronzeChest;
-            this.toolTip1.SetToolTip(this.btnBronzeChest, "Bronze Chest");
-            this.btnBronzeChest.UseVisualStyleBackColor = true;
-            // 
-            // btnPirateShip
-            // 
-            this.btnPirateShip.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnPirateShip.BackgroundImage = global::SaltCharts.Properties.Resources.PirateShip;
-            this.btnPirateShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateShip.Location = new System.Drawing.Point(80, 128);
-            this.btnPirateShip.Name = "btnPirateShip";
-            this.btnPirateShip.Size = new System.Drawing.Size(35, 35);
-            this.btnPirateShip.TabIndex = 47;
-            this.btnPirateShip.Tag = SaltCharts.MarkerType.PirateShip;
-            this.toolTip1.SetToolTip(this.btnPirateShip, "Pirate Ship");
-            this.btnPirateShip.UseVisualStyleBackColor = true;
             // 
             // btnHighMountain
             // 
@@ -511,100 +413,9 @@
             this.btnHighMountain.Name = "btnHighMountain";
             this.btnHighMountain.Size = new System.Drawing.Size(35, 35);
             this.btnHighMountain.TabIndex = 38;
-            this.btnHighMountain.Tag = SaltCharts.MarkerType.HighMountain;
+            this.btnHighMountain.Tag = "HighMountain";
             this.toolTip1.SetToolTip(this.btnHighMountain, "High Mountain");
             this.btnHighMountain.UseVisualStyleBackColor = true;
-            // 
-            // btnPirateTownship
-            // 
-            this.btnPirateTownship.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnPirateTownship.BackgroundImage = global::SaltCharts.Properties.Resources.PirateTownship;
-            this.btnPirateTownship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateTownship.Location = new System.Drawing.Point(44, 128);
-            this.btnPirateTownship.Name = "btnPirateTownship";
-            this.btnPirateTownship.Size = new System.Drawing.Size(35, 35);
-            this.btnPirateTownship.TabIndex = 46;
-            this.btnPirateTownship.Tag = SaltCharts.MarkerType.PirateTownship;
-            this.toolTip1.SetToolTip(this.btnPirateTownship, "Pirate Township");
-            this.btnPirateTownship.UseVisualStyleBackColor = true;
-            // 
-            // btnPirateCamp
-            // 
-            this.btnPirateCamp.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnPirateCamp.BackgroundImage = global::SaltCharts.Properties.Resources.PirateCamp;
-            this.btnPirateCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateCamp.Location = new System.Drawing.Point(8, 128);
-            this.btnPirateCamp.Name = "btnPirateCamp";
-            this.btnPirateCamp.Size = new System.Drawing.Size(35, 35);
-            this.btnPirateCamp.TabIndex = 45;
-            this.btnPirateCamp.Tag = SaltCharts.MarkerType.PirateCamp;
-            this.toolTip1.SetToolTip(this.btnPirateCamp, "Pirate Camp");
-            this.btnPirateCamp.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.BackgroundImage = global::SaltCharts.Properties.Resources.GoodResources;
-            this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton1.Location = new System.Drawing.Point(80, 87);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(35, 35);
-            this.radioButton1.TabIndex = 44;
-            this.radioButton1.Tag = SaltCharts.MarkerType.GoodResources;
-            this.toolTip1.SetToolTip(this.radioButton1, "Good Resources");
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnAncientAltar
-            // 
-            this.btnAncientAltar.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnAncientAltar.BackgroundImage = global::SaltCharts.Properties.Resources.AncientAltar;
-            this.btnAncientAltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientAltar.Location = new System.Drawing.Point(44, 87);
-            this.btnAncientAltar.Name = "btnAncientAltar";
-            this.btnAncientAltar.Size = new System.Drawing.Size(35, 35);
-            this.btnAncientAltar.TabIndex = 43;
-            this.btnAncientAltar.Tag = SaltCharts.MarkerType.AncientAltar;
-            this.toolTip1.SetToolTip(this.btnAncientAltar, "Ancient Altar");
-            this.btnAncientAltar.UseVisualStyleBackColor = true;
-            // 
-            // btnAncientRuins
-            // 
-            this.btnAncientRuins.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnAncientRuins.BackgroundImage = global::SaltCharts.Properties.Resources.AncientRuins;
-            this.btnAncientRuins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientRuins.Location = new System.Drawing.Point(8, 87);
-            this.btnAncientRuins.Name = "btnAncientRuins";
-            this.btnAncientRuins.Size = new System.Drawing.Size(35, 35);
-            this.btnAncientRuins.TabIndex = 42;
-            this.btnAncientRuins.Tag = SaltCharts.MarkerType.AncientRuins;
-            this.toolTip1.SetToolTip(this.btnAncientRuins, "Ancient Ruins");
-            this.btnAncientRuins.UseVisualStyleBackColor = true;
-            // 
-            // btnHuntingCamp
-            // 
-            this.btnHuntingCamp.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnHuntingCamp.BackgroundImage = global::SaltCharts.Properties.Resources.HuntingCamp;
-            this.btnHuntingCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHuntingCamp.Location = new System.Drawing.Point(80, 46);
-            this.btnHuntingCamp.Name = "btnHuntingCamp";
-            this.btnHuntingCamp.Size = new System.Drawing.Size(35, 35);
-            this.btnHuntingCamp.TabIndex = 41;
-            this.btnHuntingCamp.Tag = SaltCharts.MarkerType.HuntingCamp;
-            this.toolTip1.SetToolTip(this.btnHuntingCamp, "Hunting Camp");
-            this.btnHuntingCamp.UseVisualStyleBackColor = true;
-            // 
-            // btnInnkeeper
-            // 
-            this.btnInnkeeper.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnInnkeeper.BackgroundImage = global::SaltCharts.Properties.Resources.Innkeeper;
-            this.btnInnkeeper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInnkeeper.Location = new System.Drawing.Point(44, 46);
-            this.btnInnkeeper.Name = "btnInnkeeper";
-            this.btnInnkeeper.Size = new System.Drawing.Size(35, 35);
-            this.btnInnkeeper.TabIndex = 40;
-            this.btnInnkeeper.Tag = SaltCharts.MarkerType.Innkeeper;
-            this.toolTip1.SetToolTip(this.btnInnkeeper, "Innkeeper");
-            this.btnInnkeeper.UseVisualStyleBackColor = true;
             // 
             // btnMerchant
             // 
@@ -615,7 +426,7 @@
             this.btnMerchant.Name = "btnMerchant";
             this.btnMerchant.Size = new System.Drawing.Size(35, 35);
             this.btnMerchant.TabIndex = 39;
-            this.btnMerchant.Tag = SaltCharts.MarkerType.Merchant;
+            this.btnMerchant.Tag = "Merchant";
             this.toolTip1.SetToolTip(this.btnMerchant, "Merchant");
             this.btnMerchant.UseVisualStyleBackColor = true;
             // 
@@ -628,7 +439,7 @@
             this.btnDesert.Name = "btnDesert";
             this.btnDesert.Size = new System.Drawing.Size(35, 35);
             this.btnDesert.TabIndex = 37;
-            this.btnDesert.Tag = SaltCharts.MarkerType.Desert;
+            this.btnDesert.Tag = "Desert";
             this.toolTip1.SetToolTip(this.btnDesert, "Desert");
             this.btnDesert.UseVisualStyleBackColor = true;
             // 
@@ -643,9 +454,243 @@
             this.btnNoMarker.Size = new System.Drawing.Size(35, 35);
             this.btnNoMarker.TabIndex = 36;
             this.btnNoMarker.TabStop = true;
-            this.btnNoMarker.Tag = SaltCharts.MarkerType.None;
+            this.btnNoMarker.Tag = "None";
             this.toolTip1.SetToolTip(this.btnNoMarker, "No Marker");
             this.btnNoMarker.UseVisualStyleBackColor = true;
+            // 
+            // btnQuestion
+            // 
+            this.btnQuestion.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnQuestion.BackgroundImage = global::SaltCharts.Properties.Resources.Question;
+            this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnQuestion.Location = new System.Drawing.Point(80, 251);
+            this.btnQuestion.Name = "btnQuestion";
+            this.btnQuestion.Size = new System.Drawing.Size(35, 35);
+            this.btnQuestion.TabIndex = 56;
+            this.btnQuestion.Tag = "Question";
+            this.toolTip1.SetToolTip(this.btnQuestion, "Question");
+            this.btnQuestion.UseVisualStyleBackColor = true;
+            // 
+            // btnX
+            // 
+            this.btnX.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnX.BackgroundImage = global::SaltCharts.Properties.Resources.X;
+            this.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnX.Location = new System.Drawing.Point(44, 251);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(35, 35);
+            this.btnX.TabIndex = 55;
+            this.btnX.Tag = "X";
+            this.toolTip1.SetToolTip(this.btnX, "X");
+            this.btnX.UseVisualStyleBackColor = true;
+            // 
+            // btnFlower
+            // 
+            this.btnFlower.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnFlower.BackgroundImage = global::SaltCharts.Properties.Resources.Flower;
+            this.btnFlower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFlower.Location = new System.Drawing.Point(8, 251);
+            this.btnFlower.Name = "btnFlower";
+            this.btnFlower.Size = new System.Drawing.Size(35, 35);
+            this.btnFlower.TabIndex = 54;
+            this.btnFlower.Tag = "Flower";
+            this.toolTip1.SetToolTip(this.btnFlower, "Hightop Bloom");
+            this.btnFlower.UseVisualStyleBackColor = true;
+            // 
+            // btnDeer
+            // 
+            this.btnDeer.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDeer.BackgroundImage = global::SaltCharts.Properties.Resources.Deer;
+            this.btnDeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeer.Location = new System.Drawing.Point(80, 210);
+            this.btnDeer.Name = "btnDeer";
+            this.btnDeer.Size = new System.Drawing.Size(35, 35);
+            this.btnDeer.TabIndex = 53;
+            this.btnDeer.Tag = "Deer";
+            this.toolTip1.SetToolTip(this.btnDeer, "Deer");
+            this.btnDeer.UseVisualStyleBackColor = true;
+            // 
+            // btnSpiderQueen
+            // 
+            this.btnSpiderQueen.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSpiderQueen.BackgroundImage = global::SaltCharts.Properties.Resources.SpiderQueen;
+            this.btnSpiderQueen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSpiderQueen.Location = new System.Drawing.Point(44, 210);
+            this.btnSpiderQueen.Name = "btnSpiderQueen";
+            this.btnSpiderQueen.Size = new System.Drawing.Size(35, 35);
+            this.btnSpiderQueen.TabIndex = 52;
+            this.btnSpiderQueen.Tag = "SpiderQueen";
+            this.toolTip1.SetToolTip(this.btnSpiderQueen, "Spider Queen");
+            this.btnSpiderQueen.UseVisualStyleBackColor = true;
+            // 
+            // btnMoonrock
+            // 
+            this.btnMoonrock.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnMoonrock.BackgroundImage = global::SaltCharts.Properties.Resources.Moonrock;
+            this.btnMoonrock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMoonrock.Location = new System.Drawing.Point(8, 210);
+            this.btnMoonrock.Name = "btnMoonrock";
+            this.btnMoonrock.Size = new System.Drawing.Size(35, 35);
+            this.btnMoonrock.TabIndex = 51;
+            this.btnMoonrock.Tag = "Moonrock";
+            this.toolTip1.SetToolTip(this.btnMoonrock, "Moonrocks");
+            this.btnMoonrock.UseVisualStyleBackColor = true;
+            // 
+            // btnCompass
+            // 
+            this.btnCompass.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnCompass.BackgroundImage = global::SaltCharts.Properties.Resources.Compass;
+            this.btnCompass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCompass.Location = new System.Drawing.Point(80, 169);
+            this.btnCompass.Name = "btnCompass";
+            this.btnCompass.Size = new System.Drawing.Size(35, 35);
+            this.btnCompass.TabIndex = 50;
+            this.btnCompass.Tag = "Compass";
+            this.toolTip1.SetToolTip(this.btnCompass, "Compass");
+            this.btnCompass.UseVisualStyleBackColor = true;
+            // 
+            // btnSilverChest
+            // 
+            this.btnSilverChest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSilverChest.BackgroundImage = global::SaltCharts.Properties.Resources.SilverChest;
+            this.btnSilverChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSilverChest.Location = new System.Drawing.Point(44, 169);
+            this.btnSilverChest.Name = "btnSilverChest";
+            this.btnSilverChest.Size = new System.Drawing.Size(35, 35);
+            this.btnSilverChest.TabIndex = 49;
+            this.btnSilverChest.Tag = "SilverChest";
+            this.toolTip1.SetToolTip(this.btnSilverChest, "Silver Chest");
+            this.btnSilverChest.UseVisualStyleBackColor = true;
+            // 
+            // btnBronzeChest
+            // 
+            this.btnBronzeChest.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnBronzeChest.BackgroundImage = global::SaltCharts.Properties.Resources.BronzeChest;
+            this.btnBronzeChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBronzeChest.Location = new System.Drawing.Point(8, 169);
+            this.btnBronzeChest.Name = "btnBronzeChest";
+            this.btnBronzeChest.Size = new System.Drawing.Size(35, 35);
+            this.btnBronzeChest.TabIndex = 48;
+            this.btnBronzeChest.Tag = "BronzeChest";
+            this.toolTip1.SetToolTip(this.btnBronzeChest, "Bronze Chest");
+            this.btnBronzeChest.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateShip
+            // 
+            this.btnPirateShip.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateShip.BackgroundImage = global::SaltCharts.Properties.Resources.PirateShip;
+            this.btnPirateShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateShip.Location = new System.Drawing.Point(80, 128);
+            this.btnPirateShip.Name = "btnPirateShip";
+            this.btnPirateShip.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateShip.TabIndex = 47;
+            this.btnPirateShip.Tag = "PirateShip";
+            this.toolTip1.SetToolTip(this.btnPirateShip, "Pirate Ship");
+            this.btnPirateShip.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateTownship
+            // 
+            this.btnPirateTownship.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateTownship.BackgroundImage = global::SaltCharts.Properties.Resources.PirateTownship;
+            this.btnPirateTownship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateTownship.Location = new System.Drawing.Point(44, 128);
+            this.btnPirateTownship.Name = "btnPirateTownship";
+            this.btnPirateTownship.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateTownship.TabIndex = 46;
+            this.btnPirateTownship.Tag = "PirateTownship";
+            this.toolTip1.SetToolTip(this.btnPirateTownship, "Pirate Township");
+            this.btnPirateTownship.UseVisualStyleBackColor = true;
+            // 
+            // btnPirateCamp
+            // 
+            this.btnPirateCamp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnPirateCamp.BackgroundImage = global::SaltCharts.Properties.Resources.PirateCamp;
+            this.btnPirateCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPirateCamp.Location = new System.Drawing.Point(8, 128);
+            this.btnPirateCamp.Name = "btnPirateCamp";
+            this.btnPirateCamp.Size = new System.Drawing.Size(35, 35);
+            this.btnPirateCamp.TabIndex = 45;
+            this.btnPirateCamp.Tag = "PirateCamp";
+            this.toolTip1.SetToolTip(this.btnPirateCamp, "Pirate Camp");
+            this.btnPirateCamp.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.BackgroundImage = global::SaltCharts.Properties.Resources.GoodResources;
+            this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton1.Location = new System.Drawing.Point(80, 87);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(35, 35);
+            this.radioButton1.TabIndex = 44;
+            this.radioButton1.Tag = "GoodResources";
+            this.toolTip1.SetToolTip(this.radioButton1, "Good Resources");
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientAltar
+            // 
+            this.btnAncientAltar.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientAltar.BackgroundImage = global::SaltCharts.Properties.Resources.AncientAltar;
+            this.btnAncientAltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientAltar.Location = new System.Drawing.Point(44, 87);
+            this.btnAncientAltar.Name = "btnAncientAltar";
+            this.btnAncientAltar.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientAltar.TabIndex = 43;
+            this.btnAncientAltar.Tag = "AncientAltar";
+            this.toolTip1.SetToolTip(this.btnAncientAltar, "Ancient Altar");
+            this.btnAncientAltar.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientRuins
+            // 
+            this.btnAncientRuins.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientRuins.BackgroundImage = global::SaltCharts.Properties.Resources.AncientRuins;
+            this.btnAncientRuins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientRuins.Location = new System.Drawing.Point(8, 87);
+            this.btnAncientRuins.Name = "btnAncientRuins";
+            this.btnAncientRuins.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientRuins.TabIndex = 42;
+            this.btnAncientRuins.Tag = "AncientRuins";
+            this.toolTip1.SetToolTip(this.btnAncientRuins, "Ancient Ruins");
+            this.btnAncientRuins.UseVisualStyleBackColor = true;
+            // 
+            // btnHuntingCamp
+            // 
+            this.btnHuntingCamp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnHuntingCamp.BackgroundImage = global::SaltCharts.Properties.Resources.HuntingCamp;
+            this.btnHuntingCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHuntingCamp.Location = new System.Drawing.Point(80, 46);
+            this.btnHuntingCamp.Name = "btnHuntingCamp";
+            this.btnHuntingCamp.Size = new System.Drawing.Size(35, 35);
+            this.btnHuntingCamp.TabIndex = 41;
+            this.btnHuntingCamp.Tag = "HuntingCamp";
+            this.toolTip1.SetToolTip(this.btnHuntingCamp, "Hunting Camp");
+            this.btnHuntingCamp.UseVisualStyleBackColor = true;
+            // 
+            // btnInnkeeper
+            // 
+            this.btnInnkeeper.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnInnkeeper.BackgroundImage = global::SaltCharts.Properties.Resources.Innkeeper;
+            this.btnInnkeeper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInnkeeper.Location = new System.Drawing.Point(44, 46);
+            this.btnInnkeeper.Name = "btnInnkeeper";
+            this.btnInnkeeper.Size = new System.Drawing.Size(35, 35);
+            this.btnInnkeeper.TabIndex = 40;
+            this.btnInnkeeper.Tag = "Innkeeper";
+            this.toolTip1.SetToolTip(this.btnInnkeeper, "Innkeeper");
+            this.btnInnkeeper.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton2.BackgroundImage = global::SaltCharts.Properties.Resources.TwoByTwo;
+            this.radioButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton2.Location = new System.Drawing.Point(80, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(35, 35);
+            this.radioButton2.TabIndex = 67;
+            this.radioButton2.Tag = "";
+            this.toolTip1.SetToolTip(this.radioButton2, "2x2 Island");
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // imageSaveDialog
             // 
@@ -747,6 +792,11 @@
             // 
             // panelIsland
             // 
+            this.panelIsland.Controls.Add(this.radioButton2);
+            this.panelIsland.Controls.Add(this.label1);
+            this.panelIsland.Controls.Add(this.txtStampSize);
+            this.panelIsland.Controls.Add(this.btnStamp);
+            this.panelIsland.Controls.Add(this.btnDeepSea);
             this.panelIsland.Controls.Add(this.radioButton10);
             this.panelIsland.Controls.Add(this.radioButton11);
             this.panelIsland.Controls.Add(this.radioButton8);
@@ -757,6 +807,43 @@
             this.panelIsland.Name = "panelIsland";
             this.panelIsland.Size = new System.Drawing.Size(123, 167);
             this.panelIsland.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 128);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Stamp Size:";
+            // 
+            // txtStampSize
+            // 
+            this.txtStampSize.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txtStampSize.Location = new System.Drawing.Point(77, 126);
+            this.txtStampSize.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.txtStampSize.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.txtStampSize.Name = "txtStampSize";
+            this.txtStampSize.ReadOnly = true;
+            this.txtStampSize.Size = new System.Drawing.Size(35, 20);
+            this.txtStampSize.TabIndex = 65;
+            this.txtStampSize.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             // 
             // panelHorizontal
             // 
@@ -779,7 +866,7 @@
             this.horizontalNavigation.TabStop = false;
             this.horizontalNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.horizontalNavigation_MouseDown);
             this.horizontalNavigation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.horizontalNavigation_MouseMove);
-            this.horizontalNavigation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.horizontalNavigation_MouseUp);
+            this.horizontalNavigation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Navigation_MouseUp);
             // 
             // panelVertical
             // 
@@ -801,7 +888,7 @@
             this.verticalNavigation.TabStop = false;
             this.verticalNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.verticalNavigation_MouseDown);
             this.verticalNavigation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.verticalNavigation_MouseMove);
-            this.verticalNavigation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.verticalNavigation_MouseUp);
+            this.verticalNavigation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Navigation_MouseUp);
             // 
             // pictureBox1
             // 
@@ -813,7 +900,7 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // Map
+            // Chart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -829,7 +916,7 @@
             this.Controls.Add(this.panelChart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(700, 700);
-            this.Name = "Map";
+            this.Name = "Chart";
             this.Text = "Salt Charts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Map_FormClosing);
             this.Load += new System.EventHandler(this.Map_Load);
@@ -842,6 +929,8 @@
             this.panelNavigation.ResumeLayout(false);
             this.markerPanel.ResumeLayout(false);
             this.panelIsland.ResumeLayout(false);
+            this.panelIsland.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStampSize)).EndInit();
             this.panelHorizontal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.horizontalNavigation)).EndInit();
             this.panelVertical.ResumeLayout(false);
@@ -914,6 +1003,11 @@
         private System.Windows.Forms.PictureBox verticalNavigation;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton btnHelp;
+        private System.Windows.Forms.RadioButton btnDeepSea;
+        private System.Windows.Forms.RadioButton btnStamp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown txtStampSize;
+        private System.Windows.Forms.RadioButton radioButton2;
 
     }
 }

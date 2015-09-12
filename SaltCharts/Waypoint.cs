@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SaltCharts
 {
     [Serializable]
-    public class Waypoint
+    public class Waypoint : IMapItem, IEquatable<Waypoint>, IComparable<Waypoint>
     {
         const int CELL_SIZE = 40;
         const int GRID_CENTER = 2068;
@@ -20,37 +16,29 @@ namespace SaltCharts
         public string Notes { get; set; }
 
         [Browsable(false)]
-        public int X { get; set; }
+        public Coordinates Location { get; set; }
 
-        [Browsable(false)]
-        public int Y { get; set; }
-
+        // Constructor for deserialization
         public Waypoint()
         {
-            this.Name = string.Empty;
+            this.Name = String.Empty;
         }
 
         // Constructor for new Waypoint Generation
         public Waypoint(Point p, MarkerType marker, IslandType island)
         {
-            this.X = getCoordinate(p.X);
-            this.Y = getCoordinate(p.Y);
-            this.Marker = marker;
+            this.Location = Coordinates.FromPoint(p);
             this.Island = island;
+            this.Marker = marker;
             this.Name = string.Empty;
        }
 
-        public Point getLocation()
+        public Point GetLocation()
         {
-            int yPos = Y * CELL_SIZE + GRID_CENTER - CELL_SIZE / 2;
-            // These lines correct for slight inconsitencies in the map.
-            if (Y >= 0) yPos++; 
-            if (Y >= 40) yPos++;
-
-            return new Point (X * CELL_SIZE + GRID_CENTER - CELL_SIZE /2 -1, yPos);
+            return Location.ToPoint();
         }
 
-        public Image getImage()
+        public Image GetImage()
         {
             Image waypointImage = SaltCharts.Properties.Resources.Cell;
             Graphics graphic = Graphics.FromImage(waypointImage);
@@ -63,7 +51,7 @@ namespace SaltCharts
                 switch (Island)
                 {
                     case IslandType.None:
-                        graphic.DrawImage(markerImg, 0, 0, 40, 40);
+                        graphic.DrawImageUnscaled(markerImg, 0, 0);
                         break;
                     case IslandType.Single:
                         graphic.DrawImage(markerImg, 7, 7, 25, 25);
@@ -80,34 +68,66 @@ namespace SaltCharts
                     case IslandType.SouthEast:
                         graphic.DrawImage(markerImg, 5, 5, 25, 25);
                         break;
+                    case IslandType.DeepSea:
+                        graphic.DrawImage(markerImg, 7, 0, 25, 25);
+                        break;
                 }
             }
             return waypointImage;
         }
 
-        public override string ToString()
+        public int CompareTo(Waypoint wp) 
         {
-            return getFormatted(this.X, this.Y);
+            return Location.CompareTo(wp.Location);
         }
 
-        public static string getFormatted(Point p)
+        public override bool Equals(Object o)
         {
-            return getFormatted(getCoordinate(p.X), getCoordinate(p.Y));
+            if (o.GetType().Equals(this.GetType()))
+                return Equals((Waypoint)o);
+            return false;
         }
 
-        public static string getFormatted(int x, int y) 
+        public bool Equals(Waypoint wp)
         {
-            string template = "{0} {1}, {2} {3}";
-
-            return string.Format(template, Math.Abs(x).ToString(), (x >= 0 ? "East" : "West"), Math.Abs(y).ToString(), (y >= 0) ? "South" : "North");
+            return Location.Equals(wp.Location);
         }
 
-        public static int getCoordinate(int pixel) {
-             int coordinate = pixel - GRID_CENTER;
-             if (coordinate != 0)
-                 coordinate = (coordinate + Math.Abs(coordinate) / coordinate * (CELL_SIZE / 2)) / CELL_SIZE;
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
-             return coordinate;
+        public static bool operator >(Waypoint a, Waypoint b)
+        {
+            return a.CompareTo(b) > 0;
+        }
+
+        public static bool operator <(Waypoint a, Waypoint b)
+        {
+            return a.CompareTo(b) < 0;
+        }
+
+        public static bool operator >=(Waypoint a, Waypoint b)
+        {
+            int result = a.CompareTo(b);
+            return result == 0 || result > 0;
+        }
+
+        public static bool operator <=(Waypoint a, Waypoint b)
+        {
+            int result = a.CompareTo(b);
+            return result == 0 || result < 0;
+        }
+
+        public static bool operator ==(Waypoint a, Waypoint b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Waypoint a, Waypoint b)
+        {
+            return !a.Equals(b);
         }
     }
 }

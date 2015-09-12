@@ -32,6 +32,7 @@
         NorthWest,
         NorthEast,
         SouthWest,
-        SouthEast
+        SouthEast,
+        DeepSea
     }
 }

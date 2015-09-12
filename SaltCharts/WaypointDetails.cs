@@ -23,8 +23,8 @@ namespace SaltCharts
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            Map frm = (Map)this.Owner;
-            frm.EnableSaveButton();
+            Chart frm = (Chart)this.Owner;
+            frm.AutoSave();
         }
 
         private void PoiDetails_Load(object sender, EventArgs e)
