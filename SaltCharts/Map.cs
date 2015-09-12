@@ -28,6 +28,8 @@ namespace SaltCharts
 
         public bool HasWaypoint(Point p)
         {
+            //Noramlize the location to the grid
+            p = Coordinates.FromPoint(p).ToPoint();
             return waypoints.Exists(x => x.GetLocation() == p);
         }
 

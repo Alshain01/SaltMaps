@@ -47,6 +47,8 @@
             this.btnInfo = new System.Windows.Forms.ToolStripButton();
             this.btnHelp = new System.Windows.Forms.ToolStripButton();
             this.btnSettings = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRedraw = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnStamp = new System.Windows.Forms.RadioButton();
@@ -78,7 +80,17 @@
             this.btnAncientRuins = new System.Windows.Forms.RadioButton();
             this.btnHuntingCamp = new System.Windows.Forms.RadioButton();
             this.btnInnkeeper = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.btnTwoByTwo = new System.Windows.Forms.RadioButton();
+            this.btnAncientBreastPlate = new System.Windows.Forms.RadioButton();
+            this.btnAncientBow = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.btnBomb = new System.Windows.Forms.RadioButton();
+            this.btnNightRing = new System.Windows.Forms.RadioButton();
+            this.btnDayRing = new System.Windows.Forms.RadioButton();
+            this.btnAncientPickaxe = new System.Windows.Forms.RadioButton();
+            this.btnAncientGauntlets = new System.Windows.Forms.RadioButton();
+            this.btnAncientGreaves = new System.Windows.Forms.RadioButton();
+            this.btnAncientHelm = new System.Windows.Forms.RadioButton();
             this.imageSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.btnEast = new System.Windows.Forms.Button();
@@ -118,7 +130,7 @@
             this.panelChart.Controls.Add(this.SeaChart);
             this.panelChart.Location = new System.Drawing.Point(164, 71);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1116, 570);
+            this.panelChart.Size = new System.Drawing.Size(1120, 670);
             this.panelChart.TabIndex = 2;
             // 
             // SeaChart
@@ -129,7 +141,7 @@
             this.SeaChart.Image = global::SaltCharts.Properties.Resources.Grid;
             this.SeaChart.Location = new System.Drawing.Point(-87, -87);
             this.SeaChart.Name = "SeaChart";
-            this.SeaChart.Size = new System.Drawing.Size(3961, 4135);
+            this.SeaChart.Size = new System.Drawing.Size(3965, 4235);
             this.SeaChart.TabIndex = 2;
             this.SeaChart.TabStop = false;
             this.SeaChart.LocationChanged += new System.EventHandler(this.SeaChart_LocationChanged);
@@ -146,9 +158,9 @@
             this.statusRawCoord,
             this.statusPoint,
             this.statusChartLocation});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 640);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 740);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1280, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -212,10 +224,12 @@
             this.btnSaveImage,
             this.btnInfo,
             this.btnHelp,
-            this.btnSettings});
+            this.btnSettings,
+            this.toolStripSeparator1,
+            this.btnRedraw});
             this.toolStrip1.Location = new System.Drawing.Point(123, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1157, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1161, 31);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -291,6 +305,21 @@
             this.btnSettings.Size = new System.Drawing.Size(28, 28);
             this.btnSettings.Text = "Settings";
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btnRedraw
+            // 
+            this.btnRedraw.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRedraw.Image = global::SaltCharts.Properties.Resources.Redraw;
+            this.btnRedraw.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRedraw.Name = "btnRedraw";
+            this.btnRedraw.Size = new System.Drawing.Size(28, 28);
+            this.btnRedraw.Text = "Redraw Map";
+            this.btnRedraw.Click += new System.EventHandler(this.btnRedraw_Click);
             // 
             // openFileDialog1
             // 
@@ -679,18 +708,148 @@
             this.toolTip1.SetToolTip(this.btnInnkeeper, "Innkeeper");
             this.btnInnkeeper.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // btnTwoByTwo
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.BackgroundImage = global::SaltCharts.Properties.Resources.TwoByTwo;
-            this.radioButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton2.Location = new System.Drawing.Point(80, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(35, 35);
-            this.radioButton2.TabIndex = 67;
-            this.radioButton2.Tag = "";
-            this.toolTip1.SetToolTip(this.radioButton2, "2x2 Island");
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.btnTwoByTwo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnTwoByTwo.BackgroundImage = global::SaltCharts.Properties.Resources.TwoByTwo;
+            this.btnTwoByTwo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTwoByTwo.Location = new System.Drawing.Point(80, 3);
+            this.btnTwoByTwo.Name = "btnTwoByTwo";
+            this.btnTwoByTwo.Size = new System.Drawing.Size(35, 35);
+            this.btnTwoByTwo.TabIndex = 67;
+            this.btnTwoByTwo.Tag = "NorthWest";
+            this.toolTip1.SetToolTip(this.btnTwoByTwo, "2x2 Island");
+            this.btnTwoByTwo.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientBreastPlate
+            // 
+            this.btnAncientBreastPlate.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientBreastPlate.BackgroundImage = global::SaltCharts.Properties.Resources.AncientBreastplate;
+            this.btnAncientBreastPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientBreastPlate.Location = new System.Drawing.Point(8, 374);
+            this.btnAncientBreastPlate.Name = "btnAncientBreastPlate";
+            this.btnAncientBreastPlate.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientBreastPlate.TabIndex = 62;
+            this.btnAncientBreastPlate.Tag = "AncientBreastplate";
+            this.toolTip1.SetToolTip(this.btnAncientBreastPlate, "Ancient Breastplate");
+            this.btnAncientBreastPlate.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientBow
+            // 
+            this.btnAncientBow.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientBow.BackgroundImage = global::SaltCharts.Properties.Resources.AncientBow;
+            this.btnAncientBow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientBow.Location = new System.Drawing.Point(44, 333);
+            this.btnAncientBow.Name = "btnAncientBow";
+            this.btnAncientBow.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientBow.TabIndex = 61;
+            this.btnAncientBow.Tag = "AncientBow";
+            this.toolTip1.SetToolTip(this.btnAncientBow, "Ancient Bow");
+            this.btnAncientBow.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton4.BackgroundImage = global::SaltCharts.Properties.Resources.AncientDagger;
+            this.radioButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.radioButton4.Location = new System.Drawing.Point(8, 333);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(35, 35);
+            this.radioButton4.TabIndex = 60;
+            this.radioButton4.Tag = "AncientDagger";
+            this.toolTip1.SetToolTip(this.radioButton4, "Ancient Dagger");
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // btnBomb
+            // 
+            this.btnBomb.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnBomb.BackgroundImage = global::SaltCharts.Properties.Resources.Bomb;
+            this.btnBomb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBomb.Location = new System.Drawing.Point(80, 292);
+            this.btnBomb.Name = "btnBomb";
+            this.btnBomb.Size = new System.Drawing.Size(35, 35);
+            this.btnBomb.TabIndex = 59;
+            this.btnBomb.Tag = "Bomb";
+            this.toolTip1.SetToolTip(this.btnBomb, "Bomb");
+            this.btnBomb.UseVisualStyleBackColor = true;
+            // 
+            // btnNightRing
+            // 
+            this.btnNightRing.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnNightRing.BackgroundImage = global::SaltCharts.Properties.Resources.RingOfNight;
+            this.btnNightRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNightRing.Location = new System.Drawing.Point(44, 292);
+            this.btnNightRing.Name = "btnNightRing";
+            this.btnNightRing.Size = new System.Drawing.Size(35, 35);
+            this.btnNightRing.TabIndex = 58;
+            this.btnNightRing.Tag = "RingOfNight";
+            this.toolTip1.SetToolTip(this.btnNightRing, "Ring of Night");
+            this.btnNightRing.UseVisualStyleBackColor = true;
+            // 
+            // btnDayRing
+            // 
+            this.btnDayRing.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnDayRing.BackgroundImage = global::SaltCharts.Properties.Resources.RingOfDay;
+            this.btnDayRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDayRing.Location = new System.Drawing.Point(8, 292);
+            this.btnDayRing.Name = "btnDayRing";
+            this.btnDayRing.Size = new System.Drawing.Size(35, 35);
+            this.btnDayRing.TabIndex = 57;
+            this.btnDayRing.Tag = "RingOfDay";
+            this.toolTip1.SetToolTip(this.btnDayRing, "Ring Of Day");
+            this.btnDayRing.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientPickaxe
+            // 
+            this.btnAncientPickaxe.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientPickaxe.BackgroundImage = global::SaltCharts.Properties.Resources.AncientPickaxe;
+            this.btnAncientPickaxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientPickaxe.Location = new System.Drawing.Point(80, 333);
+            this.btnAncientPickaxe.Name = "btnAncientPickaxe";
+            this.btnAncientPickaxe.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientPickaxe.TabIndex = 64;
+            this.btnAncientPickaxe.Tag = "AncientPickaxe";
+            this.toolTip1.SetToolTip(this.btnAncientPickaxe, "Ancient Pickaxe");
+            this.btnAncientPickaxe.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientGauntlets
+            // 
+            this.btnAncientGauntlets.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientGauntlets.BackgroundImage = global::SaltCharts.Properties.Resources.AncientGauntlets;
+            this.btnAncientGauntlets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientGauntlets.Location = new System.Drawing.Point(44, 374);
+            this.btnAncientGauntlets.Name = "btnAncientGauntlets";
+            this.btnAncientGauntlets.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientGauntlets.TabIndex = 63;
+            this.btnAncientGauntlets.Tag = "AncientGauntlets";
+            this.toolTip1.SetToolTip(this.btnAncientGauntlets, "Ancient Gauntlets");
+            this.btnAncientGauntlets.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientGreaves
+            // 
+            this.btnAncientGreaves.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientGreaves.BackgroundImage = global::SaltCharts.Properties.Resources.AncientGreaves;
+            this.btnAncientGreaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientGreaves.Location = new System.Drawing.Point(80, 374);
+            this.btnAncientGreaves.Name = "btnAncientGreaves";
+            this.btnAncientGreaves.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientGreaves.TabIndex = 65;
+            this.btnAncientGreaves.Tag = "AncientGreaves";
+            this.toolTip1.SetToolTip(this.btnAncientGreaves, "Ancient Greaves");
+            this.btnAncientGreaves.UseVisualStyleBackColor = true;
+            // 
+            // btnAncientHelm
+            // 
+            this.btnAncientHelm.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnAncientHelm.BackgroundImage = global::SaltCharts.Properties.Resources.AncientHelm;
+            this.btnAncientHelm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAncientHelm.Location = new System.Drawing.Point(8, 415);
+            this.btnAncientHelm.Name = "btnAncientHelm";
+            this.btnAncientHelm.Size = new System.Drawing.Size(35, 35);
+            this.btnAncientHelm.TabIndex = 66;
+            this.btnAncientHelm.Tag = "AncientHelm";
+            this.toolTip1.SetToolTip(this.btnAncientHelm, "Ancient Helm");
+            this.btnAncientHelm.UseVisualStyleBackColor = true;
             // 
             // imageSaveDialog
             // 
@@ -764,6 +923,16 @@
             // 
             this.markerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.markerPanel.Controls.Add(this.btnAncientHelm);
+            this.markerPanel.Controls.Add(this.btnAncientGreaves);
+            this.markerPanel.Controls.Add(this.btnAncientPickaxe);
+            this.markerPanel.Controls.Add(this.btnAncientGauntlets);
+            this.markerPanel.Controls.Add(this.btnAncientBreastPlate);
+            this.markerPanel.Controls.Add(this.btnAncientBow);
+            this.markerPanel.Controls.Add(this.radioButton4);
+            this.markerPanel.Controls.Add(this.btnBomb);
+            this.markerPanel.Controls.Add(this.btnNightRing);
+            this.markerPanel.Controls.Add(this.btnDayRing);
             this.markerPanel.Controls.Add(this.btnQuestion);
             this.markerPanel.Controls.Add(this.btnX);
             this.markerPanel.Controls.Add(this.btnFlower);
@@ -787,12 +956,12 @@
             this.markerPanel.Controls.Add(this.btnNoMarker);
             this.markerPanel.Location = new System.Drawing.Point(0, 288);
             this.markerPanel.Name = "markerPanel";
-            this.markerPanel.Size = new System.Drawing.Size(123, 350);
+            this.markerPanel.Size = new System.Drawing.Size(123, 450);
             this.markerPanel.TabIndex = 3;
             // 
             // panelIsland
             // 
-            this.panelIsland.Controls.Add(this.radioButton2);
+            this.panelIsland.Controls.Add(this.btnTwoByTwo);
             this.panelIsland.Controls.Add(this.label1);
             this.panelIsland.Controls.Add(this.txtStampSize);
             this.panelIsland.Controls.Add(this.btnStamp);
@@ -831,7 +1000,7 @@
             0,
             0});
             this.txtStampSize.Minimum = new decimal(new int[] {
-            20,
+            10,
             0,
             0,
             0});
@@ -852,7 +1021,7 @@
             this.panelHorizontal.Controls.Add(this.horizontalNavigation);
             this.panelHorizontal.Location = new System.Drawing.Point(164, 30);
             this.panelHorizontal.Name = "panelHorizontal";
-            this.panelHorizontal.Size = new System.Drawing.Size(1116, 41);
+            this.panelHorizontal.Size = new System.Drawing.Size(1120, 41);
             this.panelHorizontal.TabIndex = 6;
             // 
             // horizontalNavigation
@@ -861,7 +1030,7 @@
             this.horizontalNavigation.Image = global::SaltCharts.Properties.Resources.Grid;
             this.horizontalNavigation.Location = new System.Drawing.Point(-46, -46);
             this.horizontalNavigation.Name = "horizontalNavigation";
-            this.horizontalNavigation.Size = new System.Drawing.Size(3961, 4136);
+            this.horizontalNavigation.Size = new System.Drawing.Size(3965, 4136);
             this.horizontalNavigation.TabIndex = 0;
             this.horizontalNavigation.TabStop = false;
             this.horizontalNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.horizontalNavigation_MouseDown);
@@ -875,7 +1044,7 @@
             this.panelVertical.Controls.Add(this.verticalNavigation);
             this.panelVertical.Location = new System.Drawing.Point(123, 71);
             this.panelVertical.Name = "panelVertical";
-            this.panelVertical.Size = new System.Drawing.Size(41, 570);
+            this.panelVertical.Size = new System.Drawing.Size(41, 670);
             this.panelVertical.TabIndex = 7;
             // 
             // verticalNavigation
@@ -904,7 +1073,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 662);
+            this.ClientSize = new System.Drawing.Size(1284, 762);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelVertical);
             this.Controls.Add(this.panelHorizontal);
@@ -1007,7 +1176,19 @@
         private System.Windows.Forms.RadioButton btnStamp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown txtStampSize;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton btnTwoByTwo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnRedraw;
+        private System.Windows.Forms.RadioButton btnAncientBreastPlate;
+        private System.Windows.Forms.RadioButton btnAncientBow;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton btnBomb;
+        private System.Windows.Forms.RadioButton btnNightRing;
+        private System.Windows.Forms.RadioButton btnDayRing;
+        private System.Windows.Forms.RadioButton btnAncientHelm;
+        private System.Windows.Forms.RadioButton btnAncientGreaves;
+        private System.Windows.Forms.RadioButton btnAncientPickaxe;
+        private System.Windows.Forms.RadioButton btnAncientGauntlets;
 
     }
 }

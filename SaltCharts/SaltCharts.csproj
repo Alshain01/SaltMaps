@@ -319,6 +319,17 @@
     <Content Include="Help.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\AncientHelp.png" />
+    <None Include="Resources\AncientGreaves.png" />
+    <None Include="Resources\RingOfNight.png" />
+    <None Include="Resources\RingOfDay.png" />
+    <None Include="Resources\Bomb.png" />
+    <None Include="Resources\AncientPickaxe.png" />
+    <None Include="Resources\AncientGauntlets.png" />
+    <None Include="Resources\AncientDagger.png" />
+    <None Include="Resources\AncientBreastplate.png" />
+    <None Include="Resources\AncientBow.png" />
+    <None Include="Resources\Actions-draw-freehand-icon.png" />
     <None Include="Resources\2x2.png" />
     <None Include="Resources\stamp-icon.png" />
     <None Include="Resources\DeepSea.png" />

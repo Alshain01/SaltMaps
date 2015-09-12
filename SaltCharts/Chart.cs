@@ -80,22 +80,20 @@ namespace SaltCharts
 
         private void AddToMap(IMapItem item)
         {
-            // Draw the waypoint image over the map.
+            // Draw the item image over the map.
             var pb = new PictureBox();
-            // Properties
+
             pb.SizeMode = PictureBoxSizeMode.AutoSize;
             pb.Parent = SeaChart;
             pb.BackColor = Color.Transparent;
             pb.Image = item.GetImage();
             pb.BringToFront();
-            //Events
             pb.MouseMove += IMapItem_MouseMove;
 
             if (item.GetType() == typeof(Stamp))
             {
                 //Stamps should be centered at the mouse click
                 pb.Location = new Point(item.GetLocation().X - pb.Size.Width / 2, item.GetLocation().Y - pb.Size.Height / 2);
-                //Events
                 pb.MouseUp += Stamp_MouseUp;
                 pb.MouseDown += Stamp_MouseDown;
             }
@@ -156,9 +154,17 @@ namespace SaltCharts
             MarkerType marker = ActiveMarker();
 
             if (island == IslandType.None && marker == MarkerType.None)
-                return;
+            return;
 
             AddToMap(map.AddWaypoint(island, marker, location));
+
+            if (btnTwoByTwo.Checked)
+            {
+                AddToMap(map.AddWaypoint(IslandType.NorthEast, marker, new Point(location.X + 40, location.Y)));
+                AddToMap(map.AddWaypoint(IslandType.SouthWest, marker, new Point(location.X, location.Y + 40)));
+                AddToMap(map.AddWaypoint(IslandType.SouthEast, marker, new Point(location.X + 40, location.Y + 40)));
+            }
+
             AutoSave();
         }
 
@@ -194,6 +200,7 @@ namespace SaltCharts
             this.Size = SaltCharts.Properties.Settings.Default.FormSize;
             this.Location = SaltCharts.Properties.Settings.Default.FormLocation;
             this.WindowState = SaltCharts.Properties.Settings.Default.FormState;
+            txtStampSize.Value = SaltCharts.Properties.Settings.Default.StampSize;
             btnSave.Visible = !SaltCharts.Properties.Settings.Default.AutoSave;
             statusNotes.Text = String.Empty;
             statusName.Text = String.Empty;
@@ -206,6 +213,7 @@ namespace SaltCharts
             SaltCharts.Properties.Settings.Default.FormState = this.WindowState;
             SaltCharts.Properties.Settings.Default.FormSize = this.Size;
             SaltCharts.Properties.Settings.Default.FormLocation = this.Location;
+            SaltCharts.Properties.Settings.Default.StampSize = txtStampSize.Value;
             SaltCharts.Properties.Settings.Default.Save();
         }
 
@@ -217,6 +225,15 @@ namespace SaltCharts
             else if (e.Button == MouseButtons.Right)
                 if (btnStamp.Checked)
                     AddStamp(e.Location);
+                else if (btnTwoByTwo.Checked)
+                {
+                    if(map.HasWaypoint(new Point(e.Location.X + 40, e.Location.Y))
+                        || map.HasWaypoint(new Point(e.Location.X, e.Location.Y + 40))
+                        || map.HasWaypoint(new Point(e.Location.X + 40, e.Location.Y + 40)))
+                    { return; }
+
+                    AddWaypoint(e.Location);
+                }
                 else
                     AddWaypoint(e.Location);
         }
@@ -287,6 +304,8 @@ namespace SaltCharts
                     DeleteWaypoint(pb);
                 else if (btnStamp.Checked)
                     AddStamp(new Point(pb.Location.X + e.Location.X, pb.Location.Y + e.Location.Y));
+                else if (btnTwoByTwo.Checked)
+                    return;
                 else
                 {
                     IslandType island = ActiveIsland();
@@ -306,7 +325,7 @@ namespace SaltCharts
         {
             PictureBox pix = ((PictureBox)sender);
             Waypoint mp = map.GetWaypoint(pix.Location);
-            statusCoord.Text = mp.ToString();
+            statusCoord.Text = mp.Location.ToString();
             if(!String.IsNullOrEmpty(mp.Name))
                 statusName.Text = "Name: " + mp.Name;
             if (!String.IsNullOrEmpty(mp.Notes))
@@ -457,6 +476,10 @@ namespace SaltCharts
         }
         #endregion
 
- 
+        private void btnRedraw_Click(object sender, EventArgs e)
+        {
+            ClearMap();
+            PlotMap();
+        }
     }
 }

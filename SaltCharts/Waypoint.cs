@@ -22,6 +22,7 @@ namespace SaltCharts
         public Waypoint()
         {
             this.Name = String.Empty;
+            this.Notes = String.Empty;
         }
 
         // Constructor for new Waypoint Generation
@@ -31,6 +32,7 @@ namespace SaltCharts
             this.Island = island;
             this.Marker = marker;
             this.Name = string.Empty;
+            this.Notes = String.Empty;
        }
 
         public Point GetLocation()

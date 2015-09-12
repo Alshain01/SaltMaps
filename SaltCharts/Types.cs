@@ -22,7 +22,17 @@
         SpiderQueen,
         Deer,
         Flower,
-        Question
+        Question,
+        Bomb,
+        RingOfDay,
+        RingOfNight,
+        AncientDagger,
+        AncientBow,
+        AncientPickaxe,
+        AncientBreastplate,
+        AncientGauntlets,
+        AncientGreaves,
+        AncientHelm
     }
 
     public enum IslandType
