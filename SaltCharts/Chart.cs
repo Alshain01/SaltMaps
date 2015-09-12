@@ -178,18 +178,18 @@ namespace SaltCharts
             }
         }
 
-        private void DeleteWaypoint(PictureBox waypoint)
+        private void DeleteWaypoint(PictureBox wpPic)
         {
-            if (map.HasWaypoint(waypoint.Location))
+            if (map.HasWaypoint(wpPic.Location))
             {
-                Waypoint wp = map.GetWaypoint(waypoint.Location);
+                Waypoint wp = map.GetWaypoint(wpPic.Location);
                 if (!String.IsNullOrEmpty(wp.Name) || !String.IsNullOrEmpty(wp.Notes))
                     if (MessageBox.Show("This waypoint has notes. Are you sure you want to delete it?", "Are you sure?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.OK)
                         return;
 
-                map.RemoveWaypoint(waypoint.Location);
+                map.RemoveWaypoint(wpPic.Location);
             }
-            waypoint.Dispose();
+            wpPic.Dispose();
             AutoSave();
         }
 
@@ -227,9 +227,9 @@ namespace SaltCharts
                     AddStamp(e.Location);
                 else if (btnTwoByTwo.Checked)
                 {
-                    if(map.HasWaypoint(new Point(e.Location.X + 40, e.Location.Y))
-                        || map.HasWaypoint(new Point(e.Location.X, e.Location.Y + 40))
-                        || map.HasWaypoint(new Point(e.Location.X + 40, e.Location.Y + 40)))
+                    if(map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y)).ToPoint())
+                        || map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X, e.Location.Y + 40)).ToPoint())
+                        || map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y + 40)).ToPoint()))
                     { return; }
 
                     AddWaypoint(e.Location);
