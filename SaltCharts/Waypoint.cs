@@ -92,5 +92,14 @@ namespace SaltCharts
         {
             return Name == wp.Name && Notes == wp.Notes && Marker == wp.Marker && Island == wp.Island && Location.X == wp.Location.X && Location.Y == wp.Location.Y;
         }
+
+        public void Copy(Waypoint wp)
+        {
+            Name = wp.Name;
+            Location = wp.Location;
+            Island = wp.Island;
+            Marker = wp.Marker;
+            Notes = wp.Notes;
+        }
     }
 }

@@ -37,6 +37,9 @@
             this.grpMerged = new System.Windows.Forms.GroupBox();
             this.pgMerged = new System.Windows.Forms.PropertyGrid();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUseNew = new System.Windows.Forms.Button();
+            this.btnUseOriginal = new System.Windows.Forms.Button();
+            this.chkContinue = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.grpNew.SuspendLayout();
             this.grpMerged.SuspendLayout();
@@ -46,11 +49,11 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(496, 319);
+            this.btnOK.Location = new System.Drawing.Point(496, 321);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Use Merged";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -132,19 +135,56 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // btnUseNew
+            // 
+            this.btnUseNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUseNew.Location = new System.Drawing.Point(93, 321);
+            this.btnUseNew.Name = "btnUseNew";
+            this.btnUseNew.Size = new System.Drawing.Size(75, 23);
+            this.btnUseNew.TabIndex = 15;
+            this.btnUseNew.Text = "Use New";
+            this.btnUseNew.UseVisualStyleBackColor = true;
+            this.btnUseNew.Click += new System.EventHandler(this.btnUseNew_Click);
+            // 
+            // btnUseOriginal
+            // 
+            this.btnUseOriginal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUseOriginal.Location = new System.Drawing.Point(12, 321);
+            this.btnUseOriginal.Name = "btnUseOriginal";
+            this.btnUseOriginal.Size = new System.Drawing.Size(75, 23);
+            this.btnUseOriginal.TabIndex = 14;
+            this.btnUseOriginal.Text = "Use Original";
+            this.btnUseOriginal.UseVisualStyleBackColor = true;
+            this.btnUseOriginal.Click += new System.EventHandler(this.btnUseOriginal_Click);
+            // 
+            // chkContinue
+            // 
+            this.chkContinue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkContinue.AutoSize = true;
+            this.chkContinue.Location = new System.Drawing.Point(174, 325);
+            this.chkContinue.Name = "chkContinue";
+            this.chkContinue.Size = new System.Drawing.Size(185, 17);
+            this.chkContinue.TabIndex = 14;
+            this.chkContinue.Text = "Do this for the remaining conflicts.";
+            this.chkContinue.UseVisualStyleBackColor = true;
+            this.chkContinue.CheckedChanged += new System.EventHandler(this.chkContinue_CheckedChanged);
+            // 
+            // WaypointConflict
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 354);
+            this.ClientSize = new System.Drawing.Size(583, 356);
             this.ControlBox = false;
+            this.Controls.Add(this.chkContinue);
+            this.Controls.Add(this.btnUseNew);
+            this.Controls.Add(this.btnUseOriginal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpMerged);
             this.Controls.Add(this.grpNew);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "WaypointConflict";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -170,5 +210,8 @@
         private System.Windows.Forms.GroupBox grpMerged;
         private System.Windows.Forms.PropertyGrid pgMerged;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnUseNew;
+        private System.Windows.Forms.Button btnUseOriginal;
+        private System.Windows.Forms.CheckBox chkContinue;
     }
 }

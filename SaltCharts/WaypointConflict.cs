@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace SaltCharts
 {
+    public enum ConflictResponse
+    {
+        Merged,
+        Original,
+        New
+    }
+
     public partial class WaypointConflict : Form
     {
         public Waypoint Merged { get; private set;  }
         private Waypoint Incoming;
         private Waypoint Original;
+        public bool ContinueWithRemaining { get; private set; }
+        public ConflictResponse Response { get; private set; }
 
         public WaypointConflict(Waypoint original, Waypoint incoming)
         {
@@ -39,10 +48,30 @@ namespace SaltCharts
             this.pgOriginal.SelectedObject = Original;
             this.pgNew.SelectedObject = Incoming;
             this.pgMerged.SelectedObject = Merged;
+            btnOK.Focus();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            this.Response = ConflictResponse.Merged;
+            this.ContinueWithRemaining = chkContinue.Checked;
+            this.Close();
+        }
+
+        private void btnUseOriginal_Click(object sender, EventArgs e)
+        {
+            this.Response = ConflictResponse.Original;
+            this.Close();
+        }
+
+        private void chkContinue_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ContinueWithRemaining = chkContinue.Checked;
+        }
+
+        private void btnUseNew_Click(object sender, EventArgs e)
+        {
+            this.Response = ConflictResponse.New;
             this.Close();
         }
     }

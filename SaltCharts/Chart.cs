@@ -557,24 +557,43 @@ namespace SaltCharts
 
         private void ImportWaypoints(Map newMap)
         {
+            bool Continue = false;
+            ConflictResponse response =  ConflictResponse.Merged;
+
             foreach (Waypoint wp in newMap.GetWaypoints())
             {
                 if (map.HasWaypoint(wp.Location))
                 {
+                    // There is a conflict in waypoints
+
+                    if (Continue && response == ConflictResponse.Original)
+                        // User has chosen to use the original waypoint, don't change anything
+                        break;
+
                     Waypoint oldWp = map.GetWaypoint(wp.Location);
-                    if (!wp.IsExactMatch(oldWp))
+                    if (wp.IsExactMatch(oldWp))
+                        // The original waypoint is an exact match, no need to change
+                        break;
+
+                    // Resolve the conflict
+                    WaypointConflict conflict = new WaypointConflict(oldWp, wp);
+                    conflict.Text = "Waypoint Conflict - " + wp.Location.ToString();
+                    if (!Continue)
                     {
-                        WaypointConflict conflict = new WaypointConflict(oldWp, wp);
-                        conflict.Text = "Waypoint Conflict - " + wp.Location.ToString();
+                        // User has not opted to bypass resolution screen
                         conflict.ShowDialog(this);
-                        oldWp.Island = conflict.Merged.Island;
-                        oldWp.Location = conflict.Merged.Location;
-                        oldWp.Marker = conflict.Merged.Marker;
-                        oldWp.Name = conflict.Merged.Name;
-                        oldWp.Notes = conflict.Merged.Notes;
+                        response = conflict.Response;
+                        Continue = conflict.ContinueWithRemaining;
                     }
+                    
+                    // Correct the resolved conflict
+                    if (response == ConflictResponse.New)
+                        oldWp.Copy(wp);
+                    else if (response == ConflictResponse.Merged)
+                        oldWp.Copy(conflict.Merged);
                 }
                 else
+                    // There was no conflict
                     map.AddWaypoint(wp);
             }
         }
