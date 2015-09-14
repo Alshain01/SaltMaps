@@ -29,6 +29,7 @@ namespace SaltCharts
             statusPoint.Visible = state;
             statusRawCoord.Visible = state;
             statusChartLocation.Visible = state;
+            btnRedraw.Visible = state;
         }
 
         private void setDebug()
@@ -42,8 +43,7 @@ namespace SaltCharts
         private void ClearMap()
         {
             //clear all the map points
-            foreach (PictureBox p in SeaChart.Controls)
-                p.Dispose();
+            SeaChart.Controls.Clear();
         }
 
         private void PlotMap()
@@ -89,15 +89,18 @@ namespace SaltCharts
             pb.Image = item.GetImage();
             pb.BringToFront();
             pb.MouseMove += IMapItem_MouseMove;
+            pb.ParentChanged += IMapItem_ParentChanged;
             pb.Location = item.GetLocation();
 
             if (item.GetType() == typeof(Stamp))
             {
+                pb.Tag = "Stamp";
                 pb.MouseUp += Stamp_MouseUp;
                 pb.MouseDown += Stamp_MouseDown;
             }
             else if (item.GetType() == typeof(Waypoint))
             {
+                pb.Tag = "Waypoint";
                 pb.MouseUp += Waypoint_MouseUp;
                 pb.MouseEnter += Waypoint_MouseEnter;
                 pb.MouseLeave += Waypoint_MouseLeave;
@@ -109,7 +112,7 @@ namespace SaltCharts
         {
             Type eType = Type.GetType("SaltCharts.IslandType");
             IslandType island = IslandType.None;
-            foreach (Control c in panelIsland.Controls)
+            foreach (Control c in grpIsland.Controls)
             {
                 if (c.GetType() == typeof(RadioButton) && ((RadioButton)c).Checked)
                 {
@@ -124,7 +127,7 @@ namespace SaltCharts
         {
             Type eType = Type.GetType("SaltCharts.MarkerType");
             MarkerType marker = MarkerType.None;
-            foreach (Control c in markerPanel.Controls)
+            foreach (Control c in grpMarker.Controls)
             {
                 if (c.GetType() == typeof(RadioButton) && ((RadioButton)c).Checked)
                 {
@@ -223,17 +226,13 @@ namespace SaltCharts
             if (e.Button == MouseButtons.Left)
                 this.Cursor = Cursors.NoMove2D;
             else if (e.Button == MouseButtons.Right)
-                if (btnStamp.Checked)
-                    AddStamp(e.Location);
-                else if (btnTwoByTwo.Checked)
-                {
-                    if(map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y)).ToPoint())
+                if(btnTwoByTwo.Checked && 
+                        (map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y)).ToPoint())
                         || map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X, e.Location.Y + 40)).ToPoint())
-                        || map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y + 40)).ToPoint()))
-                    { return; }
-
-                    AddWaypoint(e.Location);
-                }
+                        || map.HasWaypoint(Coordinates.FromPoint(new Point(e.Location.X + 40, e.Location.Y + 40)).ToPoint())))
+                    return; 
+                else if (btnStamp.Checked)
+                    AddStamp(e.Location);
                 else
                     AddWaypoint(e.Location);
         }
@@ -325,6 +324,12 @@ namespace SaltCharts
         {
             PictureBox pix = ((PictureBox)sender);
             Waypoint mp = map.GetWaypoint(pix.Location);
+            if (mp == null)
+            {
+                statusCoord.Text = ((Control)sender).Parent.Name;
+                ((Control)sender).Dispose();
+                return;
+            }
             statusCoord.Text = mp.Location.ToString();
             if(!String.IsNullOrEmpty(mp.Name))
                 statusName.Text = "Name: " + mp.Name;
@@ -339,6 +344,11 @@ namespace SaltCharts
         {
             statusName.Text = string.Empty;
             statusNotes.Text = string.Empty;
+        }
+
+        private void IMapItem_ParentChanged(object sender, EventArgs e)
+        {
+            ((Control)sender).Dispose();
         }
 
         private void SeaChart_LocationChanged(object sender, EventArgs e)
@@ -407,10 +417,14 @@ namespace SaltCharts
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "map";
+            ofd.Title = "Select Map File";
+            ofd.Filter = "Map File|*.map";
+            if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
                 ClearMap();
-                SaltCharts.Properties.Settings.Default.LastMapFile = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
+                SaltCharts.Properties.Settings.Default.LastMapFile = Path.GetFileNameWithoutExtension(ofd.FileName);
                 map = FileIO.Load(Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + MAP_EXTENSION);
                 PlotMap();
 
@@ -440,9 +454,13 @@ namespace SaltCharts
 
         private void btnSaveImage_Click(object sender, EventArgs e)
         {
-            imageSaveDialog.FileName = SaltCharts.Properties.Settings.Default.LastMapFile + ".png";
-            if (imageSaveDialog.ShowDialog() == DialogResult.OK)
-                FileIO.SaveImage(imageSaveDialog.FileName, map);
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save Map as Image";
+            sfd.DefaultExt = "png";
+            sfd.Filter = "Portable Network Graphic|*.png|JPEG|*.jpg|Graphics Interchange Format|*.gif|Bitmap Image|*.bmp|Tagged Image File Format|*.tif";
+            sfd.FileName = SaltCharts.Properties.Settings.Default.LastMapFile + ".png";
+            if (sfd.ShowDialog() == DialogResult.OK)
+                FileIO.SaveImage(sfd.FileName, map);
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -474,12 +492,98 @@ namespace SaltCharts
         {
             SeaChart.Location = new Point(SeaChart.Location.X, Math.Max(SeaChart.Location.Y - (panelChart.Height / 2), -(SeaChart.Image.Height - panelChart.Height)));
         }
-        #endregion
 
         private void btnRedraw_Click(object sender, EventArgs e)
         {
             ClearMap();
             PlotMap();
         }
+
+        private void btnWaypointsBack_Click(object sender, EventArgs e)
+        {
+            foreach(Control c in SeaChart.Controls)
+                if ((String)(c.Tag) == "Stamp")
+                    c.BringToFront();
+        }
+
+        private void btnWaypointForward_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in SeaChart.Controls)
+                if ((String)(c.Tag) == "Waypoint")
+                    c.BringToFront();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            Import(true, true);
+        }
+
+        private void btnImportWaypoints_Click(object sender, EventArgs e)
+        {
+            Import(true, false);
+        }
+
+        private void btnImportStamps_Click(object sender, EventArgs e)
+        {
+            Import(false, true);
+        }
+        #endregion
+
+        private void Import(bool Waypoints, bool Stamps)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "map";
+            ofd.Title = "Select Map File To Merge";
+            ofd.Filter = "Map File|*.map";
+            ofd.Multiselect = false;
+
+            if (ofd.ShowDialog(this) == DialogResult.OK)
+            {
+                DialogResult r = MessageBox.Show(this, "Are you sure you want to import the following file?\nThis can not be undone.\n" + ofd.FileName, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (r == DialogResult.Yes)
+                {
+                    FileIO.Save(Path.GetDirectoryName(Application.ExecutablePath) + Path.DirectorySeparatorChar + SaltCharts.Properties.Settings.Default.LastMapFile + "_" + DateAndTime.Now.ToFileTimeUtc().ToString() + ".bak", map);
+                    Map newMap = FileIO.Load(ofd.FileName);
+                    if (Waypoints)
+                        ImportWaypoints(newMap);
+                    if (Stamps)
+                        ImportStamps(newMap);
+                    ClearMap();
+                    PlotMap();
+                    AutoSave();
+                }
+            }
+        }
+
+        private void ImportWaypoints(Map newMap)
+        {
+            foreach (Waypoint wp in newMap.GetWaypoints())
+            {
+                if (map.HasWaypoint(wp.Location))
+                {
+                    Waypoint oldWp = map.GetWaypoint(wp.Location);
+                    if (!wp.IsExactMatch(oldWp))
+                    {
+                        WaypointConflict conflict = new WaypointConflict(oldWp, wp);
+                        conflict.Text = "Waypoint Conflict - " + wp.Location.ToString();
+                        conflict.ShowDialog(this);
+                        oldWp.Island = conflict.Merged.Island;
+                        oldWp.Location = conflict.Merged.Location;
+                        oldWp.Marker = conflict.Merged.Marker;
+                        oldWp.Name = conflict.Merged.Name;
+                        oldWp.Notes = conflict.Merged.Notes;
+                    }
+                }
+                else
+                    map.AddWaypoint(wp);
+            }
+        }
+
+        private void ImportStamps(Map newMap)
+        {
+            foreach (Stamp s in newMap.GetStamps())
+                map.AddStamp(s);
+        }
+
     }
-}
+ }

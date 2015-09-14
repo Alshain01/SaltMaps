@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="Coordinates.cs" />
     <Compile Include="FileIO.cs" />
+    <Compile Include="WaypointConflict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaypointConflict.Designer.cs">
+      <DependentUpon>WaypointConflict.cs</DependentUpon>
+    </Compile>
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaypointConflict.resx">
+      <DependentUpon>WaypointConflict.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
@@ -319,6 +328,9 @@
     <Content Include="Help.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Action-db-add-icon.png" />
+    <None Include="Resources\Actions-go-top-icon.png" />
+    <None Include="Resources\Actions-go-bottom-icon.png" />
     <None Include="Resources\AncientHelp.png" />
     <None Include="Resources\AncientGreaves.png" />
     <None Include="Resources\RingOfNight.png" />

@@ -5,7 +5,7 @@ using System.Drawing;
 namespace SaltCharts
 {
     [Serializable]
-    public class Waypoint : IMapItem, IEquatable<Waypoint>, IComparable<Waypoint>
+    public class Waypoint : IMapItem
     {
         const int CELL_SIZE = 40;
         const int GRID_CENTER = 2068;
@@ -34,6 +34,16 @@ namespace SaltCharts
             this.Name = string.Empty;
             this.Notes = String.Empty;
        }
+
+        // Constructor for new Waypoint Generation
+        public Waypoint(Coordinates c, MarkerType marker, IslandType island)
+        {
+            this.Location = c;
+            this.Island = island;
+            this.Marker = marker;
+            this.Name = string.Empty;
+            this.Notes = String.Empty;
+        }
 
         public Point GetLocation()
         {
@@ -78,58 +88,9 @@ namespace SaltCharts
             return waypointImage;
         }
 
-        public int CompareTo(Waypoint wp) 
+        public bool IsExactMatch(Waypoint wp)
         {
-            return Location.CompareTo(wp.Location);
-        }
-
-        public override bool Equals(Object o)
-        {
-            if (o.GetType().Equals(this.GetType()))
-                return Equals((Waypoint)o);
-            return false;
-        }
-
-        public bool Equals(Waypoint wp)
-        {
-            return Location.Equals(wp.Location);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public static bool operator >(Waypoint a, Waypoint b)
-        {
-            return a.CompareTo(b) > 0;
-        }
-
-        public static bool operator <(Waypoint a, Waypoint b)
-        {
-            return a.CompareTo(b) < 0;
-        }
-
-        public static bool operator >=(Waypoint a, Waypoint b)
-        {
-            int result = a.CompareTo(b);
-            return result == 0 || result > 0;
-        }
-
-        public static bool operator <=(Waypoint a, Waypoint b)
-        {
-            int result = a.CompareTo(b);
-            return result == 0 || result < 0;
-        }
-
-        public static bool operator ==(Waypoint a, Waypoint b)
-        {
-            return a.Equals(b);
-        }
-
-        public static bool operator !=(Waypoint a, Waypoint b)
-        {
-            return !a.Equals(b);
+            return Name == wp.Name && Notes == wp.Notes && Marker == wp.Marker && Island == wp.Island && Location.X == wp.Location.X && Location.Y == wp.Location.Y;
         }
     }
 }

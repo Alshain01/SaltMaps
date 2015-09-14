@@ -20,15 +20,35 @@ namespace SaltCharts
             waypoints.Add(wp);
             return wp;
         }
+
+        public bool AddWaypoint(Waypoint wp)
+        {
+            if (HasWaypoint(wp.Location))
+                return false;
+                
+            waypoints.Add(wp);
+            return true;
+        
+        }
         
         public Waypoint GetWaypoint(Point p)
         {
-            return waypoints.Find(x => x.GetLocation() == p);
+            return waypoints.Find(x => x.GetLocation().X == p.X && x.GetLocation().Y == p.Y);
+        }
+
+        public Waypoint GetWaypoint(Coordinates c)
+        {
+            return waypoints.Find(x => x.Location.X == c.X && x.Location.Y == c.Y);
         }
 
         public bool HasWaypoint(Point p)
         {
-            return waypoints.Exists(x => x.GetLocation() == p);
+            return waypoints.Exists(x => x.GetLocation().X == p.X && x.GetLocation().Y == p.Y);
+        }
+
+        public bool HasWaypoint(Coordinates c)
+        {
+            return waypoints.Exists(x => x.Location.X == c.X && x.Location.Y == c.Y);
         }
 
         public void RemoveWaypoint(Point p)
@@ -39,7 +59,7 @@ namespace SaltCharts
 
         public Stamp AddStamp(MarkerType m, int size, Point p)
         {
-            if (m == MarkerType.None || stamps.Exists(x => x.Location == p))
+            if (m == MarkerType.None || HasStamp(p))
                 return null;
 
             Stamp stamp = new Stamp(p, size, m);
@@ -47,14 +67,24 @@ namespace SaltCharts
             return stamp;
         }
 
+        public bool AddStamp(Stamp s)
+        {
+            if (HasStamp(s.Location))
+                return false;
+
+            stamps.Add(s);
+            return true;
+
+        }
+
         public Stamp GetStamp(Point p)
         {
-            return stamps.Find(x => x.Location == p);
+            return stamps.Find(x => x.Location.X == p.X && x.Location.Y == p.Y);
         }
 
         public bool HasStamp(Point p)
         {
-            return stamps.Exists(x => x.Location == p);
+            return stamps.Exists(x => x.Location.X == p.X && x.Location.Y == p.Y);
         }
 
         public void RemoveStamp(Point p)

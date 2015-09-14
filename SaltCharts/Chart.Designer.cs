@@ -48,8 +48,12 @@
             this.btnHelp = new System.Windows.Forms.ToolStripButton();
             this.btnSettings = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnWaypointsBack = new System.Windows.Forms.ToolStripButton();
+            this.btnWaypointForward = new System.Windows.Forms.ToolStripButton();
             this.btnRedraw = new System.Windows.Forms.ToolStripButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnImport = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnImportWaypoints = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportStamps = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnStamp = new System.Windows.Forms.RadioButton();
             this.btnDeepSea = new System.Windows.Forms.RadioButton();
@@ -91,15 +95,17 @@
             this.btnAncientGauntlets = new System.Windows.Forms.RadioButton();
             this.btnAncientGreaves = new System.Windows.Forms.RadioButton();
             this.btnAncientHelm = new System.Windows.Forms.RadioButton();
-            this.imageSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.panelNavigation = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.btnEast = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnWest = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnSouth = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCenter = new System.Windows.Forms.Button();
             this.btnNorth = new System.Windows.Forms.Button();
-            this.markerPanel = new System.Windows.Forms.Panel();
-            this.panelIsland = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStampSize = new System.Windows.Forms.NumericUpDown();
             this.panelHorizontal = new System.Windows.Forms.Panel();
@@ -107,19 +113,21 @@
             this.panelVertical = new System.Windows.Forms.Panel();
             this.verticalNavigation = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grpIsland = new System.Windows.Forms.GroupBox();
+            this.grpMarker = new System.Windows.Forms.GroupBox();
             this.panelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeaChart)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panelNavigation.SuspendLayout();
-            this.markerPanel.SuspendLayout();
-            this.panelIsland.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtStampSize)).BeginInit();
             this.panelHorizontal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalNavigation)).BeginInit();
             this.panelVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.verticalNavigation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grpIsland.SuspendLayout();
+            this.grpMarker.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelChart
@@ -128,9 +136,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChart.Controls.Add(this.SeaChart);
-            this.panelChart.Location = new System.Drawing.Point(164, 71);
+            this.panelChart.Location = new System.Drawing.Point(171, 71);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1120, 670);
+            this.panelChart.Size = new System.Drawing.Size(1110, 700);
             this.panelChart.TabIndex = 2;
             // 
             // SeaChart
@@ -141,7 +149,7 @@
             this.SeaChart.Image = global::SaltCharts.Properties.Resources.Grid;
             this.SeaChart.Location = new System.Drawing.Point(-87, -87);
             this.SeaChart.Name = "SeaChart";
-            this.SeaChart.Size = new System.Drawing.Size(3965, 4235);
+            this.SeaChart.Size = new System.Drawing.Size(3955, 4272);
             this.SeaChart.TabIndex = 2;
             this.SeaChart.TabStop = false;
             this.SeaChart.LocationChanged += new System.EventHandler(this.SeaChart_LocationChanged);
@@ -158,7 +166,7 @@
             this.statusRawCoord,
             this.statusPoint,
             this.statusChartLocation});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 740);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 770);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
             this.statusStrip1.TabIndex = 3;
@@ -225,7 +233,10 @@
             this.btnInfo,
             this.btnHelp,
             this.btnSettings,
+            this.btnImport,
             this.toolStripSeparator1,
+            this.btnWaypointsBack,
+            this.btnWaypointForward,
             this.btnRedraw});
             this.toolStrip1.Location = new System.Drawing.Point(123, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -311,6 +322,28 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
+            // btnWaypointsBack
+            // 
+            this.btnWaypointsBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnWaypointsBack.Image = global::SaltCharts.Properties.Resources.Actions_go_top_icon;
+            this.btnWaypointsBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWaypointsBack.Name = "btnWaypointsBack";
+            this.btnWaypointsBack.Size = new System.Drawing.Size(28, 28);
+            this.btnWaypointsBack.Text = "toolStripButton2";
+            this.btnWaypointsBack.ToolTipText = "Send Waypoints Back";
+            this.btnWaypointsBack.Click += new System.EventHandler(this.btnWaypointsBack_Click);
+            // 
+            // btnWaypointForward
+            // 
+            this.btnWaypointForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnWaypointForward.Image = global::SaltCharts.Properties.Resources.Actions_go_bottom_icon;
+            this.btnWaypointForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnWaypointForward.Name = "btnWaypointForward";
+            this.btnWaypointForward.Size = new System.Drawing.Size(28, 28);
+            this.btnWaypointForward.Text = "Bring Waypoints Forward";
+            this.btnWaypointForward.ToolTipText = "Bring Waypoints Forward";
+            this.btnWaypointForward.Click += new System.EventHandler(this.btnWaypointForward_Click);
+            // 
             // btnRedraw
             // 
             this.btnRedraw.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -321,18 +354,39 @@
             this.btnRedraw.Text = "Redraw Map";
             this.btnRedraw.Click += new System.EventHandler(this.btnRedraw_Click);
             // 
-            // openFileDialog1
+            // btnImport
             // 
-            this.openFileDialog1.DefaultExt = "map";
-            this.openFileDialog1.Filter = "Map File|*.map";
-            this.openFileDialog1.Title = "Select Map File";
+            this.btnImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnImportWaypoints,
+            this.btnImportStamps});
+            this.btnImport.Image = global::SaltCharts.Properties.Resources.Action_db_add_icon;
+            this.btnImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(40, 28);
+            this.btnImport.Text = "Import";
+            this.btnImport.ButtonClick += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnImportWaypoints
+            // 
+            this.btnImportWaypoints.Name = "btnImportWaypoints";
+            this.btnImportWaypoints.Size = new System.Drawing.Size(169, 22);
+            this.btnImportWaypoints.Text = "Import Waypoints";
+            this.btnImportWaypoints.Click += new System.EventHandler(this.btnImportWaypoints_Click);
+            // 
+            // btnImportStamps
+            // 
+            this.btnImportStamps.Name = "btnImportStamps";
+            this.btnImportStamps.Size = new System.Drawing.Size(169, 22);
+            this.btnImportStamps.Text = "Import Stamps";
+            this.btnImportStamps.Click += new System.EventHandler(this.btnImportStamps_Click);
             // 
             // btnStamp
             // 
             this.btnStamp.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnStamp.BackgroundImage = global::SaltCharts.Properties.Resources.stamp_icon;
             this.btnStamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnStamp.Location = new System.Drawing.Point(8, 85);
+            this.btnStamp.Location = new System.Drawing.Point(8, 101);
             this.btnStamp.Name = "btnStamp";
             this.btnStamp.Size = new System.Drawing.Size(35, 35);
             this.btnStamp.TabIndex = 64;
@@ -345,7 +399,7 @@
             this.btnDeepSea.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnDeepSea.BackgroundImage = global::SaltCharts.Properties.Resources.DeepSea;
             this.btnDeepSea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeepSea.Location = new System.Drawing.Point(8, 44);
+            this.btnDeepSea.Location = new System.Drawing.Point(8, 60);
             this.btnDeepSea.Name = "btnDeepSea";
             this.btnDeepSea.Size = new System.Drawing.Size(35, 35);
             this.btnDeepSea.TabIndex = 63;
@@ -358,7 +412,7 @@
             this.radioButton10.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton10.BackgroundImage")));
             this.radioButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton10.Location = new System.Drawing.Point(80, 85);
+            this.radioButton10.Location = new System.Drawing.Point(80, 101);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(35, 35);
             this.radioButton10.TabIndex = 62;
@@ -371,7 +425,7 @@
             this.radioButton11.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton11.BackgroundImage")));
             this.radioButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton11.Location = new System.Drawing.Point(44, 85);
+            this.radioButton11.Location = new System.Drawing.Point(44, 101);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(35, 35);
             this.radioButton11.TabIndex = 61;
@@ -384,7 +438,7 @@
             this.radioButton8.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton8.BackgroundImage")));
             this.radioButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton8.Location = new System.Drawing.Point(80, 44);
+            this.radioButton8.Location = new System.Drawing.Point(80, 60);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(35, 35);
             this.radioButton8.TabIndex = 60;
@@ -397,7 +451,7 @@
             this.radioButton9.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radioButton9.BackgroundImage")));
             this.radioButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton9.Location = new System.Drawing.Point(44, 44);
+            this.radioButton9.Location = new System.Drawing.Point(44, 60);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(35, 35);
             this.radioButton9.TabIndex = 59;
@@ -410,7 +464,7 @@
             this.btnSingle.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnSingle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSingle.BackgroundImage")));
             this.btnSingle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSingle.Location = new System.Drawing.Point(44, 3);
+            this.btnSingle.Location = new System.Drawing.Point(44, 19);
             this.btnSingle.Name = "btnSingle";
             this.btnSingle.Size = new System.Drawing.Size(35, 35);
             this.btnSingle.TabIndex = 58;
@@ -424,7 +478,7 @@
             this.btnNoIsland.BackgroundImage = global::SaltCharts.Properties.Resources.No;
             this.btnNoIsland.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNoIsland.Checked = true;
-            this.btnNoIsland.Location = new System.Drawing.Point(8, 3);
+            this.btnNoIsland.Location = new System.Drawing.Point(8, 19);
             this.btnNoIsland.Name = "btnNoIsland";
             this.btnNoIsland.Size = new System.Drawing.Size(35, 35);
             this.btnNoIsland.TabIndex = 57;
@@ -438,7 +492,7 @@
             this.btnHighMountain.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnHighMountain.BackgroundImage = global::SaltCharts.Properties.Resources.HighMountain;
             this.btnHighMountain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHighMountain.Location = new System.Drawing.Point(81, 5);
+            this.btnHighMountain.Location = new System.Drawing.Point(81, 19);
             this.btnHighMountain.Name = "btnHighMountain";
             this.btnHighMountain.Size = new System.Drawing.Size(35, 35);
             this.btnHighMountain.TabIndex = 38;
@@ -451,7 +505,7 @@
             this.btnMerchant.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnMerchant.BackgroundImage = global::SaltCharts.Properties.Resources.Merchant;
             this.btnMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMerchant.Location = new System.Drawing.Point(8, 46);
+            this.btnMerchant.Location = new System.Drawing.Point(8, 60);
             this.btnMerchant.Name = "btnMerchant";
             this.btnMerchant.Size = new System.Drawing.Size(35, 35);
             this.btnMerchant.TabIndex = 39;
@@ -464,7 +518,7 @@
             this.btnDesert.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnDesert.BackgroundImage = global::SaltCharts.Properties.Resources.Desert;
             this.btnDesert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDesert.Location = new System.Drawing.Point(45, 5);
+            this.btnDesert.Location = new System.Drawing.Point(45, 19);
             this.btnDesert.Name = "btnDesert";
             this.btnDesert.Size = new System.Drawing.Size(35, 35);
             this.btnDesert.TabIndex = 37;
@@ -478,7 +532,7 @@
             this.btnNoMarker.BackgroundImage = global::SaltCharts.Properties.Resources.No;
             this.btnNoMarker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNoMarker.Checked = true;
-            this.btnNoMarker.Location = new System.Drawing.Point(8, 5);
+            this.btnNoMarker.Location = new System.Drawing.Point(8, 19);
             this.btnNoMarker.Name = "btnNoMarker";
             this.btnNoMarker.Size = new System.Drawing.Size(35, 35);
             this.btnNoMarker.TabIndex = 36;
@@ -492,7 +546,7 @@
             this.btnQuestion.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnQuestion.BackgroundImage = global::SaltCharts.Properties.Resources.Question;
             this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnQuestion.Location = new System.Drawing.Point(80, 251);
+            this.btnQuestion.Location = new System.Drawing.Point(80, 265);
             this.btnQuestion.Name = "btnQuestion";
             this.btnQuestion.Size = new System.Drawing.Size(35, 35);
             this.btnQuestion.TabIndex = 56;
@@ -505,7 +559,7 @@
             this.btnX.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnX.BackgroundImage = global::SaltCharts.Properties.Resources.X;
             this.btnX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnX.Location = new System.Drawing.Point(44, 251);
+            this.btnX.Location = new System.Drawing.Point(44, 265);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(35, 35);
             this.btnX.TabIndex = 55;
@@ -518,7 +572,7 @@
             this.btnFlower.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnFlower.BackgroundImage = global::SaltCharts.Properties.Resources.Flower;
             this.btnFlower.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFlower.Location = new System.Drawing.Point(8, 251);
+            this.btnFlower.Location = new System.Drawing.Point(8, 265);
             this.btnFlower.Name = "btnFlower";
             this.btnFlower.Size = new System.Drawing.Size(35, 35);
             this.btnFlower.TabIndex = 54;
@@ -531,7 +585,7 @@
             this.btnDeer.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnDeer.BackgroundImage = global::SaltCharts.Properties.Resources.Deer;
             this.btnDeer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeer.Location = new System.Drawing.Point(80, 210);
+            this.btnDeer.Location = new System.Drawing.Point(80, 224);
             this.btnDeer.Name = "btnDeer";
             this.btnDeer.Size = new System.Drawing.Size(35, 35);
             this.btnDeer.TabIndex = 53;
@@ -544,7 +598,7 @@
             this.btnSpiderQueen.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnSpiderQueen.BackgroundImage = global::SaltCharts.Properties.Resources.SpiderQueen;
             this.btnSpiderQueen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSpiderQueen.Location = new System.Drawing.Point(44, 210);
+            this.btnSpiderQueen.Location = new System.Drawing.Point(44, 224);
             this.btnSpiderQueen.Name = "btnSpiderQueen";
             this.btnSpiderQueen.Size = new System.Drawing.Size(35, 35);
             this.btnSpiderQueen.TabIndex = 52;
@@ -557,7 +611,7 @@
             this.btnMoonrock.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnMoonrock.BackgroundImage = global::SaltCharts.Properties.Resources.Moonrock;
             this.btnMoonrock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMoonrock.Location = new System.Drawing.Point(8, 210);
+            this.btnMoonrock.Location = new System.Drawing.Point(8, 224);
             this.btnMoonrock.Name = "btnMoonrock";
             this.btnMoonrock.Size = new System.Drawing.Size(35, 35);
             this.btnMoonrock.TabIndex = 51;
@@ -570,7 +624,7 @@
             this.btnCompass.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnCompass.BackgroundImage = global::SaltCharts.Properties.Resources.Compass;
             this.btnCompass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCompass.Location = new System.Drawing.Point(80, 169);
+            this.btnCompass.Location = new System.Drawing.Point(80, 183);
             this.btnCompass.Name = "btnCompass";
             this.btnCompass.Size = new System.Drawing.Size(35, 35);
             this.btnCompass.TabIndex = 50;
@@ -583,7 +637,7 @@
             this.btnSilverChest.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnSilverChest.BackgroundImage = global::SaltCharts.Properties.Resources.SilverChest;
             this.btnSilverChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSilverChest.Location = new System.Drawing.Point(44, 169);
+            this.btnSilverChest.Location = new System.Drawing.Point(44, 183);
             this.btnSilverChest.Name = "btnSilverChest";
             this.btnSilverChest.Size = new System.Drawing.Size(35, 35);
             this.btnSilverChest.TabIndex = 49;
@@ -596,7 +650,7 @@
             this.btnBronzeChest.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnBronzeChest.BackgroundImage = global::SaltCharts.Properties.Resources.BronzeChest;
             this.btnBronzeChest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBronzeChest.Location = new System.Drawing.Point(8, 169);
+            this.btnBronzeChest.Location = new System.Drawing.Point(8, 183);
             this.btnBronzeChest.Name = "btnBronzeChest";
             this.btnBronzeChest.Size = new System.Drawing.Size(35, 35);
             this.btnBronzeChest.TabIndex = 48;
@@ -609,7 +663,7 @@
             this.btnPirateShip.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnPirateShip.BackgroundImage = global::SaltCharts.Properties.Resources.PirateShip;
             this.btnPirateShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateShip.Location = new System.Drawing.Point(80, 128);
+            this.btnPirateShip.Location = new System.Drawing.Point(80, 142);
             this.btnPirateShip.Name = "btnPirateShip";
             this.btnPirateShip.Size = new System.Drawing.Size(35, 35);
             this.btnPirateShip.TabIndex = 47;
@@ -622,7 +676,7 @@
             this.btnPirateTownship.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnPirateTownship.BackgroundImage = global::SaltCharts.Properties.Resources.PirateTownship;
             this.btnPirateTownship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateTownship.Location = new System.Drawing.Point(44, 128);
+            this.btnPirateTownship.Location = new System.Drawing.Point(44, 142);
             this.btnPirateTownship.Name = "btnPirateTownship";
             this.btnPirateTownship.Size = new System.Drawing.Size(35, 35);
             this.btnPirateTownship.TabIndex = 46;
@@ -635,7 +689,7 @@
             this.btnPirateCamp.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnPirateCamp.BackgroundImage = global::SaltCharts.Properties.Resources.PirateCamp;
             this.btnPirateCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPirateCamp.Location = new System.Drawing.Point(8, 128);
+            this.btnPirateCamp.Location = new System.Drawing.Point(8, 142);
             this.btnPirateCamp.Name = "btnPirateCamp";
             this.btnPirateCamp.Size = new System.Drawing.Size(35, 35);
             this.btnPirateCamp.TabIndex = 45;
@@ -648,7 +702,7 @@
             this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton1.BackgroundImage = global::SaltCharts.Properties.Resources.GoodResources;
             this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton1.Location = new System.Drawing.Point(80, 87);
+            this.radioButton1.Location = new System.Drawing.Point(80, 101);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(35, 35);
             this.radioButton1.TabIndex = 44;
@@ -661,7 +715,7 @@
             this.btnAncientAltar.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientAltar.BackgroundImage = global::SaltCharts.Properties.Resources.AncientAltar;
             this.btnAncientAltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientAltar.Location = new System.Drawing.Point(44, 87);
+            this.btnAncientAltar.Location = new System.Drawing.Point(44, 101);
             this.btnAncientAltar.Name = "btnAncientAltar";
             this.btnAncientAltar.Size = new System.Drawing.Size(35, 35);
             this.btnAncientAltar.TabIndex = 43;
@@ -674,7 +728,7 @@
             this.btnAncientRuins.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientRuins.BackgroundImage = global::SaltCharts.Properties.Resources.AncientRuins;
             this.btnAncientRuins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientRuins.Location = new System.Drawing.Point(8, 87);
+            this.btnAncientRuins.Location = new System.Drawing.Point(8, 101);
             this.btnAncientRuins.Name = "btnAncientRuins";
             this.btnAncientRuins.Size = new System.Drawing.Size(35, 35);
             this.btnAncientRuins.TabIndex = 42;
@@ -687,7 +741,7 @@
             this.btnHuntingCamp.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnHuntingCamp.BackgroundImage = global::SaltCharts.Properties.Resources.HuntingCamp;
             this.btnHuntingCamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHuntingCamp.Location = new System.Drawing.Point(80, 46);
+            this.btnHuntingCamp.Location = new System.Drawing.Point(80, 60);
             this.btnHuntingCamp.Name = "btnHuntingCamp";
             this.btnHuntingCamp.Size = new System.Drawing.Size(35, 35);
             this.btnHuntingCamp.TabIndex = 41;
@@ -700,7 +754,7 @@
             this.btnInnkeeper.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnInnkeeper.BackgroundImage = global::SaltCharts.Properties.Resources.Innkeeper;
             this.btnInnkeeper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInnkeeper.Location = new System.Drawing.Point(44, 46);
+            this.btnInnkeeper.Location = new System.Drawing.Point(44, 60);
             this.btnInnkeeper.Name = "btnInnkeeper";
             this.btnInnkeeper.Size = new System.Drawing.Size(35, 35);
             this.btnInnkeeper.TabIndex = 40;
@@ -713,7 +767,7 @@
             this.btnTwoByTwo.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnTwoByTwo.BackgroundImage = global::SaltCharts.Properties.Resources.TwoByTwo;
             this.btnTwoByTwo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTwoByTwo.Location = new System.Drawing.Point(80, 3);
+            this.btnTwoByTwo.Location = new System.Drawing.Point(80, 19);
             this.btnTwoByTwo.Name = "btnTwoByTwo";
             this.btnTwoByTwo.Size = new System.Drawing.Size(35, 35);
             this.btnTwoByTwo.TabIndex = 67;
@@ -726,7 +780,7 @@
             this.btnAncientBreastPlate.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientBreastPlate.BackgroundImage = global::SaltCharts.Properties.Resources.AncientBreastplate;
             this.btnAncientBreastPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientBreastPlate.Location = new System.Drawing.Point(8, 374);
+            this.btnAncientBreastPlate.Location = new System.Drawing.Point(8, 388);
             this.btnAncientBreastPlate.Name = "btnAncientBreastPlate";
             this.btnAncientBreastPlate.Size = new System.Drawing.Size(35, 35);
             this.btnAncientBreastPlate.TabIndex = 62;
@@ -739,7 +793,7 @@
             this.btnAncientBow.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientBow.BackgroundImage = global::SaltCharts.Properties.Resources.AncientBow;
             this.btnAncientBow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientBow.Location = new System.Drawing.Point(44, 333);
+            this.btnAncientBow.Location = new System.Drawing.Point(44, 347);
             this.btnAncientBow.Name = "btnAncientBow";
             this.btnAncientBow.Size = new System.Drawing.Size(35, 35);
             this.btnAncientBow.TabIndex = 61;
@@ -752,7 +806,7 @@
             this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton4.BackgroundImage = global::SaltCharts.Properties.Resources.AncientDagger;
             this.radioButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radioButton4.Location = new System.Drawing.Point(8, 333);
+            this.radioButton4.Location = new System.Drawing.Point(8, 347);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(35, 35);
             this.radioButton4.TabIndex = 60;
@@ -765,7 +819,7 @@
             this.btnBomb.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnBomb.BackgroundImage = global::SaltCharts.Properties.Resources.Bomb;
             this.btnBomb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBomb.Location = new System.Drawing.Point(80, 292);
+            this.btnBomb.Location = new System.Drawing.Point(80, 306);
             this.btnBomb.Name = "btnBomb";
             this.btnBomb.Size = new System.Drawing.Size(35, 35);
             this.btnBomb.TabIndex = 59;
@@ -778,7 +832,7 @@
             this.btnNightRing.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnNightRing.BackgroundImage = global::SaltCharts.Properties.Resources.RingOfNight;
             this.btnNightRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNightRing.Location = new System.Drawing.Point(44, 292);
+            this.btnNightRing.Location = new System.Drawing.Point(44, 306);
             this.btnNightRing.Name = "btnNightRing";
             this.btnNightRing.Size = new System.Drawing.Size(35, 35);
             this.btnNightRing.TabIndex = 58;
@@ -791,7 +845,7 @@
             this.btnDayRing.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnDayRing.BackgroundImage = global::SaltCharts.Properties.Resources.RingOfDay;
             this.btnDayRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDayRing.Location = new System.Drawing.Point(8, 292);
+            this.btnDayRing.Location = new System.Drawing.Point(8, 306);
             this.btnDayRing.Name = "btnDayRing";
             this.btnDayRing.Size = new System.Drawing.Size(35, 35);
             this.btnDayRing.TabIndex = 57;
@@ -804,7 +858,7 @@
             this.btnAncientPickaxe.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientPickaxe.BackgroundImage = global::SaltCharts.Properties.Resources.AncientPickaxe;
             this.btnAncientPickaxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientPickaxe.Location = new System.Drawing.Point(80, 333);
+            this.btnAncientPickaxe.Location = new System.Drawing.Point(80, 347);
             this.btnAncientPickaxe.Name = "btnAncientPickaxe";
             this.btnAncientPickaxe.Size = new System.Drawing.Size(35, 35);
             this.btnAncientPickaxe.TabIndex = 64;
@@ -817,7 +871,7 @@
             this.btnAncientGauntlets.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientGauntlets.BackgroundImage = global::SaltCharts.Properties.Resources.AncientGauntlets;
             this.btnAncientGauntlets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientGauntlets.Location = new System.Drawing.Point(44, 374);
+            this.btnAncientGauntlets.Location = new System.Drawing.Point(44, 388);
             this.btnAncientGauntlets.Name = "btnAncientGauntlets";
             this.btnAncientGauntlets.Size = new System.Drawing.Size(35, 35);
             this.btnAncientGauntlets.TabIndex = 63;
@@ -830,7 +884,7 @@
             this.btnAncientGreaves.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientGreaves.BackgroundImage = global::SaltCharts.Properties.Resources.AncientGreaves;
             this.btnAncientGreaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientGreaves.Location = new System.Drawing.Point(80, 374);
+            this.btnAncientGreaves.Location = new System.Drawing.Point(80, 388);
             this.btnAncientGreaves.Name = "btnAncientGreaves";
             this.btnAncientGreaves.Size = new System.Drawing.Size(35, 35);
             this.btnAncientGreaves.TabIndex = 65;
@@ -843,7 +897,7 @@
             this.btnAncientHelm.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAncientHelm.BackgroundImage = global::SaltCharts.Properties.Resources.AncientHelm;
             this.btnAncientHelm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAncientHelm.Location = new System.Drawing.Point(8, 415);
+            this.btnAncientHelm.Location = new System.Drawing.Point(8, 429);
             this.btnAncientHelm.Name = "btnAncientHelm";
             this.btnAncientHelm.Size = new System.Drawing.Size(35, 35);
             this.btnAncientHelm.TabIndex = 66;
@@ -851,23 +905,32 @@
             this.toolTip1.SetToolTip(this.btnAncientHelm, "Ancient Helm");
             this.btnAncientHelm.UseVisualStyleBackColor = true;
             // 
-            // imageSaveDialog
-            // 
-            this.imageSaveDialog.DefaultExt = "png";
-            this.imageSaveDialog.Filter = "Portable Network Graphic|*.png|JPEG|*.jpg|Graphics Interchange Format|*.gif|Bitma" +
-    "p Image|*.bmp|Tagged Image File Format|*.tif";
-            // 
             // panelNavigation
             // 
+            this.panelNavigation.Controls.Add(this.button5);
             this.panelNavigation.Controls.Add(this.btnEast);
+            this.panelNavigation.Controls.Add(this.button4);
             this.panelNavigation.Controls.Add(this.btnWest);
+            this.panelNavigation.Controls.Add(this.button3);
             this.panelNavigation.Controls.Add(this.btnSouth);
+            this.panelNavigation.Controls.Add(this.button2);
+            this.panelNavigation.Controls.Add(this.button1);
             this.panelNavigation.Controls.Add(this.btnCenter);
             this.panelNavigation.Controls.Add(this.btnNorth);
-            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
+            this.panelNavigation.Location = new System.Drawing.Point(3, 3);
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(123, 116);
             this.panelNavigation.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.Image = global::SaltCharts.Properties.Resources.right;
+            this.button5.Location = new System.Drawing.Point(80, 40);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(35, 35);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnEast_Click);
             // 
             // btnEast
             // 
@@ -879,6 +942,16 @@
             this.btnEast.UseVisualStyleBackColor = true;
             this.btnEast.Click += new System.EventHandler(this.btnEast_Click);
             // 
+            // button4
+            // 
+            this.button4.Image = global::SaltCharts.Properties.Resources.left;
+            this.button4.Location = new System.Drawing.Point(8, 40);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(35, 35);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnWest_Click);
+            // 
             // btnWest
             // 
             this.btnWest.Image = global::SaltCharts.Properties.Resources.left;
@@ -889,6 +962,16 @@
             this.btnWest.UseVisualStyleBackColor = true;
             this.btnWest.Click += new System.EventHandler(this.btnWest_Click);
             // 
+            // button3
+            // 
+            this.button3.Image = global::SaltCharts.Properties.Resources.down;
+            this.button3.Location = new System.Drawing.Point(44, 76);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(35, 35);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnSouth_Click);
+            // 
             // btnSouth
             // 
             this.btnSouth.Image = global::SaltCharts.Properties.Resources.down;
@@ -898,6 +981,26 @@
             this.btnSouth.TabIndex = 2;
             this.btnSouth.UseVisualStyleBackColor = true;
             this.btnSouth.Click += new System.EventHandler(this.btnSouth_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::SaltCharts.Properties.Resources.globe;
+            this.button2.Location = new System.Drawing.Point(44, 40);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(35, 35);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnCenter_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::SaltCharts.Properties.Resources.up;
+            this.button1.Location = new System.Drawing.Point(44, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 35);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnNorth_Click);
             // 
             // btnCenter
             // 
@@ -919,68 +1022,10 @@
             this.btnNorth.UseVisualStyleBackColor = true;
             this.btnNorth.Click += new System.EventHandler(this.btnNorth_Click);
             // 
-            // markerPanel
-            // 
-            this.markerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.markerPanel.Controls.Add(this.btnAncientHelm);
-            this.markerPanel.Controls.Add(this.btnAncientGreaves);
-            this.markerPanel.Controls.Add(this.btnAncientPickaxe);
-            this.markerPanel.Controls.Add(this.btnAncientGauntlets);
-            this.markerPanel.Controls.Add(this.btnAncientBreastPlate);
-            this.markerPanel.Controls.Add(this.btnAncientBow);
-            this.markerPanel.Controls.Add(this.radioButton4);
-            this.markerPanel.Controls.Add(this.btnBomb);
-            this.markerPanel.Controls.Add(this.btnNightRing);
-            this.markerPanel.Controls.Add(this.btnDayRing);
-            this.markerPanel.Controls.Add(this.btnQuestion);
-            this.markerPanel.Controls.Add(this.btnX);
-            this.markerPanel.Controls.Add(this.btnFlower);
-            this.markerPanel.Controls.Add(this.btnDeer);
-            this.markerPanel.Controls.Add(this.btnSpiderQueen);
-            this.markerPanel.Controls.Add(this.btnMoonrock);
-            this.markerPanel.Controls.Add(this.btnCompass);
-            this.markerPanel.Controls.Add(this.btnSilverChest);
-            this.markerPanel.Controls.Add(this.btnBronzeChest);
-            this.markerPanel.Controls.Add(this.btnPirateShip);
-            this.markerPanel.Controls.Add(this.btnHighMountain);
-            this.markerPanel.Controls.Add(this.btnPirateTownship);
-            this.markerPanel.Controls.Add(this.btnPirateCamp);
-            this.markerPanel.Controls.Add(this.radioButton1);
-            this.markerPanel.Controls.Add(this.btnAncientAltar);
-            this.markerPanel.Controls.Add(this.btnAncientRuins);
-            this.markerPanel.Controls.Add(this.btnHuntingCamp);
-            this.markerPanel.Controls.Add(this.btnInnkeeper);
-            this.markerPanel.Controls.Add(this.btnMerchant);
-            this.markerPanel.Controls.Add(this.btnDesert);
-            this.markerPanel.Controls.Add(this.btnNoMarker);
-            this.markerPanel.Location = new System.Drawing.Point(0, 288);
-            this.markerPanel.Name = "markerPanel";
-            this.markerPanel.Size = new System.Drawing.Size(123, 450);
-            this.markerPanel.TabIndex = 3;
-            // 
-            // panelIsland
-            // 
-            this.panelIsland.Controls.Add(this.btnTwoByTwo);
-            this.panelIsland.Controls.Add(this.label1);
-            this.panelIsland.Controls.Add(this.txtStampSize);
-            this.panelIsland.Controls.Add(this.btnStamp);
-            this.panelIsland.Controls.Add(this.btnDeepSea);
-            this.panelIsland.Controls.Add(this.radioButton10);
-            this.panelIsland.Controls.Add(this.radioButton11);
-            this.panelIsland.Controls.Add(this.radioButton8);
-            this.panelIsland.Controls.Add(this.radioButton9);
-            this.panelIsland.Controls.Add(this.btnSingle);
-            this.panelIsland.Controls.Add(this.btnNoIsland);
-            this.panelIsland.Location = new System.Drawing.Point(0, 117);
-            this.panelIsland.Name = "panelIsland";
-            this.panelIsland.Size = new System.Drawing.Size(123, 167);
-            this.panelIsland.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 128);
+            this.label1.Location = new System.Drawing.Point(8, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 66;
@@ -993,7 +1038,7 @@
             0,
             0,
             0});
-            this.txtStampSize.Location = new System.Drawing.Point(77, 126);
+            this.txtStampSize.Location = new System.Drawing.Point(77, 142);
             this.txtStampSize.Maximum = new decimal(new int[] {
             40,
             0,
@@ -1019,9 +1064,9 @@
             this.panelHorizontal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHorizontal.Controls.Add(this.horizontalNavigation);
-            this.panelHorizontal.Location = new System.Drawing.Point(164, 30);
+            this.panelHorizontal.Location = new System.Drawing.Point(171, 30);
             this.panelHorizontal.Name = "panelHorizontal";
-            this.panelHorizontal.Size = new System.Drawing.Size(1120, 41);
+            this.panelHorizontal.Size = new System.Drawing.Size(1110, 41);
             this.panelHorizontal.TabIndex = 6;
             // 
             // horizontalNavigation
@@ -1030,7 +1075,7 @@
             this.horizontalNavigation.Image = global::SaltCharts.Properties.Resources.Grid;
             this.horizontalNavigation.Location = new System.Drawing.Point(-46, -46);
             this.horizontalNavigation.Name = "horizontalNavigation";
-            this.horizontalNavigation.Size = new System.Drawing.Size(3965, 4136);
+            this.horizontalNavigation.Size = new System.Drawing.Size(3955, 4136);
             this.horizontalNavigation.TabIndex = 0;
             this.horizontalNavigation.TabStop = false;
             this.horizontalNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.horizontalNavigation_MouseDown);
@@ -1042,9 +1087,9 @@
             this.panelVertical.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelVertical.Controls.Add(this.verticalNavigation);
-            this.panelVertical.Location = new System.Drawing.Point(123, 71);
+            this.panelVertical.Location = new System.Drawing.Point(130, 71);
             this.panelVertical.Name = "panelVertical";
-            this.panelVertical.Size = new System.Drawing.Size(41, 670);
+            this.panelVertical.Size = new System.Drawing.Size(41, 700);
             this.panelVertical.TabIndex = 7;
             // 
             // verticalNavigation
@@ -1063,28 +1108,88 @@
             // 
             this.pictureBox1.BackgroundImage = global::SaltCharts.Properties.Resources.Cell;
             this.pictureBox1.Image = global::SaltCharts.Properties.Resources.Compass;
-            this.pictureBox1.Location = new System.Drawing.Point(124, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(130, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 41);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // grpIsland
+            // 
+            this.grpIsland.Controls.Add(this.btnTwoByTwo);
+            this.grpIsland.Controls.Add(this.btnNoIsland);
+            this.grpIsland.Controls.Add(this.label1);
+            this.grpIsland.Controls.Add(this.btnSingle);
+            this.grpIsland.Controls.Add(this.txtStampSize);
+            this.grpIsland.Controls.Add(this.radioButton9);
+            this.grpIsland.Controls.Add(this.btnStamp);
+            this.grpIsland.Controls.Add(this.radioButton8);
+            this.grpIsland.Controls.Add(this.btnDeepSea);
+            this.grpIsland.Controls.Add(this.radioButton11);
+            this.grpIsland.Controls.Add(this.radioButton10);
+            this.grpIsland.Location = new System.Drawing.Point(3, 122);
+            this.grpIsland.Name = "grpIsland";
+            this.grpIsland.Size = new System.Drawing.Size(123, 170);
+            this.grpIsland.TabIndex = 3;
+            this.grpIsland.TabStop = false;
+            this.grpIsland.Text = "Islands";
+            // 
+            // grpMarker
+            // 
+            this.grpMarker.Controls.Add(this.btnAncientHelm);
+            this.grpMarker.Controls.Add(this.btnNoMarker);
+            this.grpMarker.Controls.Add(this.btnAncientGreaves);
+            this.grpMarker.Controls.Add(this.btnDesert);
+            this.grpMarker.Controls.Add(this.btnAncientPickaxe);
+            this.grpMarker.Controls.Add(this.btnMerchant);
+            this.grpMarker.Controls.Add(this.btnAncientGauntlets);
+            this.grpMarker.Controls.Add(this.btnInnkeeper);
+            this.grpMarker.Controls.Add(this.btnAncientBreastPlate);
+            this.grpMarker.Controls.Add(this.btnHuntingCamp);
+            this.grpMarker.Controls.Add(this.btnAncientBow);
+            this.grpMarker.Controls.Add(this.btnAncientRuins);
+            this.grpMarker.Controls.Add(this.radioButton4);
+            this.grpMarker.Controls.Add(this.btnAncientAltar);
+            this.grpMarker.Controls.Add(this.btnBomb);
+            this.grpMarker.Controls.Add(this.radioButton1);
+            this.grpMarker.Controls.Add(this.btnNightRing);
+            this.grpMarker.Controls.Add(this.btnPirateCamp);
+            this.grpMarker.Controls.Add(this.btnDayRing);
+            this.grpMarker.Controls.Add(this.btnPirateTownship);
+            this.grpMarker.Controls.Add(this.btnQuestion);
+            this.grpMarker.Controls.Add(this.btnHighMountain);
+            this.grpMarker.Controls.Add(this.btnX);
+            this.grpMarker.Controls.Add(this.btnPirateShip);
+            this.grpMarker.Controls.Add(this.btnFlower);
+            this.grpMarker.Controls.Add(this.btnBronzeChest);
+            this.grpMarker.Controls.Add(this.btnDeer);
+            this.grpMarker.Controls.Add(this.btnSilverChest);
+            this.grpMarker.Controls.Add(this.btnSpiderQueen);
+            this.grpMarker.Controls.Add(this.btnCompass);
+            this.grpMarker.Controls.Add(this.btnMoonrock);
+            this.grpMarker.Location = new System.Drawing.Point(3, 298);
+            this.grpMarker.Name = "grpMarker";
+            this.grpMarker.Size = new System.Drawing.Size(123, 469);
+            this.grpMarker.TabIndex = 3;
+            this.grpMarker.TabStop = false;
+            this.grpMarker.Text = "Markers";
+            // 
             // Chart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 762);
+            this.ClientSize = new System.Drawing.Size(1284, 792);
+            this.Controls.Add(this.grpMarker);
+            this.Controls.Add(this.grpIsland);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelVertical);
             this.Controls.Add(this.panelHorizontal);
-            this.Controls.Add(this.panelIsland);
-            this.Controls.Add(this.markerPanel);
             this.Controls.Add(this.panelNavigation);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panelChart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(700, 700);
+            this.MinimumSize = new System.Drawing.Size(700, 830);
             this.Name = "Chart";
             this.Text = "Salt Charts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chart_FormClosing);
@@ -1096,15 +1201,15 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelNavigation.ResumeLayout(false);
-            this.markerPanel.ResumeLayout(false);
-            this.panelIsland.ResumeLayout(false);
-            this.panelIsland.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtStampSize)).EndInit();
             this.panelHorizontal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.horizontalNavigation)).EndInit();
             this.panelVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.verticalNavigation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grpIsland.ResumeLayout(false);
+            this.grpIsland.PerformLayout();
+            this.grpMarker.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1118,7 +1223,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusCoord;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnSave;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripButton btnNew;
         private System.Windows.Forms.ToolStripButton btnOpen;
         private System.Windows.Forms.ToolStripButton btnInfo;
@@ -1128,7 +1232,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusChartLocation;
         private System.Windows.Forms.ToolStripButton btnSettings;
         private System.Windows.Forms.ToolStripButton btnSaveImage;
-        private System.Windows.Forms.SaveFileDialog imageSaveDialog;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Button btnEast;
         private System.Windows.Forms.Button btnWest;
@@ -1147,7 +1250,6 @@
         private System.Windows.Forms.RadioButton btnHighMountain;
         private System.Windows.Forms.RadioButton btnDesert;
         private System.Windows.Forms.RadioButton btnNoMarker;
-        private System.Windows.Forms.Panel markerPanel;
         private System.Windows.Forms.RadioButton btnCompass;
         private System.Windows.Forms.RadioButton btnSilverChest;
         private System.Windows.Forms.RadioButton btnBronzeChest;
@@ -1157,7 +1259,6 @@
         private System.Windows.Forms.RadioButton btnDeer;
         private System.Windows.Forms.RadioButton btnSpiderQueen;
         private System.Windows.Forms.RadioButton btnMoonrock;
-        private System.Windows.Forms.Panel panelIsland;
         private System.Windows.Forms.RadioButton btnSingle;
         private System.Windows.Forms.RadioButton btnNoIsland;
         private System.Windows.Forms.RadioButton radioButton10;
@@ -1189,6 +1290,18 @@
         private System.Windows.Forms.RadioButton btnAncientGreaves;
         private System.Windows.Forms.RadioButton btnAncientPickaxe;
         private System.Windows.Forms.RadioButton btnAncientGauntlets;
+        private System.Windows.Forms.GroupBox grpIsland;
+        private System.Windows.Forms.GroupBox grpMarker;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripButton btnWaypointForward;
+        private System.Windows.Forms.ToolStripButton btnWaypointsBack;
+        private System.Windows.Forms.ToolStripSplitButton btnImport;
+        private System.Windows.Forms.ToolStripMenuItem btnImportWaypoints;
+        private System.Windows.Forms.ToolStripMenuItem btnImportStamps;
 
     }
 }

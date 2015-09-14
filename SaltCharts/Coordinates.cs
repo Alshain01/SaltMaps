@@ -4,7 +4,7 @@ using System.Drawing;
 namespace SaltCharts
 {
     [Serializable]
-    public class Coordinates : IEquatable<Coordinates>, IComparable<Coordinates>
+    public class Coordinates
     {
         const int CELL_SIZE = 40;
         const int GRID_CENTER = 2068;
@@ -51,77 +51,6 @@ namespace SaltCharts
         public override string ToString()
         {
             return string.Format("{0} {1}, {2} {3}", Math.Abs(X).ToString(), (X >= 0 ? "East" : "West"), Math.Abs(Y).ToString(), (Y >= 0) ? "South" : "North");
-        }
-
-        public int CompareTo(Coordinates c)
-        {
-            if (Y == c.Y)
-            {
-                if (X == c.X)
-                    return 0;
-
-                if (X < c.X)
-                    return -1;
-
-                return 1;
-            }
-
-            if (Y < c.Y)
-                return -1;
-
-            return 1;
-        }
-
-        public override bool Equals(Object o)
-        {
-            if(o.GetType().Equals(this.GetType()))
-                return Equals((Coordinates)o);
-            return false;
-        }
-        
-        public bool Equals(Coordinates c) {
-            return (X == c.X && Y == c.Y);
-        }
-
-        public bool Equads(Point p)
-        {
-            return Equals(FromPoint(p));
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-        public static bool operator >(Coordinates a, Coordinates b)
-        {
-            return a.CompareTo(b) > 0;
-        }
-
-        public static bool operator <(Coordinates a, Coordinates b)
-        {
-            return a.CompareTo(b) < 0;
-        }
-
-        public static bool operator >=(Coordinates a, Coordinates b)
-        {
-            int result = a.CompareTo(b);
-            return result == 0 || result > 0;
-        }
-
-        public static bool operator <=(Coordinates a, Coordinates b)
-        {
-            int result = a.CompareTo(b);
-            return result == 0 || result < 0;
-        }
-
-        public static bool operator ==(Coordinates a, Coordinates b)
-        {
-            return a.Equals(b);
-        }
-
-        public static bool operator !=(Coordinates a, Coordinates b)
-        {
-            return !a.Equals(b);
         }
     }
 }
